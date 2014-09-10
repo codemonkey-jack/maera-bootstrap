@@ -1,17 +1,27 @@
 {#<?php#}
 {% if theme_mods.navbar_position == 'none' %}
-{% elseif theme_mods.navbar_position == 'right-slide' %}
+{% elseif ( theme_mods.navbar_position == 'right-slide' or theme_mods.navbar_position == 'left-slide' ) %}
 
 	{% do action( 'maera/sidebar/before' ) %}
-		<a id="menu-toggle" href="#" class="btn btn-link btn-lg toggle"><i class="el-icon-lines"></i></a>
+		{% if theme_mods.navbar_position == 'right-slide' %}
+			<a id="menu-right-toggle" href="#" class="btn btn-link btn-lg toggle"><i class="el-icon-lines"></i></a>
 
-		<div id="sidebar-wrapper" role="navigation">
+			<div id="sidebar-right-wrapper" role="navigation">
+		{% elseif theme_mods.navbar_position == 'left-slide' %}
+			<a id="menu-left-toggle" href="#" class="btn btn-link btn-lg toggle"><i class="el-icon-lines"></i></a>
+
+			<div id="sidebar-left-wrapper" role="navigation">
+		{% endif %}
 
 			{% do action( 'maera/sidebar/main/before' ) %}
 
 			<nav class="sidebar-nav" role="navigation">
 
-				<a id="menu-close" href="#" class="btn btn-links btn-lg toggle"><i class="el-icon-caret-left"></i></a>
+			{% if theme_mods.navbar_position == 'right-slide' %}
+				<a id="menu-right-close" href="#" class="btn btn-links btn-lg toggle"><i class="el-icon-caret-left"></i></a>
+			{% elseif theme_mods.navbar_position == 'left-slide' %}
+				<a id="menu-left-close" href="#" class="btn btn-links btn-lg toggle"><i class="el-icon-caret-right"></i></a>
+			{% endif %}
 
 				<div class="sidebar-header">
 					<a class="sidebar-brand" href="{{ site.url }}">{{ "<div class='sitename h3'>#{ site.name }</div>"|apply_filters( 'maera/sidebar/brand' ) }}</a>
@@ -49,21 +59,41 @@
 			{% do action( 'maera/sidebar/main/after' ) %}
 
 	</div>
-	<script type="text/javascript">
-		var $jq = jQuery.noConflict();
-		$jq("document").ready(function() {
-			/*---------- Sidebar ----------*/
-			    $jq("#menu-close").click(function(e) {
-			        e.preventDefault();
-			        $jq("#sidebar-wrapper").toggleClass("active");
-			    });
-			    $jq("#menu-toggle").click(function(e) {
-			        e.preventDefault();
-			        $jq("#sidebar-wrapper").toggleClass("active");
-			    });
-			/*----------*/
-		});
-	</script>
+	{% if theme_mods.navbar_position == 'right-slide' %}
+		<script type="text/javascript">
+			var $jq = jQuery.noConflict();
+			$jq("document").ready(function() {
+				/*---------- Sidebar ----------*/
+				    $jq("#menu-right-close").click(function(e) {
+				        e.preventDefault();
+				        $jq("#sidebar-right-wrapper").toggleClass("active");
+				    });
+				    $jq("#menu-right-toggle").click(function(e) {
+				        e.preventDefault();
+				        $jq("#sidebar-right-wrapper").toggleClass("active");
+				    });
+				/*----------*/
+			});
+		</script>
+	{% elseif theme_mods.navbar_position == 'left-slide' %}
+		<script type="text/javascript">
+			var $jq = jQuery.noConflict();
+			$jq("document").ready(function() {
+				/*---------- Sidebar ----------*/
+				    $jq("#menu-left-close").click(function(e) {
+				        e.preventDefault();
+				        $jq("#sidebar-left-wrapper").toggleClass("active");
+				    });
+				    $jq("#menu-left-toggle").click(function(e) {
+				        e.preventDefault();
+				        $jq("#sidebar-left-wrapper").toggleClass("active");
+				    });
+				/*----------*/
+			});
+		</script>
+	{% endif %}
+
+	
 
 	{% do action( 'maera/sidebar/after' ) %}
 

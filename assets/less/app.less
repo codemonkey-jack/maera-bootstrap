@@ -129,14 +129,16 @@ ul.nav.navbar-nav.navbar-center {
 
 /*---------- Side menu ----------*/
 .admin-bar {
-	#menu-toggle {
+	#menu-right-toggle,
+	#menu-left-toggle {
 		top: 46px;
 	}
-	#sidebar-wrapper {
+	#sidebar-right-wrapper,
+	#sidebar-left-wrapper {
 		top: 32px;
 	}
 }
-#sidebar-wrapper {
+#sidebar-right-wrapper {
     margin-right: -250px;
     right: 0;
     top: 0;
@@ -152,8 +154,33 @@ ul.nav.navbar-nav.navbar-center {
     transition: all 0.4s ease 0s;
     background: @navbar-default-bg;
 }
-#sidebar-wrapper.active {
+#sidebar-right-wrapper.active {
     right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+#sidebar-left-wrapper {
+    margin-left: -250px;
+    left: 0;
+    top: 0;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    background: @navbar-default-bg;
+}
+#sidebar-left-wrapper.active {
+    left: 250px;
     width: 250px;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -185,11 +212,29 @@ ul.nav.navbar-nav.navbar-center {
 	    text-align: center;
 	}
 }
-#menu-toggle {
+#menu-right-toggle {
     top: 0;
     right: 0;
     position: fixed;
     z-index: 1000;
+}
+#menu-left-toggle {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+}
+#menu-left-close {
+	display: block;
+	text-align: right;
+}
+#menu-right-close {
+	display: block;
+	text-align: left;
+}
+#menu-left-toggle:hover,
+#menu-right-toggle:hover{
+	text-decoration: none;
 }
 .toggle {
     margin: 5px 5px 0px 0px;
