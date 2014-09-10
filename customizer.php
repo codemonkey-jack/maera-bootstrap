@@ -442,7 +442,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_menus_height',
-		'subtitle' => __( 'Line Height (px)', 'maera' ),
+		'subtitle' => __( 'Line Height', 'maera' ),
 		'section'  => 'typo_nav',
 		'default'  => 1.1,
 		'priority' => 25,
@@ -945,14 +945,14 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_jumbotron_height',
-		'subtitle' => __( 'Line Height (px)', 'maera' ),
+		'subtitle' => __( 'Line Height', 'maera' ),
 		'section'  => 'typo_jumbo',
 		'default'  => 22,
 		'priority' => 25,
 		'choices'  => array(
-			'min'  => 7,
-			'max'  => 70,
-			'step' => 1,
+			'min'  => 0,
+			'max'  => 3,
+			'step' => 0.1,
 		),
 	);
 	//-------------------------------------------------
