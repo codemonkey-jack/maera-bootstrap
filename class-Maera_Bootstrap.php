@@ -3,7 +3,7 @@
 if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 	/**
-	* The Bootstrap Framework module
+	* The Bootstrap Shell module
 	*/
 	class Maera_Bootstrap {
 
@@ -19,18 +19,18 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			add_theme_support( 'maera_image' );
 			add_theme_support( 'maera_color' );
 
-			if ( ! defined( 'MAERA_FRAMEWORK_PATH' ) ) {
-				define( 'MAERA_FRAMEWORK_PATH', dirname( __FILE__ ) );
+			if ( ! defined( 'MAERA_SHELL_PATH' ) ) {
+				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
 			}
 
 			// Include the customizer
-			include_once( MAERA_FRAMEWORK_PATH . '/customizer.php' );
+			include_once( MAERA_SHELL_PATH . '/customizer.php' );
 
 			// Include other classes
-			include_once( MAERA_FRAMEWORK_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
-			include_once( MAERA_FRAMEWORK_PATH . '/classes/class-Maera_Bootstrap_Styles.php' );
-			include_once( MAERA_FRAMEWORK_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
-			include_once( MAERA_FRAMEWORK_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Styles.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
 
 			// Instantianate addon classes
 			global $bs_structure;
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 110 );
 
-			// Add the framework Timber modifications
+			// Add the shell Timber modifications
 			add_filter( 'timber_context', array( $this, 'timber_extras' ), 20 );
 
 			// Excerpt
@@ -97,15 +97,15 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 		 */
 		function scripts() {
 
-			wp_register_script( 'bootstrap-min', MAERA_BOOTSTRAP_FRAMEWORK_URL . '/assets/js/bootstrap.min.js', false, null, true  );
+			wp_register_script( 'bootstrap-min', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap.min.js', false, null, true  );
 			wp_enqueue_script( 'bootstrap-min' );
 
 			if ( get_theme_mod( 'wai_aria', 0 ) == 1 ) {
 
-				wp_register_script( 'bootstrap-accessibility', MAERA_BOOTSTRAP_FRAMEWORK_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
+				wp_register_script( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
 				wp_enqueue_script( 'bootstrap-accessibility' );
 
-				wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_FRAMEWORK_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
+				wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
 				wp_enqueue_style( 'bootstrap-accessibility' );
 
 			}

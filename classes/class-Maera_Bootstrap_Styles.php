@@ -3,7 +3,7 @@
 if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 
 	/**
-	* The Bootstrap Framework module
+	* The Bootstrap Shell module
 	*/
 	class Maera_Bootstrap_Styles {
 
