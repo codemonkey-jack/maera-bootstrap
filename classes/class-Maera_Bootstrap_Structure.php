@@ -86,8 +86,8 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			$metas       = get_theme_mod( 'maera_entry_meta_config', 'post-format, date, author, comments' );
 			$date_format = get_theme_mod( 'date_meta_format', 1 );
 
-			$categories_list = has_category( '', $post_id ) ? get_the_category_list( __( ', ', 'maera' ), '', $post_id ) : false;
-			$tag_list        = has_tag( '', $post_id ) ? get_the_tag_list( '', __( ', ', 'maera' ) ) : false;
+			$categories_list = has_category( '', $post_id ) ? get_the_category_list( __( ', ', 'maera_bootstrap' ), '', $post_id ) : false;
+			$tag_list        = has_tag( '', $post_id ) ? get_the_tag_list( '', __( ', ', 'maera_bootstrap' ) ) : false;
 
 			// No need to proceed if the option is empty
 			if ( empty( $metas ) ) {
@@ -108,7 +108,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 					$content .= sprintf( '<span class="post-meta-element ' . $meta . '"><span class="author vcard"><i class="el-icon-user icon"></i> <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>',
 						esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) ) ),
-						esc_attr( sprintf( __( 'View all posts by %s', 'maera' ), get_the_author_meta( 'display_name', $post->post_author ) ) ),
+						esc_attr( sprintf( __( 'View all posts by %s', 'maera_bootstrap' ), get_the_author_meta( 'display_name', $post->post_author ) ) ),
 						get_the_author_meta( 'display_name', $post->post_author )
 					);
 
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 					if ( is_sticky() ) {
 						$content .= '<span class="post-meta-element ' . $meta . '">';
-						$content .= '<i class="el-icon-flag icon"></i> ' . __( 'Sticky', 'maera' );
+						$content .= '<i class="el-icon-flag icon"></i> ' . __( 'Sticky', 'maera_bootstrap' );
 						$content .= '</span>';
 					}
 
@@ -128,31 +128,31 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 						if ( get_post_format( $post_id ) === 'gallery' ) {
 							// Gallery
-							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'gallery' ) ) . '">' . __('Gallery','maera') . '</a>';
+							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'gallery' ) ) . '">' . __('Gallery','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'aside' ) {
 							// Aside
-							$content .= '<i class="el-icon-chevron-right"></i> <a href="' . esc_url( get_post_format_link( 'aside' ) ) . '">' . __('Aside','maera') . '</a>';
+							$content .= '<i class="el-icon-chevron-right"></i> <a href="' . esc_url( get_post_format_link( 'aside' ) ) . '">' . __('Aside','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'link' ) {
 							// Link
-							$content .= '<i class="el-icon-link"></i> <a href="' . esc_url( get_post_format_link( 'link' ) ) . '">' . __('Link','maera') . '</a>';
+							$content .= '<i class="el-icon-link"></i> <a href="' . esc_url( get_post_format_link( 'link' ) ) . '">' . __('Link','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'image' ) {
 							// Image
-							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'image' ) ) . '">' . __('Image','maera') . '</a>';
+							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'image' ) ) . '">' . __('Image','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'quote' ) {
 							// Quote
-							$content .= '<i class="el-icon-quotes-alt"></i> <a href="' . esc_url( get_post_format_link( 'quote' ) ) . '">' . __('Quote','maera') . '</a>';
+							$content .= '<i class="el-icon-quotes-alt"></i> <a href="' . esc_url( get_post_format_link( 'quote' ) ) . '">' . __('Quote','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'status' ) {
 							// Status
-							$content .= '<i class="el-icon-comment"></i> <a href="' . esc_url( get_post_format_link( 'status' ) ) . '">' . __('Status','maera') . '</a>';
+							$content .= '<i class="el-icon-comment"></i> <a href="' . esc_url( get_post_format_link( 'status' ) ) . '">' . __('Status','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'video' ) {
 							// Video
-							$content .= '<i class="el-icon-video"></i> <a href="' . esc_url( get_post_format_link( 'video' ) ) . '">' . __('Video','maera') . '</a>';
+							$content .= '<i class="el-icon-video"></i> <a href="' . esc_url( get_post_format_link( 'video' ) ) . '">' . __('Video','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'audio' ) {
 							// Audio
-							$content .= '<i class="el-icon-volume-up"></i> <a href="' . esc_url( get_post_format_link( 'audio' ) ) . '">' . __('Audio','maera') . '</a>';
+							$content .= '<i class="el-icon-volume-up"></i> <a href="' . esc_url( get_post_format_link( 'audio' ) ) . '">' . __('Audio','maera_bootstrap') . '</a>';
 						} elseif ( get_post_format( $post_id ) === 'chat' ) {
 							// Chat
-							$content .= '<i class="el-icon-comment-alt"></i> <a href="' . esc_url( get_post_format_link( 'chat' ) ) . '">' . __('Chat','maera') . '</a>';
+							$content .= '<i class="el-icon-comment-alt"></i> <a href="' . esc_url( get_post_format_link( 'chat' ) ) . '">' . __('Chat','maera_bootstrap') . '</a>';
 						}
 
 						$content .= '</span>';
@@ -165,7 +165,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 						$content .= '<span class="post-meta-element ' . $meta . '">';
 
-						$format_prefix = ( has_post_format( 'chat' ) || has_post_format( 'status' ) ) ? _x( '%1$s on %2$s', '1: post format name. 2: date', 'maera' ): '%2$s';
+						$format_prefix = ( has_post_format( 'chat' ) || has_post_format( 'status' ) ) ? _x( '%1$s on %2$s', '1: post format name. 2: date', 'maera_bootstrap' ): '%2$s';
 
 						if ( $date_format == 0 ) {
 
@@ -199,7 +199,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 				} elseif ( 'comments' == $meta ) { // Comments
 
-					$content .= '<span class="post-meta-element ' . $meta . '"><i class="el-icon-comment icon"></i> <a href="' . get_comments_link( $post_id ) . '">' . get_comments_number( $post_id ) . ' ' . __( 'Comments', 'maera' ) . '</a></span>';
+					$content .= '<span class="post-meta-element ' . $meta . '"><i class="el-icon-comment icon"></i> <a href="' . get_comments_link( $post_id ) . '">' . get_comments_number( $post_id ) . ' ' . __( 'Comments', 'maera_bootstrap' ) . '</a></span>';
 
 				}
 
@@ -641,8 +641,8 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			if ( $navbar_search == 1 ) { ?>
 				<form role="search" method="get" id="searchform" class="form-search navbar-right navbar-form" action="<?php echo home_url('/'); ?>">
-					<label class="hide" for="s"><?php _e('Search for:', 'maera'); ?></label>
-					<input type="text" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="form-control search-query" placeholder="<?php _e('Search', 'maera'); ?> <?php bloginfo('name'); ?>">
+					<label class="hide" for="s"><?php _e('Search for:', 'maera_bootstrap'); ?></label>
+					<input type="text" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="form-control search-query" placeholder="<?php _e('Search', 'maera_bootstrap'); ?> <?php bloginfo('name'); ?>">
 				</form>
 			<?php }
 		}
@@ -653,27 +653,27 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 		function social_links_builder( $before = '', $after = '', $separator = '' ) {
 
 			$social_links = array(
-				'blogger'     => __( 'Blogger', 'maera' ),
-				'deviantart'  => __( 'DeviantART', 'maera' ),
-				'digg'        => __( 'Digg', 'maera' ),
-				'dribbble'    => __( 'Dribbble', 'maera' ),
-				'facebook'    => __( 'Facebook', 'maera' ),
-				'flickr'      => __( 'Flickr', 'maera' ),
-				'github'      => __( 'Github', 'maera' ),
-				'googleplus' => __( 'Google+', 'maera' ),
-				'instagram'   => __( 'Instagram', 'maera' ),
-				'linkedin'    => __( 'LinkedIn', 'maera' ),
-				'myspace'     => __( 'MySpace', 'maera' ),
-				'pinterest'   => __( 'Pinterest', 'maera' ),
-				'reddit'      => __( 'Reddit', 'maera' ),
-				'rss'         => __( 'RSS', 'maera' ),
-				'skype'       => __( 'Skype', 'maera' ),
-				'soundcloud'  => __( 'SoundCloud', 'maera' ),
-				'tumblr'      => __( 'Tumblr', 'maera' ),
-				'twitter'     => __( 'Twitter', 'maera' ),
-				'vimeo'       => __( 'Vimeo', 'maera' ),
-				'vkontakte'   => __( 'Vkontakte', 'maera' ),
-				'youtube'     => __( 'YouTube', 'maera' ),
+				'blogger'     => __( 'Blogger', 'maera_bootstrap' ),
+				'deviantart'  => __( 'DeviantART', 'maera_bootstrap' ),
+				'digg'        => __( 'Digg', 'maera_bootstrap' ),
+				'dribbble'    => __( 'Dribbble', 'maera_bootstrap' ),
+				'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
+				'flickr'      => __( 'Flickr', 'maera_bootstrap' ),
+				'github'      => __( 'Github', 'maera_bootstrap' ),
+				'googleplus' => __( 'Google+', 'maera_bootstrap' ),
+				'instagram'   => __( 'Instagram', 'maera_bootstrap' ),
+				'linkedin'    => __( 'LinkedIn', 'maera_bootstrap' ),
+				'myspace'     => __( 'MySpace', 'maera_bootstrap' ),
+				'pinterest'   => __( 'Pinterest', 'maera_bootstrap' ),
+				'reddit'      => __( 'Reddit', 'maera_bootstrap' ),
+				'rss'         => __( 'RSS', 'maera_bootstrap' ),
+				'skype'       => __( 'Skype', 'maera_bootstrap' ),
+				'soundcloud'  => __( 'SoundCloud', 'maera_bootstrap' ),
+				'tumblr'      => __( 'Tumblr', 'maera_bootstrap' ),
+				'twitter'     => __( 'Twitter', 'maera_bootstrap' ),
+				'vimeo'       => __( 'Vimeo', 'maera_bootstrap' ),
+				'vkontakte'   => __( 'Vkontakte', 'maera_bootstrap' ),
+				'youtube'     => __( 'YouTube', 'maera_bootstrap' ),
 			);
 
 			$content = $before;

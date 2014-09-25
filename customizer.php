@@ -9,44 +9,44 @@ function maera_customizer_sections( $wp_customize ) {
 	$wp_customize->remove_section( 'nav' );
 
 	$panels = array(
-		'structure'   => array( 'title' => __( 'Structure', 'maera' ),   'description' => __( 'Set the structure options', 'maera' ),       'priority' => 10 ),
-		'backgrounds' => array( 'title' => __( 'Backgrounds', 'maera' ), 'description' => __( 'Set the site backgrounds', 'maera' ),        'priority' => 20 ),
-		'typography'  => array( 'title' => __( 'Typography', 'maera' ),  'description' => __( 'Set the site typography options', 'maera' ), 'priority' => 30 ),
-		'blog'        => array( 'title' => __( 'Blog', 'maera' ),        'description' => __( 'Set the blog options', 'maera' ),            'priority' => 40 ),
+		'structure'   => array( 'title' => __( 'Structure', 'maera_bootstrap' ),   'description' => __( 'Set the structure options', 'maera_bootstrap' ),       'priority' => 10 ),
+		'backgrounds' => array( 'title' => __( 'Backgrounds', 'maera_bootstrap' ), 'description' => __( 'Set the site backgrounds', 'maera_bootstrap' ),        'priority' => 20 ),
+		'typography'  => array( 'title' => __( 'Typography', 'maera_bootstrap' ),  'description' => __( 'Set the site typography options', 'maera_bootstrap' ), 'priority' => 30 ),
+		'blog'        => array( 'title' => __( 'Blog', 'maera_bootstrap' ),        'description' => __( 'Set the blog options', 'maera_bootstrap' ),            'priority' => 40 ),
 	);
 
 	$sections = array(
-		'branding' => array( 'title' => __( 'Branding', 'maera' ), 'priority' => 5, 'panel' => '' ),
+		'branding' => array( 'title' => __( 'Branding', 'maera_bootstrap' ), 'priority' => 5, 'panel' => '' ),
 
-		'general'         => array( 'title' => __( 'General', 'maera' ),         'priority' => 10, 'panel' => 'structure' ),
-		'layout'          => array( 'title' => __( 'Layout', 'maera' ),          'priority' => 15, 'panel' => 'structure' ),
-		'layout_advanced' => array( 'title' => __( 'Advanced Layout', 'maera' ), 'priority' => 20, 'panel' => 'structure' ),
-		'structure_jumbo' => array( 'title' => __( 'Jumbotron', 'maera' ),       'priority' => 30, 'panel' => 'structure' ),
-		'nav'             => array( 'title' => __( 'Navigation', 'maera' ),      'priority' => 35, 'panel' => 'structure' ),
-		'widget_areas'    => array( 'title' => __( 'Widget Areas', 'maera' ),    'priority' => 35, 'panel' => 'structure' ),
+		'general'         => array( 'title' => __( 'General', 'maera_bootstrap' ),         'priority' => 10, 'panel' => 'structure' ),
+		'layout'          => array( 'title' => __( 'Layout', 'maera_bootstrap' ),          'priority' => 15, 'panel' => 'structure' ),
+		'layout_advanced' => array( 'title' => __( 'Advanced Layout', 'maera_bootstrap' ), 'priority' => 20, 'panel' => 'structure' ),
+		'structure_jumbo' => array( 'title' => __( 'Jumbotron', 'maera_bootstrap' ),       'priority' => 30, 'panel' => 'structure' ),
+		'nav'             => array( 'title' => __( 'Navigation', 'maera_bootstrap' ),      'priority' => 35, 'panel' => 'structure' ),
+		'widget_areas'    => array( 'title' => __( 'Widget Areas', 'maera_bootstrap' ),    'priority' => 35, 'panel' => 'structure' ),
 
-		'html_bg'    => array( 'title' => __( 'HTML', 'maera' ),         'priority' => 10, 'panel' => 'backgrounds' ),
-		'body_bg'    => array( 'title' => __( 'Body', 'maera' ),         'priority' => 15, 'panel' => 'backgrounds' ),
-		'nav_bg'     => array( 'title' => __( 'Navbar', 'maera' ),       'priority' => 20, 'panel' => 'backgrounds' ),
-		'header_bg'  => array( 'title' => __( 'Extra Header', 'maera' ), 'priority' => 25, 'panel' => 'backgrounds' ),
-		'jumbo_bg'   => array( 'title' => __( 'Jumbotron', 'maera' ),    'priority' => 30, 'panel' => 'backgrounds' ),
-		'footer_bg'  => array( 'title' => __( 'Footer', 'maera' ),       'priority' => 35, 'panel' => 'backgrounds' ),
+		'html_bg'    => array( 'title' => __( 'HTML', 'maera_bootstrap' ),         'priority' => 10, 'panel' => 'backgrounds' ),
+		'body_bg'    => array( 'title' => __( 'Body', 'maera_bootstrap' ),         'priority' => 15, 'panel' => 'backgrounds' ),
+		'nav_bg'     => array( 'title' => __( 'Navbar', 'maera_bootstrap' ),       'priority' => 20, 'panel' => 'backgrounds' ),
+		'header_bg'  => array( 'title' => __( 'Extra Header', 'maera_bootstrap' ), 'priority' => 25, 'panel' => 'backgrounds' ),
+		'jumbo_bg'   => array( 'title' => __( 'Jumbotron', 'maera_bootstrap' ),    'priority' => 30, 'panel' => 'backgrounds' ),
+		'footer_bg'  => array( 'title' => __( 'Footer', 'maera_bootstrap' ),       'priority' => 35, 'panel' => 'backgrounds' ),
 
-		'colors' => array( 'title' => __( 'Colors', 'maera' ), 'priority' => 25, 'panel' => '' ),
+		'colors' => array( 'title' => __( 'Colors', 'maera_bootstrap' ), 'priority' => 25, 'panel' => '' ),
 
-		'typo_base'    => array( 'title' => __( 'Base', 'maera' ),         'priority' => 10, 'panel' => 'typography' ),
-		'typo_headers' => array( 'title' => __( 'Headers', 'maera' ),      'priority' => 15, 'panel' => 'typography' ),
-		'typo_nav'     => array( 'title' => __( 'Navbar', 'maera' ),       'priority' => 20, 'panel' => 'typography' ),
-		'typo_header'  => array( 'title' => __( 'Extra Header', 'maera' ), 'priority' => 25, 'panel' => 'typography' ),
-		'typo_jumbo'   => array( 'title' => __( 'Jumbotron', 'maera' ),    'priority' => 30, 'panel' => 'typography' ),
-		'typo_footer'  => array( 'title' => __( 'Footer', 'maera' ),       'priority' => 35, 'panel' => 'typography' ),
+		'typo_base'    => array( 'title' => __( 'Base', 'maera_bootstrap' ),         'priority' => 10, 'panel' => 'typography' ),
+		'typo_headers' => array( 'title' => __( 'Headers', 'maera_bootstrap' ),      'priority' => 15, 'panel' => 'typography' ),
+		'typo_nav'     => array( 'title' => __( 'Navbar', 'maera_bootstrap' ),       'priority' => 20, 'panel' => 'typography' ),
+		'typo_header'  => array( 'title' => __( 'Extra Header', 'maera_bootstrap' ), 'priority' => 25, 'panel' => 'typography' ),
+		'typo_jumbo'   => array( 'title' => __( 'Jumbotron', 'maera_bootstrap' ),    'priority' => 30, 'panel' => 'typography' ),
+		'typo_footer'  => array( 'title' => __( 'Footer', 'maera_bootstrap' ),       'priority' => 35, 'panel' => 'typography' ),
 
-		'blog_options' => array( 'title' => __( 'Blog Options', 'maera' ),                'priority' => 10, 'panel' => 'blog' ),
-		'feat_archive' => array( 'title' => __( 'Featured Images on archives', 'maera' ), 'priority' => 15, 'panel' => 'blog' ),
-		'feat_single'  => array( 'title' => __( 'Featured Images on posts', 'maera' ),    'priority' => 20, 'panel' => 'blog' ),
+		'blog_options' => array( 'title' => __( 'Blog Options', 'maera_bootstrap' ),                'priority' => 10, 'panel' => 'blog' ),
+		'feat_archive' => array( 'title' => __( 'Featured Images on archives', 'maera_bootstrap' ), 'priority' => 15, 'panel' => 'blog' ),
+		'feat_single'  => array( 'title' => __( 'Featured Images on posts', 'maera_bootstrap' ),    'priority' => 20, 'panel' => 'blog' ),
 
-		'social' => array( 'title' => __( 'Social Links', 'maera' ), 'priority' => 45, 'panel' => '' ),
-		'advanced' => array( 'title' => __( 'Advanced', 'maera' ), 'priority' => 50, 'panel' => '' ),
+		'social' => array( 'title' => __( 'Social Links', 'maera_bootstrap' ), 'priority' => 45, 'panel' => '' ),
+		'advanced' => array( 'title' => __( 'Advanced', 'maera_bootstrap' ), 'priority' => 50, 'panel' => '' ),
 	);
 
 	foreach ( $sections as $section => $args ) {
@@ -86,8 +86,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'        => 'image',
 		'setting'     => 'logo',
-		'label'       => __( 'Logo', 'maera' ),
-		'subtitle' => __( 'Upload your site\'s logo', 'maera' ),
+		'label'       => __( 'Logo', 'maera_bootstrap' ),
+		'subtitle' => __( 'Upload your site\'s logo', 'maera_bootstrap' ),
 		'section'     => 'branding',
 		'priority'    => 10,
 		'default'     => null
@@ -97,15 +97,15 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'widgets_mode',
-		'label'    => __( 'Widgets mode', 'maera' ),
-		'subtitle' => __( 'How do you want your widgets to be displayed?', 'maera' ),
+		'label'    => __( 'Widgets mode', 'maera_bootstrap' ),
+		'subtitle' => __( 'How do you want your widgets to be displayed?', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 13,
 		'default'  => 2,
 		'choices'  => array(
-			'none'  => __( 'None', 'maera' ),
-			'well'  => __( 'Well', 'maera' ),
-			'panel' => __( 'Panel', 'maera' ),
+			'none'  => __( 'None', 'maera_bootstrap' ),
+			'well'  => __( 'Well', 'maera_bootstrap' ),
+			'panel' => __( 'Panel', 'maera_bootstrap' ),
 		),
 	);
 
@@ -113,9 +113,9 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'font_size_units',
-		'label'    => __( 'Font-size units', 'maera' ),
+		'label'    => __( 'Font-size units', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
-		'subtitle' => __( 'Choose if you want to set font sizes as pixels or ems. This will apply to all settings. Please note that if you change this setting you will have to save and refresh this page. Once you do, please review ALL your font-size settings and set them accordingly.', 'maera' ),
+		'subtitle' => __( 'Choose if you want to set font sizes as pixels or ems. This will apply to all settings. Please note that if you change this setting you will have to save and refresh this page. Once you do, please review ALL your font-size settings and set them accordingly.', 'maera_bootstrap' ),
 		'default'  => 'px',
 		'choices'  => array(
 			'px'   => 'Pixels',
@@ -127,9 +127,9 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'wai_aria',
-		'label'    => __( 'Enable accessibility scripts', 'maera' ),
+		'label'    => __( 'Enable accessibility scripts', 'maera_bootstrap' ),
 		'section'  => 'advanced',
-		'subtitle' => __( 'When enabled, paypal\'s bootstrap-accessibility plugin is loaded', 'maera' ),
+		'subtitle' => __( 'When enabled, paypal\'s bootstrap-accessibility plugin is loaded', 'maera_bootstrap' ),
 		'default'  => 1,
 		'priority' => 19,
 	);
@@ -151,15 +151,15 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'site_style',
-		'label'    => __( 'Site Style', 'maera' ),
-		'subtitle' => __( 'Wide and boxed Layouts are responsive while fluid layouts are full-width.', 'maera' ),
+		'label'    => __( 'Site Style', 'maera_bootstrap' ),
+		'subtitle' => __( 'Wide and boxed Layouts are responsive while fluid layouts are full-width.', 'maera_bootstrap' ),
 		'section'  => 'layout',
 		'priority' => 2,
 		'default'  => 'wide',
 		'choices'  => array(
-			'wide'    => __( 'Wide', 'maera' ),
-			'boxed'   => __( 'Boxed', 'maera' ),
-			'fluid'   => __( 'Fluid', 'maera' ),
+			'wide'    => __( 'Wide', 'maera_bootstrap' ),
+			'boxed'   => __( 'Boxed', 'maera_bootstrap' ),
+			'fluid'   => __( 'Fluid', 'maera_bootstrap' ),
 		),
 	);
 
@@ -167,8 +167,8 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'image',
 		'setting'  => 'layout',
-		'label'    => __( 'Layout', 'maera' ),
-		'subtitle' => __( 'Select your main layout. Please note that if no widgets are present in a sidebar then that sidebar will not be displayed. ', 'maera' ),
+		'label'    => __( 'Layout', 'maera_bootstrap' ),
+		'subtitle' => __( 'Select your main layout. Please note that if no widgets are present in a sidebar then that sidebar will not be displayed. ', 'maera_bootstrap' ),
 		'section'  => 'layout',
 		'priority' => 3,
 		'default'  => 1,
@@ -178,7 +178,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'layout_primary_width',
-		'label'    => __( 'Primary Sidebar Width', 'maera' ),
+		'label'    => __( 'Primary Sidebar Width', 'maera_bootstrap' ),
 		'description' => '',
 		'section'  => 'layout',
 		'priority' => 4,
@@ -193,7 +193,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'layout_secondary_width',
-		'label'    => __( 'Secondary Sidebar Width', 'maera' ),
+		'label'    => __( 'Secondary Sidebar Width', 'maera_bootstrap' ),
 		'description' => '',
 		'section'  => 'layout',
 		'priority' => 5,
@@ -208,8 +208,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'screen_tablet',
-		'label'    => __( 'Small Screen / Tablet view', 'maera' ),
-		'subtitle' => __( 'The width of Tablet screens. Default: 768px', 'maera' ),
+		'label'    => __( 'Small Screen / Tablet view', 'maera_bootstrap' ),
+		'subtitle' => __( 'The width of Tablet screens. Default: 768px', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 81,
 		'default'  => 768,
@@ -223,8 +223,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'screen_desktop',
-		'label'    => __( 'Desktop Container Width', 'maera' ),
-		'subtitle' => __( 'The width of normal screens. Default: 992px', 'maera' ),
+		'label'    => __( 'Desktop Container Width', 'maera_bootstrap' ),
+		'subtitle' => __( 'The width of normal screens. Default: 992px', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 82,
 		'default'  => 992,
@@ -238,8 +238,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'screen_large_desktop',
-		'label'    => __( 'Large Desktop Container Width', 'maera' ),
-		'subtitle' => __( 'The width of Large Desktop screens. Default: 1200px', 'maera' ),
+		'label'    => __( 'Large Desktop Container Width', 'maera_bootstrap' ),
+		'subtitle' => __( 'The width of Large Desktop screens. Default: 1200px', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 83,
 		'default'  => 1200,
@@ -253,8 +253,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'gutter',
-		'label'    => __( 'Gutter', 'maera' ),
-		'subtitle' => __( 'The spacing between grid columns. Default: 30px', 'maera' ),
+		'label'    => __( 'Gutter', 'maera_bootstrap' ),
+		'subtitle' => __( 'The spacing between grid columns. Default: 30px', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 84,
 		'default'  => 30,
@@ -268,8 +268,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'cpt_layout_toggle',
-		'label'    => __( 'Per Post-Type layouts', 'maera' ),
-		'subtitle' => __( 'After you enable this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera' ),
+		'label'    => __( 'Per Post-Type layouts', 'maera_bootstrap' ),
+		'subtitle' => __( 'After you enable this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera_bootstrap' ),
 		'section'  => 'layout_advanced',
 		'priority' => 90,
 		'default'  => 0,
@@ -286,7 +286,7 @@ function maera_customizer_settings( $controls ) {
 				'type'     => 'radio',
 				'mode'     => 'image',
 				'setting'  => $post_type . '_layout',
-				'label'    => $post_type . ' ' . __( 'layout', 'maera' ),
+				'label'    => $post_type . ' ' . __( 'layout', 'maera_bootstrap' ),
 				'description' => null,
 				'section'  => 'layout_advanced',
 				'priority' => 92,
@@ -303,19 +303,19 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'navbar_position',
-		'label'    => __( 'NavBar Positioning', 'maera' ),
-		'description' => __( 'Using this option you can set the navbar to be fixed to top, fixed to bottom or normal. When you\'re using one of the \'fixed\' options, the navbar will stay fixed on the top or bottom of the page. Default: Normal', 'maera' ),
+		'label'    => __( 'NavBar Positioning', 'maera_bootstrap' ),
+		'description' => __( 'Using this option you can set the navbar to be fixed to top, fixed to bottom or normal. When you\'re using one of the \'fixed\' options, the navbar will stay fixed on the top or bottom of the page. Default: Normal', 'maera_bootstrap' ),
 		'section'  => 'nav',
 		'default'  => 'normal',
 		'choices'  => array(
-			'none'          => __( 'None', 'maera' ),
-			'normal'        => __( 'Normal', 'maera' ),
-			'full'          => __( 'Full-Width', 'maera' ),
-			'fixed-top'     => __( 'Fixed (top)', 'maera' ),
-			'fixed-bottom'  => __( 'Fixed (bottom)', 'maera' ),
-			'after-headers' => __( 'After Extra Headers', 'maera' ),
-			'left-slide'	=> __( 'Left Slide', 'maera' ),
-			'right-slide'	=> __( 'Right Slide', 'maera' )
+			'none'          => __( 'None', 'maera_bootstrap' ),
+			'normal'        => __( 'Normal', 'maera_bootstrap' ),
+			'full'          => __( 'Full-Width', 'maera_bootstrap' ),
+			'fixed-top'     => __( 'Fixed (top)', 'maera_bootstrap' ),
+			'fixed-bottom'  => __( 'Fixed (bottom)', 'maera_bootstrap' ),
+			'after-headers' => __( 'After Extra Headers', 'maera_bootstrap' ),
+			'left-slide'	=> __( 'Left Slide', 'maera_bootstrap' ),
+			'right-slide'	=> __( 'Right Slide', 'maera_bootstrap' )
 		),
 		'priority' => 23,
 	);
@@ -323,17 +323,17 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'grid_float_breakpoint',
-		'label'    => __( 'Responsive NavBar Threshold', 'maera' ),
-		'subtitle' => __( 'Point at which the navbar becomes uncollapsed', 'maera' ),
+		'label'    => __( 'Responsive NavBar Threshold', 'maera_bootstrap' ),
+		'subtitle' => __( 'Point at which the navbar becomes uncollapsed', 'maera_bootstrap' ),
 		'section'  => 'nav',
 		'default'  => 'screen_sm_min',
 		'choices'  => array(
-			'min'           => __( 'Never', 'maera' ),
-			'screen_xs_min' => __( 'Extra Small', 'maera' ),
-			'screen_sm_min' => __( 'Small', 'maera' ),
-			'screen_md_min' => __( 'Desktop', 'maera' ),
-			'screen_lg_min' => __( 'Large Desktop', 'maera' ),
-			'max'           => __( 'Always', 'maera' ),
+			'min'           => __( 'Never', 'maera_bootstrap' ),
+			'screen_xs_min' => __( 'Extra Small', 'maera_bootstrap' ),
+			'screen_sm_min' => __( 'Small', 'maera_bootstrap' ),
+			'screen_md_min' => __( 'Desktop', 'maera_bootstrap' ),
+			'screen_lg_min' => __( 'Large Desktop', 'maera_bootstrap' ),
+			'max'           => __( 'Always', 'maera_bootstrap' ),
 		),
 		'priority' => 24,
 	);
@@ -341,7 +341,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'navbar_search',
-		'label'    => __( 'Display search form on the NavBar', 'maera' ),
+		'label'    => __( 'Display search form on the NavBar', 'maera_bootstrap' ),
 		'section'  => 'nav',
 		'default'  => 1,
 		'priority' => 26,
@@ -351,13 +351,13 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'navbar_nav_align',
-		'label'    => __( 'Menus alignment', 'maera' ),
+		'label'    => __( 'Menus alignment', 'maera_bootstrap' ),
 		'section'  => 'nav',
 		'default'  => 'left',
 		'choices'  => array(
-			'left'   => __( 'Left', 'maera' ),
-			'center' => __( 'Center', 'maera' ),
-			'right'  => __( 'Right', 'maera' ),
+			'left'   => __( 'Left', 'maera_bootstrap' ),
+			'center' => __( 'Center', 'maera_bootstrap' ),
+			'right'  => __( 'Right', 'maera_bootstrap' ),
 		),
 		'priority' => 27,
 	);
@@ -365,8 +365,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'color',
 		'setting'  => 'navbar_bg',
-		'label'    => __( 'NavBar Background Color', 'maera' ),
-		'description' => __( 'Pick a background color for the NavBar. Default: #f8f8f8.', 'maera' ),
+		'label'    => __( 'NavBar Background Color', 'maera_bootstrap' ),
+		'description' => __( 'Pick a background color for the NavBar. Default: #f8f8f8.', 'maera_bootstrap' ),
 		'section'  => 'nav_bg',
 		'default'  => '#f8f8f8',
 		'priority' => 30,
@@ -375,7 +375,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'navbar_bg_opacity',
-		'label'    => __( 'NavBar Background Opacity', 'maera' ),
+		'label'    => __( 'NavBar Background Opacity', 'maera_bootstrap' ),
 		'section'  => 'nav_bg',
 		'default'  => 100,
 		'priority' => 31,
@@ -389,8 +389,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'navbar_height',
-		'label'    => __( 'NavBar Height', 'maera' ),
-		'subtitle' => __( 'Select the height of your navbars in pixels.', 'maera' ),
+		'label'    => __( 'NavBar Height', 'maera_bootstrap' ),
+		'subtitle' => __( 'Select the height of your navbars in pixels.', 'maera_bootstrap' ),
 		'section'  => 'nav',
 		'default'  => 50,
 		'priority' => 33,
@@ -404,7 +404,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'font_menus_font_family',
-		'label'    => __( 'Menus font', 'maera' ),
+		'label'    => __( 'Menus font', 'maera_bootstrap' ),
 		'section'  => 'typo_nav',
 		'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 		'priority' => 40,
@@ -414,7 +414,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_menus_weight',
-		'subtitle' => __( 'Font Weight', 'maera' ),
+		'subtitle' => __( 'Font Weight', 'maera_bootstrap' ),
 		'section'  => 'typo_nav',
 		'default'  => 400,
 		'priority' => 43,
@@ -428,7 +428,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_menus_size',
-		'subtitle' => __( 'Font Size', 'maera' ),
+		'subtitle' => __( 'Font Size', 'maera_bootstrap' ),
 		'section'  => 'typo_nav',
 		'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5,
 		'priority' => 44,
@@ -442,7 +442,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_menus_height',
-		'subtitle' => __( 'Line Height', 'maera' ),
+		'subtitle' => __( 'Line Height', 'maera_bootstrap' ),
 		'section'  => 'typo_nav',
 		'default'  => 1.1,
 		'priority' => 25,
@@ -460,8 +460,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'color',
 		'setting'  => 'color_brand_primary',
-		'label'    => __( 'Brand Colors: Primary', 'maera' ),
-		'description' => __( 'Select your primary branding color. Also referred to as an accent color. This will affect various areas of your site, including the color of your primary buttons, link color, the background of some elements and many more.', 'maera' ),
+		'label'    => __( 'Brand Colors: Primary', 'maera_bootstrap' ),
+		'description' => __( 'Select your primary branding color. Also referred to as an accent color. This will affect various areas of your site, including the color of your primary buttons, link color, the background of some elements and many more.', 'maera_bootstrap' ),
 		'section'  => 'colors',
 		'default'  => '#428bca',
 		'priority' => 1,
@@ -471,8 +471,8 @@ function maera_customizer_settings( $controls ) {
 	// $controls[] = array(
 	// 	'type'     => 'color',
 	// 	'setting'  => 'color_brand_info',
-	// 	'label'    => __( 'Brand Colors: Info', 'maera' ),
-	// 	'description' =>  __( 'Select your branding color for info messages etc. It will also be used for the Search button color as well as other areas where it semantically makes sense to use an \'info\' class.', 'maera' ),
+	// 	'label'    => __( 'Brand Colors: Info', 'maera_bootstrap' ),
+	// 	'description' =>  __( 'Select your branding color for info messages etc. It will also be used for the Search button color as well as other areas where it semantically makes sense to use an \'info\' class.', 'maera_bootstrap' ),
 	// 	'section'  => 'colors',
 	// 	'default'  => '#5bc0de',
 	// 	'priority' => 2,
@@ -482,8 +482,8 @@ function maera_customizer_settings( $controls ) {
 	// $controls[] = array(
 	// 	'type'     => 'color',
 	// 	'setting'  => 'color_brand_success',
-	// 	'label'    => __( 'Brand Colors: Success', 'maera' ),
-	// 	'description' =>  __( 'Select your branding color for success messages etc.', 'maera' ),
+	// 	'label'    => __( 'Brand Colors: Success', 'maera_bootstrap' ),
+	// 	'description' =>  __( 'Select your branding color for success messages etc.', 'maera_bootstrap' ),
 	// 	'section'  => 'colors',
 	// 	'default'  => '#5cb85c',
 	// 	'priority' => 3,
@@ -493,8 +493,8 @@ function maera_customizer_settings( $controls ) {
 	// $controls[] = array(
 	// 	'type'     => 'color',
 	// 	'setting'  => 'color_brand_warning',
-	// 	'label'    => __( 'Brand Colors: Warning', 'maera' ),
-	// 	'description' =>  __( 'Select your branding color for warning messages etc.', 'maera' ),
+	// 	'label'    => __( 'Brand Colors: Warning', 'maera_bootstrap' ),
+	// 	'description' =>  __( 'Select your branding color for warning messages etc.', 'maera_bootstrap' ),
 	// 	'section'  => 'colors',
 	// 	'default'  => '#f0ad4e',
 	// 	'priority' => 4,
@@ -504,8 +504,8 @@ function maera_customizer_settings( $controls ) {
 	// $controls[] = array(
 	// 	'type'     => 'color',
 	// 	'setting'  => 'color_brand_danger',
-	// 	'label'    => __( 'Brand Colors: Danger', 'maera' ),
-	// 	'description' =>  __( 'Select your branding color for danger messages etc.', 'maera' ),
+	// 	'label'    => __( 'Brand Colors: Danger', 'maera_bootstrap' ),
+	// 	'description' =>  __( 'Select your branding color for danger messages etc.', 'maera_bootstrap' ),
 	// 	'section'  => 'colors',
 	// 	'default'  => '#d9534f',
 	// 	'priority' => 5,
@@ -516,14 +516,14 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'gradients_toggle',
-		'label'    => __( 'Enable Gradients', 'maera' ),
-		'description' => __( 'Enable or disable gradients. These are applied to navbars, buttons and other elements. Please note that gradients will not be applied in the preview mode and can only be seen on the live site.', 'maera' ),
+		'label'    => __( 'Enable Gradients', 'maera_bootstrap' ),
+		'description' => __( 'Enable or disable gradients. These are applied to navbars, buttons and other elements. Please note that gradients will not be applied in the preview mode and can only be seen on the live site.', 'maera_bootstrap' ),
 		'section'  => 'colors',
 		'priority' => 10,
 		'default'  => 0,
 		'choices'  => array(
-			0 => __( 'Flat', 'maera' ),
-			1 => __( 'Gradients', 'maera' ),
+			0 => __( 'Flat', 'maera_bootstrap' ),
+			1 => __( 'Gradients', 'maera_bootstrap' ),
 		),
 	);
 	//-------------------------------------------------
@@ -533,7 +533,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'         => 'background',
 		'setting'      => 'html_bg',
-		'label'        => __( 'General Background', 'maera' ),
+		'label'        => __( 'General Background', 'maera_bootstrap' ),
 		'section'      => 'html_bg',
 		'default'      => array(
 			'color'    => '#ffffff',
@@ -551,7 +551,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'         => 'background',
 		'setting'      => 'body_bg',
-		'label'        => __( 'Body Background', 'maera' ),
+		'label'        => __( 'Body Background', 'maera_bootstrap' ),
 		'section'      => 'body_bg',
 		'default'      => array(
 			'color'    => '#ffffff',
@@ -573,7 +573,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'font_base_family',
-		'label'    => __( 'Base font', 'maera' ),
+		'label'    => __( 'Base font', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
 		'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 		'priority' => 20,
@@ -583,8 +583,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'multicheck',
 		'setting'  => 'font_subsets',
-		'label'    => __( 'Google-Font subsets', 'maera' ),
-		'description' => __( 'The subsets used from Google\'s API.', 'maera' ),
+		'label'    => __( 'Google-Font subsets', 'maera_bootstrap' ),
+		'description' => __( 'The subsets used from Google\'s API.', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
 		'default'  => 'latin',
 		'priority' => 22,
@@ -594,7 +594,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_base_weight',
-		'label'    => __( 'Base Font Weight', 'maera' ),
+		'label'    => __( 'Base Font Weight', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
 		'default'  => 400,
 		'priority' => 24,
@@ -608,7 +608,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_base_size',
-		'label'    => __( 'Base Font Size', 'maera' ),
+		'label'    => __( 'Base Font Size', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
 		'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5,
 		'priority' => 25,
@@ -622,7 +622,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_base_height',
-		'label'    => __( 'Base Line Height', 'maera' ),
+		'label'    => __( 'Base Line Height', 'maera_bootstrap' ),
 		'section'  => 'typo_base',
 		'default'  => 1.43,
 		'priority' => 26,
@@ -636,7 +636,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'headers_font_family',
-		'label'    => __( 'Font-Family', 'maera' ),
+		'label'    => __( 'Font-Family', 'maera_bootstrap' ),
 		'section'  => 'typo_headers',
 		'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 		'priority' => 30,
@@ -646,8 +646,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'multicheck',
 		'setting'  => 'font_headers_google_subsets',
-		'label'    => __( 'Google-Font subsets', 'maera' ),
-		'description' => __( 'The subsets used from Google\'s API.', 'maera' ),
+		'label'    => __( 'Google-Font subsets', 'maera_bootstrap' ),
+		'description' => __( 'The subsets used from Google\'s API.', 'maera_bootstrap' ),
 		'section'  => 'typo_headers',
 		'default'  => 'latin',
 		'priority' => 32,
@@ -657,7 +657,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_headers_weight',
-		'label'    => __( 'Font Weight.', 'maera' ) . ' ' . __( 'Default: ', 'maera' ) . 400,
+		'label'    => __( 'Font Weight.', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . 400,
 		'section'  => 'typo_headers',
 		'default'  => 500,
 		'priority' => 34,
@@ -671,8 +671,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_headers_size',
-		'label'    => __( 'Font Size', 'maera' ) . ' ' . __( 'Default: ', 'maera' ) . '1',
-		'description' => __( 'The size defined here applies to H5. All other header elements are calculated porportionally, based on the base font size.', 'maera' ),
+		'label'    => __( 'Font Size', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . '1',
+		'description' => __( 'The size defined here applies to H5. All other header elements are calculated porportionally, based on the base font size.', 'maera_bootstrap' ),
 		'section'  => 'typo_headers',
 		'default'  => 215,
 		'priority' => 35,
@@ -686,7 +686,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_headers_height',
-		'label'    => __( 'Line Height', 'maera' ) . ' ' . __( 'Default: ', 'maera' ) . '1.1',
+		'label'    => __( 'Line Height', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . '1.1',
 		'section'  => 'typo_headers',
 		'default'  => 1.1,
 		'priority' => 36,
@@ -705,22 +705,22 @@ function maera_customizer_settings( $controls ) {
 		'type'        => 'radio',
 		'mode'        => 'buttonset',
 		'setting'     => 'blog_post_mode',
-		'label'       => __( 'Archives Display Mode', 'maera' ),
-		'description' => __( 'Display the excerpt or the full post on post archives.', 'maera' ),
+		'label'       => __( 'Archives Display Mode', 'maera_bootstrap' ),
+		'description' => __( 'Display the excerpt or the full post on post archives.', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 1,
 		'default'     => 'excerpt',
 		'choices'     => array(
-			'excerpt' => __( 'Excerpt', 'maera' ),
-			'full'    => __( 'Full Post', 'maera' ),
+			'excerpt' => __( 'Excerpt', 'maera_bootstrap' ),
+			'full'    => __( 'Full Post', 'maera_bootstrap' ),
 		),
 	);
 
 	$controls[] = array(
 		'type'        => 'text',
 		'setting'     => 'maera_entry_meta_config',
-		'label'       => __( 'Post Meta elements', 'maera' ),
-		'subtitle'    => __( 'You can define a comma-separated list of meta elements you want on your posts, in the order that you want them. Accepted values: <code>author, sticky, post-format, date, category, tags, comments</code>', 'maera' ),
+		'label'       => __( 'Post Meta elements', 'maera_bootstrap' ),
+		'subtitle'    => __( 'You can define a comma-separated list of meta elements you want on your posts, in the order that you want them. Accepted values: <code>author, sticky, post-format, date, category, tags, comments</code>', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 2,
 		'default'     => 'post-format, date, author, comments',
@@ -729,7 +729,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'        => 'checkbox',
 		'setting'     => 'breadcrumbs',
-		'label'       => __( 'Show Breadcrumbs', 'maera' ),
+		'label'       => __( 'Show Breadcrumbs', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 3,
 		'default'     => 0,
@@ -739,22 +739,22 @@ function maera_customizer_settings( $controls ) {
 		'type'        => 'radio',
 		'mode'        => 'buttonset',
 		'setting'     => 'date_meta_format',
-		'label'       => __( 'Date format in meta', 'maera' ),
-		'subtitle'    => __( 'Show the date as a normal date, or as time difference (example: 2 weeks ago)', 'maera' ),
+		'label'       => __( 'Date format in meta', 'maera_bootstrap' ),
+		'subtitle'    => __( 'Show the date as a normal date, or as time difference (example: 2 weeks ago)', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 9,
 		'default'     => 1,
 		'choices'     => array(
-			0 => __( 'Date', 'maera' ),
-			1 => __( 'Time Difference', 'maera' ),
+			0 => __( 'Date', 'maera_bootstrap' ),
+			1 => __( 'Time Difference', 'maera_bootstrap' ),
 		),
 	);
 
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'post_excerpt_length',
-		'label'    => __( 'Post excerpt length', 'maera' ),
-		'description' => __( 'Choose how many words should be used for post excerpt. Default: 55', 'maera' ),
+		'label'    => __( 'Post excerpt length', 'maera_bootstrap' ),
+		'description' => __( 'Choose how many words should be used for post excerpt. Default: 55', 'maera_bootstrap' ),
 		'section'  => 'blog_options',
 		'priority' => 10,
 		'default'  => 55,
@@ -768,11 +768,11 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'        => 'text',
 		'setting'     => 'post_excerpt_link_text',
-		'label'       => __( '"more" text', 'maera' ),
-		'subtitle'    => __( 'Text to display in case of excerpt too long. Default: Continued', 'maera' ),
+		'label'       => __( '"more" text', 'maera_bootstrap' ),
+		'subtitle'    => __( 'Text to display in case of excerpt too long. Default: Continued', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 12,
-		'default'     => __( 'Continued', 'maera' ),
+		'default'     => __( 'Continued', 'maera_bootstrap' ),
 	);
 
 	//-------------------------------------------------
@@ -782,8 +782,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'        => 'checkbox',
 		'setting'     => 'feat_img_archive',
-		'label'       => __( 'Display Featured Images', 'maera' ),
-		'description' => __( 'Display featured Images on post archives ( such as categories, tags, month view etc ).', 'maera' ),
+		'label'       => __( 'Display Featured Images', 'maera_bootstrap' ),
+		'description' => __( 'Display featured Images on post archives ( such as categories, tags, month view etc ).', 'maera_bootstrap' ),
 		'section'     => 'feat_archive',
 		'priority'    => 50,
 		'default'     => 0,
@@ -792,8 +792,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'feat_img_archive_width',
-		'label'    => __( 'Featured Image Width', 'maera' ),
-		'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera' ),
+		'label'    => __( 'Featured Image Width', 'maera_bootstrap' ),
+		'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera_bootstrap' ),
 		'section'  => 'feat_archive',
 		'priority' => 52,
 		'default'  => -1,
@@ -807,8 +807,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'feat_img_archive_height',
-		'label'    => __( 'Featured Image Height', 'maera' ),
-		'subtitle' => __( 'Set to 0 to resize the image using the original image proportions. Default: 0', 'maera' ),
+		'label'    => __( 'Featured Image Height', 'maera_bootstrap' ),
+		'subtitle' => __( 'Set to 0 to resize the image using the original image proportions. Default: 0', 'maera_bootstrap' ),
 		'section'  => 'feat_archive',
 		'priority' => 53,
 		'default'  => 0,
@@ -822,8 +822,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'        => 'checkbox',
 		'setting'     => 'feat_img_post',
-		'label'       => __( 'Display Featured Images', 'maera' ),
-		'subtitle'    => __( 'Display featured Images on simgle posts.', 'maera' ),
+		'label'       => __( 'Display Featured Images', 'maera_bootstrap' ),
+		'subtitle'    => __( 'Display featured Images on simgle posts.', 'maera_bootstrap' ),
 		'section'     => 'feat_single',
 		'priority'    => 60,
 		'default'     => 0,
@@ -832,8 +832,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'feat_img_post_width',
-		'label'    => __( 'Featured Image Width', 'maera' ),
-		'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera' ),
+		'label'    => __( 'Featured Image Width', 'maera_bootstrap' ),
+		'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera_bootstrap' ),
 		'section'  => 'feat_single',
 		'priority' => 62,
 		'default'  => -1,
@@ -847,8 +847,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'feat_img_post_height',
-		'label'    => __( 'Featured Image Height', 'maera' ),
-		'subtitle' => __( 'Set to 0 to use the original image proportions. Default: 0', 'maera' ),
+		'label'    => __( 'Featured Image Height', 'maera_bootstrap' ),
+		'subtitle' => __( 'Set to 0 to use the original image proportions. Default: 0', 'maera_bootstrap' ),
 		'section'  => 'feat_single',
 		'priority' => 63,
 		'default'  => 0,
@@ -864,8 +864,8 @@ function maera_customizer_settings( $controls ) {
 		'type'        => 'multicheck',
 		'mode'        => 'checkbox',
 		'setting'     => 'feat_img_per_post_type',
-		'label'       => __( 'Disable featured images per post type.', 'maera' ),
-		'subtitle'    => __( 'CAUTION: This setting will also disable displaying the featured images on single posts as well.', 'maera' ),
+		'label'       => __( 'Disable featured images per post type.', 'maera_bootstrap' ),
+		'subtitle'    => __( 'CAUTION: This setting will also disable displaying the featured images on single posts as well.', 'maera_bootstrap' ),
 		'section'     => 'feat_archive',
 		'priority'    => 65,
 		'default'     => '',
@@ -879,7 +879,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'         => 'background',
 		'setting'      => 'jumbo_bg',
-		'label'        => __( 'Jumbotron Background', 'maera' ),
+		'label'        => __( 'Jumbotron Background', 'maera_bootstrap' ),
 		'section'      => 'jumbo_bg',
 		'default'      => array(
 			'color'    => '#eeeeee',
@@ -897,8 +897,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'jumbotron_nocontainer',
-		'label'    => __( 'Full-Width', 'maera' ),
-		'description' => __( 'When selected, the Jumbotron is no longer restricted by the width of your page, taking over the full width of your screen. This option is useful when you have assigned a slider widget on the Jumbotron area and you want its width to be the maximum width of the screen. Default: OFF.', 'maera' ),
+		'label'    => __( 'Full-Width', 'maera_bootstrap' ),
+		'description' => __( 'When selected, the Jumbotron is no longer restricted by the width of your page, taking over the full width of your screen. This option is useful when you have assigned a slider widget on the Jumbotron area and you want its width to be the maximum width of the screen. Default: OFF.', 'maera_bootstrap' ),
 		'section'  => 'structure_jumbo',
 		'default'  => 0,
 		'priority' => 11,
@@ -907,7 +907,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'select',
 		'setting'  => 'font_jumbotron_font_family',
-		'label'    => __( 'Jumbotron font', 'maera' ),
+		'label'    => __( 'Jumbotron font', 'maera_bootstrap' ),
 		'section'  => 'typo_jumbo',
 		'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 		'priority' => 20,
@@ -917,7 +917,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_jumbotron_weight',
-		'subtitle' => __( 'Font Weight', 'maera' ),
+		'subtitle' => __( 'Font Weight', 'maera_bootstrap' ),
 		'section'  => 'typo_jumbo',
 		'default'  => 400,
 		'priority' => 23,
@@ -931,7 +931,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_jumbotron_size',
-		'subtitle' => __( 'Font Size', 'maera' ),
+		'subtitle' => __( 'Font Size', 'maera_bootstrap' ),
 		'section'  => 'typo_jumbo',
 		'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 20 : 1.8,
 		'priority' => 24,
@@ -945,7 +945,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'font_jumbotron_height',
-		'subtitle' => __( 'Line Height', 'maera' ),
+		'subtitle' => __( 'Line Height', 'maera_bootstrap' ),
 		'section'  => 'typo_jumbo',
 		'default'  => 22,
 		'priority' => 25,
@@ -962,7 +962,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'         => 'background',
 		'setting'      => 'header_bg',
-		'label'        => __( 'Header Background', 'maera' ),
+		'label'        => __( 'Header Background', 'maera_bootstrap' ),
 		'section'      => 'header_bg',
 		'default'      => array(
 			'color'    => '#ffffff',
@@ -985,40 +985,40 @@ function maera_customizer_settings( $controls ) {
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'navbar_social',
-		'label'    => __( 'Display social links in the NavBar.', 'maera' ),
-		'subtitle' => __( 'Social network links can be set-up in the "Social" section.', 'maera' ),
+		'label'    => __( 'Display social links in the NavBar.', 'maera_bootstrap' ),
+		'subtitle' => __( 'Social network links can be set-up in the "Social" section.', 'maera_bootstrap' ),
 		'section'  => 'social',
 		'default'  => 'off',
 		'choices'  => array(
-			'off'      => __( 'Off', 'maera' ),
-			'inline'   => __( 'Inline', 'maera' ),
-			'dropdown' => __( 'Dropdown', 'maera' ),
+			'off'      => __( 'Off', 'maera_bootstrap' ),
+			'inline'   => __( 'Inline', 'maera_bootstrap' ),
+			'dropdown' => __( 'Dropdown', 'maera_bootstrap' ),
 		),
 		'priority' => 1,
 	);
 
 	$social_links = array(
-		'blogger'     => __( 'Blogger', 'maera' ),
-		'deviantart'  => __( 'DeviantART', 'maera' ),
-		'digg'        => __( 'Digg', 'maera' ),
-		'dribbble'    => __( 'Dribbble', 'maera' ),
-		'facebook'    => __( 'Facebook', 'maera' ),
-		'flickr'      => __( 'Flickr', 'maera' ),
-		'github'      => __( 'Github', 'maera' ),
-		'googleplus'  => __( 'Google+', 'maera' ),
-		'instagram'   => __( 'Instagram', 'maera' ),
-		'linkedin'    => __( 'LinkedIn', 'maera' ),
-		'myspace'     => __( 'MySpace', 'maera' ),
-		'pinterest'   => __( 'Pinterest', 'maera' ),
-		'reddit'      => __( 'Reddit', 'maera' ),
-		'rss'         => __( 'RSS', 'maera' ),
-		'skype'       => __( 'Skype', 'maera' ),
-		'soundcloud'  => __( 'SoundCloud', 'maera' ),
-		'tumblr'      => __( 'Tumblr', 'maera' ),
-		'twitter'     => __( 'Twitter', 'maera' ),
-		'vimeo'       => __( 'Vimeo', 'maera' ),
-		'vkontakte'   => __( 'Vkontakte', 'maera' ),
-		'youtube'     => __( 'YouTube', 'maera' ),
+		'blogger'     => __( 'Blogger', 'maera_bootstrap' ),
+		'deviantart'  => __( 'DeviantART', 'maera_bootstrap' ),
+		'digg'        => __( 'Digg', 'maera_bootstrap' ),
+		'dribbble'    => __( 'Dribbble', 'maera_bootstrap' ),
+		'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
+		'flickr'      => __( 'Flickr', 'maera_bootstrap' ),
+		'github'      => __( 'Github', 'maera_bootstrap' ),
+		'googleplus'  => __( 'Google+', 'maera_bootstrap' ),
+		'instagram'   => __( 'Instagram', 'maera_bootstrap' ),
+		'linkedin'    => __( 'LinkedIn', 'maera_bootstrap' ),
+		'myspace'     => __( 'MySpace', 'maera_bootstrap' ),
+		'pinterest'   => __( 'Pinterest', 'maera_bootstrap' ),
+		'reddit'      => __( 'Reddit', 'maera_bootstrap' ),
+		'rss'         => __( 'RSS', 'maera_bootstrap' ),
+		'skype'       => __( 'Skype', 'maera_bootstrap' ),
+		'soundcloud'  => __( 'SoundCloud', 'maera_bootstrap' ),
+		'tumblr'      => __( 'Tumblr', 'maera_bootstrap' ),
+		'twitter'     => __( 'Twitter', 'maera_bootstrap' ),
+		'vimeo'       => __( 'Vimeo', 'maera_bootstrap' ),
+		'vkontakte'   => __( 'Vkontakte', 'maera_bootstrap' ),
+		'youtube'     => __( 'YouTube', 'maera_bootstrap' ),
 	);
 
 	$i = 0;
@@ -1027,7 +1027,7 @@ function maera_customizer_settings( $controls ) {
 		$controls[] = array(
 			'type'     => 'text',
 			'setting'  => $social_link . '_link',
-			'label'    => $label . ' ' . __( 'link', 'maera' ),
+			'label'    => $label . ' ' . __( 'link', 'maera_bootstrap' ),
 			'section'  => 'social',
 			'default'  => '',
 			'priority' => 10 + $i,
@@ -1045,7 +1045,7 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'         => 'background',
 		'setting'      => 'footer_bg',
-		'label'        => __( 'Footer Background', 'maera' ),
+		'label'        => __( 'Footer Background', 'maera_bootstrap' ),
 		'section'      => 'footer_bg',
 		'default'      => array(
 			'color'    => '#ffffff',
@@ -1062,12 +1062,12 @@ function maera_customizer_settings( $controls ) {
 
 	$controls[] = array(
 		'type'     => 'textarea',
-		'label'    => __( 'Footer Text', 'maera' ),
+		'label'    => __( 'Footer Text', 'maera_bootstrap' ),
 		'setting'  => 'footer_text',
 		'default'  => '&copy; [year] [sitename]',
 		'section'  => 'branding',
 		'priority' => 12,
-		'subtitle' => __( 'The text that will be displayed in your footer. You can use [year] and [sitename] and they will be replaced appropriately. Default: &copy; [year] [sitename]', 'maera' ),
+		'subtitle' => __( 'The text that will be displayed in your footer. You can use [year] and [sitename] and they will be replaced appropriately. Default: &copy; [year] [sitename]', 'maera_bootstrap' ),
 	);
 
 	//-------------------------------------------------
@@ -1077,8 +1077,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'retina_toggle',
-		'label'    => __( 'Enable Retina mode', 'maera' ),
-		'description' => __( 'When checked, your site\'s featured images will be retina ready. Requires images to be uploaded at 2x the typical size desired. (uses retina.js) Default: On', 'maera' ),
+		'label'    => __( 'Enable Retina mode', 'maera_bootstrap' ),
+		'description' => __( 'When checked, your site\'s featured images will be retina ready. Requires images to be uploaded at 2x the typical size desired. (uses retina.js) Default: On', 'maera_bootstrap' ),
 		'section'  => 'advanced',
 		'priority' => 1,
 		'default'  => 1,
@@ -1087,8 +1087,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'border_radius',
-		'label'    => __( 'Border-Radius', 'maera' ),
-		'description' => __( 'You can adjust the corner-radius of all elements in your site here. This will affect buttons, navbars, widgets and many more. Default: 4', 'maera' ),
+		'label'    => __( 'Border-Radius', 'maera_bootstrap' ),
+		'description' => __( 'You can adjust the corner-radius of all elements in your site here. This will affect buttons, navbars, widgets and many more. Default: 4', 'maera_bootstrap' ),
 		'section'  => 'general',
 		'priority' => 2,
 		'default'  => 4,
@@ -1102,8 +1102,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'padding_base',
-		'label'    => __( 'Padding Base', 'maera' ),
-		'description' => __( 'You can adjust the padding base. This affects buttons size and lots of other cool stuff too! Default: 6', 'maera' ),
+		'label'    => __( 'Padding Base', 'maera_bootstrap' ),
+		'description' => __( 'You can adjust the padding base. This affects buttons size and lots of other cool stuff too! Default: 6', 'maera_bootstrap' ),
 		'section'  => 'general',
 		'priority' => 3,
 		'default'  => 6,
@@ -1117,8 +1117,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'textarea',
 		'setting'  => 'css',
-		'label'    => __( 'Custom CSS', 'maera' ),
-		'subtitle' => __( 'You can write your custom CSS here. This code will appear in a script tag appended in the header section of the page.', 'maera' ),
+		'label'    => __( 'Custom CSS', 'maera_bootstrap' ),
+		'subtitle' => __( 'You can write your custom CSS here. This code will appear in a script tag appended in the header section of the page.', 'maera_bootstrap' ),
 		'section'  => 'advanced',
 		'priority' => 4,
 		'default'  => '',
@@ -1127,8 +1127,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'textarea',
 		'setting'  => 'less',
-		'label'    => __( 'Custom LESS', 'maera' ),
-		'subtitle' => __( 'You can write your custom LESS here. This code will be compiled with the other LESS files of the theme and be appended to the header.', 'maera' ),
+		'label'    => __( 'Custom LESS', 'maera_bootstrap' ),
+		'subtitle' => __( 'You can write your custom LESS here. This code will be compiled with the other LESS files of the theme and be appended to the header.', 'maera_bootstrap' ),
 		'section'  => 'advanced',
 		'priority' => 5,
 		'default'  => '',
@@ -1137,8 +1137,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'textarea',
 		'setting'  => 'js',
-		'label'    => __( 'Custom JS', 'maera' ),
-		'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera' ),
+		'label'    => __( 'Custom JS', 'maera_bootstrap' ),
+		'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera_bootstrap' ),
 		'section'  => 'advanced',
 		'priority' => 6,
 		'default'  => '',
@@ -1147,8 +1147,8 @@ function maera_customizer_settings( $controls ) {
 	$controls[] = array(
 		'type'     => 'checkbox',
 		'setting'  => 'minimize_css',
-		'label'    => __( 'Minimize CSS', 'maera' ),
-		'description' => __( 'Minimize the generated CSS. This should be always be checked for production sites.', 'maera' ),
+		'label'    => __( 'Minimize CSS', 'maera_bootstrap' ),
+		'description' => __( 'Minimize the generated CSS. This should be always be checked for production sites.', 'maera_bootstrap' ),
 		'section'  => 'advanced',
 		'priority' => 10,
 		'default'  => 1,
@@ -1163,7 +1163,7 @@ function maera_customizer_settings( $controls ) {
 		$controls[] = array(
 			'type'     => 'select',
 			'setting'  => $area . '_widgets_nr',
-			'label'    => sprintf( __( 'Number of widget areas in %s', 'maera' ), $settings['name'] ),
+			'label'    => sprintf( __( 'Number of widget areas in %s', 'maera_bootstrap' ), $settings['name'] ),
 			'section'  => 'widget_areas',
 			'default'  => $settings['default'],
 			'choices'  => array(

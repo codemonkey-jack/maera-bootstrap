@@ -38,17 +38,17 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		function extra_widget_areas_array() {
 
 			$areas = array(
-				'body_top'     => array( 'name' => __( 'Body Top', 'maera' ),     'default' => 0 ),
-				'pre_header'   => array( 'name' => __( 'Pre-Header', 'maera' ),   'default' => 0 ),
-				'header'       => array( 'name' => __( 'Header', 'maera' ),       'default' => 0 ),
-				'post_header'  => array( 'name' => __( 'Post-Header', 'maera' ),  'default' => 0 ),
-				'jumbotron'    => array( 'name' => __( 'Jumbotron', 'maera' ),    'default' => 0 ),
-				'pre_content'  => array( 'name' => __( 'Pre-Content', 'maera' ),  'default' => 0 ),
-				'pre_main'     => array( 'name' => __( 'Pre-Main', 'maera' ),     'default' => 0 ),
-				'post_main'    => array( 'name' => __( 'Post-Main', 'maera' ),    'default' => 0 ),
-				'pre_footer'   => array( 'name' => __( 'Pre-Footer', 'maera' ),   'default' => 0 ),
-				'footer'       => array( 'name' => __( 'Footer', 'maera' ),       'default' => 0 ),
-				'post_footer'  => array( 'name' => __( 'Post-Footer', 'maera' ),  'default' => 0 ),
+				'body_top'     => array( 'name' => __( 'Body Top', 'maera_bootstrap' ),     'default' => 0 ),
+				'pre_header'   => array( 'name' => __( 'Pre-Header', 'maera_bootstrap' ),   'default' => 0 ),
+				'header'       => array( 'name' => __( 'Header', 'maera_bootstrap' ),       'default' => 0 ),
+				'post_header'  => array( 'name' => __( 'Post-Header', 'maera_bootstrap' ),  'default' => 0 ),
+				'jumbotron'    => array( 'name' => __( 'Jumbotron', 'maera_bootstrap' ),    'default' => 0 ),
+				'pre_content'  => array( 'name' => __( 'Pre-Content', 'maera_bootstrap' ),  'default' => 0 ),
+				'pre_main'     => array( 'name' => __( 'Pre-Main', 'maera_bootstrap' ),     'default' => 0 ),
+				'post_main'    => array( 'name' => __( 'Post-Main', 'maera_bootstrap' ),    'default' => 0 ),
+				'pre_footer'   => array( 'name' => __( 'Pre-Footer', 'maera_bootstrap' ),   'default' => 0 ),
+				'footer'       => array( 'name' => __( 'Footer', 'maera_bootstrap' ),       'default' => 0 ),
+				'post_footer'  => array( 'name' => __( 'Post-Footer', 'maera_bootstrap' ),  'default' => 0 ),
 			);
 
 			return $areas;
@@ -420,8 +420,8 @@ class Maera_Logo_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'maera_logo',
-			__( 'Logo (Maera Bootstrap)', 'maera' ),
-			array( 'description' => __( 'The logo you have specified in the Customizer', 'maera' ), )
+			__( 'Logo (Maera Bootstrap)', 'maera_bootstrap' ),
+			array( 'description' => __( 'The logo you have specified in the Customizer', 'maera_bootstrap' ), )
 		);
 	}
 
@@ -452,7 +452,7 @@ class Maera_Logo_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		_e( 'This widget has no options. Its only function is to print the site logo, as defined in the theme customizer. You can use this wherever you need, particularly useful in the header widget areas, or to accomplish alternative site layouts', 'maera' );
+		_e( 'This widget has no options. Its only function is to print the site logo, as defined in the theme customizer. You can use this wherever you need, particularly useful in the header widget areas, or to accomplish alternative site layouts', 'maera_bootstrap' );
 
 	}
 

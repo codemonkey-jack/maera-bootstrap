@@ -154,7 +154,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			}
 
 			$comment_form_args = array(
-				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'maera' ) . '</label><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'maera_bootstrap' ) . '</label><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 				'id_submit'     => 'comment-submit',
 			);
 
