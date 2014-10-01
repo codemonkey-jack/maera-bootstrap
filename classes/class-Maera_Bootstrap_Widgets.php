@@ -12,20 +12,8 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		 */
 		public function __construct() {
 
-			add_action( 'maera/header/before', array( $this, 'extra_widgets_body_top' ) );
-			add_action( 'maera/extra_header/before', array( $this, 'extra_widgets_pre_header' ), 3 );
-			add_action( 'maera/extra_header/widgets', array( $this, 'extra_widgets_header' ) );
-			add_action( 'maera/extra_header/after', array( $this, 'extra_widgets_post_header' ) );
-			add_action( 'maera/jumbotron/content', array( $this, 'extra_widgets_jumbotron' ) );
-			add_action( 'maera/wrap/before', array( $this, 'extra_widgets_pre_content' ) );
-			add_action( 'maera/content/before', array( $this, 'extra_widgets_pre_main' ) );
-			add_action( 'maera/content/after', array( $this, 'extra_widgets_post_main' ) );
-			add_action( 'maera/footer/before', array( $this, 'extra_widgets_pre_footer' ) );
-			add_action( 'maera/footer/content', array( $this, 'extra_widgets_footer' ) );
-			add_action( 'maera/footer/after', array( $this, 'extra_widgets_post_footer' ) );
-
 			// Widgets
-			add_action( 'widgets_init', array( $this, 'widget_areas' ), 12 );
+			add_action( 'maera/widgets/areas', array( $this, 'extra_widget_areas_array' ), 12 );
 			add_action( 'maera/widgets/class', array( $this, 'widgets_class' ) );
 			add_action( 'maera/widgets/title/before', array( $this, 'widgets_before_title' ) );
 			add_action( 'maera/widgets/title/after', array( $this, 'widgets_after_title' ) );
@@ -38,57 +26,86 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		function extra_widget_areas_array() {
 
 			$areas = array(
-				'body_top'     => array( 'name' => __( 'Body Top', 'maera_bootstrap' ),     'default' => 0 ),
-				'pre_header'   => array( 'name' => __( 'Pre-Header', 'maera_bootstrap' ),   'default' => 0 ),
-				'header'       => array( 'name' => __( 'Header', 'maera_bootstrap' ),       'default' => 0 ),
-				'post_header'  => array( 'name' => __( 'Post-Header', 'maera_bootstrap' ),  'default' => 0 ),
-				'jumbotron'    => array( 'name' => __( 'Jumbotron', 'maera_bootstrap' ),    'default' => 0 ),
-				'pre_content'  => array( 'name' => __( 'Pre-Content', 'maera_bootstrap' ),  'default' => 0 ),
-				'pre_main'     => array( 'name' => __( 'Pre-Main', 'maera_bootstrap' ),     'default' => 0 ),
-				'post_main'    => array( 'name' => __( 'Post-Main', 'maera_bootstrap' ),    'default' => 0 ),
-				'pre_footer'   => array( 'name' => __( 'Pre-Footer', 'maera_bootstrap' ),   'default' => 0 ),
-				'footer'       => array( 'name' => __( 'Footer', 'maera_bootstrap' ),       'default' => 0 ),
-				'post_footer'  => array( 'name' => __( 'Post-Footer', 'maera_bootstrap' ),  'default' => 0 ),
+				'body_top'     => array(
+					'name'     => __( 'Body Top', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/header/before/ewa',
+					'priority' => 20,
+					'class'    => 'row',
+				),
+				'pre_header'   => array(
+					'name'     => __( 'Pre-Header', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/extra_header/before/ewa',
+					'priority' => 20,
+					'class'    => 'row',
+				),
+				'header'       => array(
+					'name'     => __( 'Header', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/extra_header/widgets/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'post_header'  => array(
+					'name'     => __( 'Post-Header', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/extra_header/after/ewa',
+					'priority' => 15,
+					'class'    => 'row',
+				),
+				'jumbotron'    => array(
+					'name'     => __( 'Jumbotron', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/jumbotron/content/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'pre_content'  => array(
+					'name'     => __( 'Pre-Content', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/wrap/before/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'pre_main'     => array(
+					'name'     => __( 'Pre-Main', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/content/before/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'post_main'    => array(
+					'name'     => __( 'Post-Main', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/content/after/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'pre_footer'   => array(
+					'name'     => __( 'Pre-Footer', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/footer/before/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'footer'       => array(
+					'name'     => __( 'Footer', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/footer/content/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
+				'post_footer'  => array(
+					'name'     => __( 'Post-Footer', 'maera_bootstrap' ),
+					'default'  => 0,
+					'action'   => 'maera/footer/after/ewa',
+					'priority' => 10,
+					'class'    => 'row',
+				),
 			);
 
 			return $areas;
-
-		}
-
-
-		/**
-		 * Register sidebars and widgets
-		 */
-		function widget_areas() {
-
-			$areas = $this->extra_widget_areas_array();
-
-			$class        = apply_filters( 'maera/widgets/class', '' );
-			$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="widget-title">' );
-			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
-
-			foreach ( $areas as $area => $settings ) {
-
-				$areas_nr = get_theme_mod( $area . '_widgets_nr', $settings['default'] );
-
-				if ( 0 < $areas_nr ) {
-
-					for ( $i = 0;  $i < $areas_nr;  $i++ ) {
-
-						register_sidebar( array(
-							'name'          => $settings['name'] . ' ' . $i,
-							'id'            => $area . '_' . $i,
-							'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
-							'after_widget'  => '</section>',
-							'before_title'  => $before_title,
-							'after_title'   => $after_title,
-						) );
-
-					}
-
-				}
-
-			}
 
 		}
 
@@ -137,271 +154,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 			} elseif ( 'well' == $widgets_mode ) {
 				return '</h3>';
 			}
-
-		}
-
-
-		/**
-		 * Extra body_top widget areas
-		 */
-		function extra_widgets_body_top() {
-
-			$area     = 'body_top';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra pre_header widget areas
-		 */
-		function extra_widgets_pre_header() {
-
-			$area     = 'pre_header';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra header widget areas
-		 */
-		function extra_widgets_header() {
-
-			$area     = 'header';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra post_header widget areas
-		 */
-		function extra_widgets_post_header() {
-
-			$area     = 'post_header';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra jumbotron widget areas
-		 */
-		function extra_widgets_jumbotron() {
-
-			$area     = 'jumbotron';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra pre_content widget areas
-		 */
-		function extra_widgets_pre_content() {
-
-			$area     = 'pre_content';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra pre_main widget areas
-		 */
-		function extra_widgets_pre_main() {
-
-			$area     = 'pre_main';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra post_main widget areas
-		 */
-		function extra_widgets_post_main() {
-
-			$area     = 'post_main';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra pre_footer widget areas
-		 */
-		function extra_widgets_pre_footer() {
-
-			$area     = 'pre_footer';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra footer widget areas
-		 */
-		function extra_widgets_footer() {
-
-			$area     = 'footer';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-
-		/**
-		 * Extra post_footer widget areas
-		 */
-		function extra_widgets_post_footer() {
-
-			$area     = 'post_footer';
-			$areas_nr = get_theme_mod( $area . '_widgets_nr', 0 );
-
-			if ( 0 < $areas_nr ) : ?>
-
-				<div class="row row-<?php echo $area; ?>">
-
-					<?php for ( $i = 0;  $i < $areas_nr;  $i++ ) : ?>
-						<?php $this->extra_widgets_render_content( $areas_nr, $area, $i ); ?>
-					<?php endfor; ?>
-
-				</div>
-
-			<?php endif;
-
-		}
-
-		function extra_widgets_render_content( $areas_nr, $area, $i ) {
-
-			$class = apply_filters( 'maera/extra_widgets/' . $area . '/' . $i, 'col-md-' . ( 12 / $areas_nr ) ); ?>
-
-			<div class="<?php echo $area . '_' . $i . ' ' . $class; ?>">
-				<?php dynamic_sidebar( $area . '_' . $i ); ?>
-			</div>
-
-			<?php
 
 		}
 

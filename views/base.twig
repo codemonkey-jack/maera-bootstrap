@@ -17,6 +17,7 @@
 	{% do action( 'maera/header/after', post.ID ) %}
 
 	{% do action( 'maera/wrap/before', post.ID ) %}
+	{% do action( 'maera/wrap/before/ewa', 'pre_content', 'row' ) %}
 
 	{% if theme_mods.navbar_position == 'after-headers' %}
 		{% include 'header.twig' %}
@@ -25,6 +26,7 @@
 	{{ shell.open_container( 'div', 'wrap-main-section', 'wrap main-section' ) }}
 
 		{% do action( 'maera/content/before', post.ID ) %}
+		{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
 
 		<div class="content" id="content">
 
@@ -61,16 +63,19 @@
 		</div><!-- /#content -->
 
 		{% do action( 'maera/content/after' ) %}
+		{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
 
 	{{ shell.close_container( 'div' ) }}
 
 	{% do action( 'maera/footer/before', post.ID ) %}
+	{% do action( 'maera/footer/before/ewa', 'pre_footer', 'row' ) %}
 	<footer class="page-footer">
 		{% do action( 'maera/footer/start', post.ID ) %}
 		{% include 'footer.twig' %}
 		{% do action( 'maera/footer/end', post.ID ) %}
 	</footer>
 	{% do action( 'maera/footer/after', post.ID ) %}
+	{% do action( 'maera/footer/after/ewa', 'post_footer', 'row' ) %}
 	{{ function( 'wp_footer' ) }}
 </body>
 </html>

@@ -546,6 +546,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 					<?php endif; ?>
 
 						<?php do_action( 'maera/jumbotron/content' ); ?>
+						<?php do_action( 'maera/jumbotron/content/ewa', 'jumbotron', 'row' ); ?>
 
 					<?php if ( ( 1 != $nocontainer && 'wide' == $site_style ) || 'boxed' == $site_style ) : ?>
 						</div>
@@ -568,6 +569,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			<?php if ( 0 != get_theme_mod( 'header_widgets_nr', 0 ) ) : ?>
 				<?php do_action( 'maera/extra_header/before' ); ?>
+				<?php do_action( 'maera/extra_header/before/ewa', 'pre_header', 'row' ); ?>
 
 				<header class="page-header">
 
@@ -581,7 +583,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 								<div class="container">
 							<?php endif; ?>
 
-							<?php do_action( 'maera/extra_header/widgets' ); ?>
+							<?php do_action( 'maera/extra_header/widgets/ewa', 'header', 'row' ); ?>
 
 							<?php if ( 'wide' == get_theme_mod( 'site_style', 'wide' ) ) : ?>
 								</div>
@@ -595,6 +597,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 				</header>
 				<?php do_action( 'maera/extra_header/after' ); ?>
+				<?php do_action( 'maera/extra_header/after/ewa', 'post_header', 'row' ); ?>
 
 			<?php endif;
 
