@@ -23,7 +23,6 @@ function maera_customizer_sections( $wp_customize ) {
 		'layout_advanced' => array( 'title' => __( 'Advanced Layout', 'maera_bootstrap' ), 'priority' => 20, 'panel' => 'structure' ),
 		'structure_jumbo' => array( 'title' => __( 'Jumbotron', 'maera_bootstrap' ),       'priority' => 30, 'panel' => 'structure' ),
 		'nav'             => array( 'title' => __( 'Navigation', 'maera_bootstrap' ),      'priority' => 35, 'panel' => 'structure' ),
-		'widget_areas'    => array( 'title' => __( 'Widget Areas', 'maera_bootstrap' ),    'priority' => 35, 'panel' => 'structure' ),
 
 		'html_bg'    => array( 'title' => __( 'HTML', 'maera_bootstrap' ),         'priority' => 10, 'panel' => 'backgrounds' ),
 		'body_bg'    => array( 'title' => __( 'Body', 'maera_bootstrap' ),         'priority' => 15, 'panel' => 'backgrounds' ),
@@ -68,8 +67,6 @@ function maera_customizer_sections( $wp_customize ) {
 			'description'    => $args['description']
 		) );
 	}
-
-
 
 }
 add_action( 'customize_register', 'maera_customizer_sections' );
@@ -1153,33 +1150,6 @@ function maera_customizer_settings( $controls ) {
 		'priority' => 10,
 		'default'  => 1,
 	);
-
-	global $extra_widget_areas;
-
-	$i = 1;
-
-	foreach ( $extra_widget_areas as $area => $settings ) {
-
-		$controls[] = array(
-			'type'     => 'select',
-			'setting'  => $area . '_widgets_nr',
-			'label'    => sprintf( __( 'Number of widget areas in %s', 'maera_bootstrap' ), $settings['name'] ),
-			'section'  => 'widget_areas',
-			'default'  => $settings['default'],
-			'choices'  => array(
-				0 => 0,
-				1 => 1,
-				2 => 2,
-				3 => 3,
-				4 => 4,
-				6 => 6,
-			),
-			'priority' => $i,
-		);
-
-		$i++;
-	}
-
 
 	return $controls;
 }
