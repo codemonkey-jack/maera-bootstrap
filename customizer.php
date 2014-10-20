@@ -465,50 +465,6 @@ function maera_customizer_settings( $controls ) {
 		'shell_var' => '@brand-primary'
 	);
 
-	// $controls[] = array(
-	// 	'type'     => 'color',
-	// 	'setting'  => 'color_brand_info',
-	// 	'label'    => __( 'Brand Colors: Info', 'maera_bootstrap' ),
-	// 	'description' =>  __( 'Select your branding color for info messages etc. It will also be used for the Search button color as well as other areas where it semantically makes sense to use an \'info\' class.', 'maera_bootstrap' ),
-	// 	'section'  => 'colors',
-	// 	'default'  => '#5bc0de',
-	// 	'priority' => 2,
-	// 	'shell_var' => '@brand-info'
-	// );
-
-	// $controls[] = array(
-	// 	'type'     => 'color',
-	// 	'setting'  => 'color_brand_success',
-	// 	'label'    => __( 'Brand Colors: Success', 'maera_bootstrap' ),
-	// 	'description' =>  __( 'Select your branding color for success messages etc.', 'maera_bootstrap' ),
-	// 	'section'  => 'colors',
-	// 	'default'  => '#5cb85c',
-	// 	'priority' => 3,
-	// 	'shell_var' => '@brand-success'
-	// );
-
-	// $controls[] = array(
-	// 	'type'     => 'color',
-	// 	'setting'  => 'color_brand_warning',
-	// 	'label'    => __( 'Brand Colors: Warning', 'maera_bootstrap' ),
-	// 	'description' =>  __( 'Select your branding color for warning messages etc.', 'maera_bootstrap' ),
-	// 	'section'  => 'colors',
-	// 	'default'  => '#f0ad4e',
-	// 	'priority' => 4,
-	// 	'shell_var' => '@brand-warning'
-	// );
-
-	// $controls[] = array(
-	// 	'type'     => 'color',
-	// 	'setting'  => 'color_brand_danger',
-	// 	'label'    => __( 'Brand Colors: Danger', 'maera_bootstrap' ),
-	// 	'description' =>  __( 'Select your branding color for danger messages etc.', 'maera_bootstrap' ),
-	// 	'section'  => 'colors',
-	// 	'default'  => '#d9534f',
-	// 	'priority' => 5,
-	// 	'shell_var' => '@brand-danger'
-	// );
-
 	$controls[] = array(
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
@@ -671,7 +627,7 @@ function maera_customizer_settings( $controls ) {
 		'label'    => __( 'Font Size', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . '1',
 		'description' => __( 'The size defined here applies to H5. All other header elements are calculated porportionally, based on the base font size.', 'maera_bootstrap' ),
 		'section'  => 'typo_headers',
-		'default'  => 215,
+		'default'  => 1,
 		'priority' => 35,
 		'choices'  => array(
 			'min'  => 0.1,
