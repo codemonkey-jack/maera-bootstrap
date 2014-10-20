@@ -15,18 +15,19 @@ class Maera_Bootstrap_Compiler {
 
 		$theme_options = get_option( 'maera_admin_options', array() );
 
-		if ( $wp_customize || ( 1 == @$theme_options['dev_mode'] ) ) {
-
-			add_action( 'wp_head', array( $this, 'echo_less' ) );
-
-		}
-
 		// Instantianate the compiler and pass the shell's properties to it
 		$compiler = new Maera_Compiler( array(
 			'compiler'     => 'less_php',
 			'minimize_css' => false,
 			'less_path'    => MAERA_SHELL_PATH . '/assets/less/',
 		) );
+
+		if ( $wp_customize || ( 1 == @$theme_options['dev_mode'] ) ) {
+
+			add_action( 'wp_head', array( $this, 'echo_less' ) );
+			remove_filter( 'maera/stylesheet/url', array( $compiler, 'stylesheet_url' ) );
+
+		}
 
 		add_filter( 'maera/compiler/less/post', array( $this, 'less' ) );
 
@@ -49,15 +50,15 @@ class Maera_Bootstrap_Compiler {
 		echo '<style type="text/less">' . $this->less() . '</style>';
 		echo '<script>less = {
 		    env: "development",
-		    async: false,
-		    fileAsync: false,
+		    async: true,
+		    fileAsync: true,
 		    poll: 1000,
 		    functions: {},
 		    dumpLineNumbers: "comments",
-		    relativeUrls: false,
-		    rootpath: ":/a.com/"
+		    relativeUrls: true,
+		    rootpath: ":/' . MAERA_BOOTSTRAP_SHELL_URL . '/"
 		  };</script>';
-		echo '<script src="' . MAERA_ASSETS_URL . '/js/less.min.js" type="text/javascript"></script>';
+		echo '<script src="' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/less.min.js" type="text/javascript"></script>';
 
 	}
 
