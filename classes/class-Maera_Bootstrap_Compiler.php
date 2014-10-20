@@ -139,6 +139,67 @@ class Maera_Bootstrap_Compiler {
 			$content .= '.form-control { height: auto; }';
 		}
 
+		$body_obj = new Jetpack_Color( get_theme_mod( 'body_bg_color', '#ffffff' ) );
+		$b_p_obj  = new Jetpack_Color( get_theme_mod( 'color_brand_primary', '#428bca' ) );
+
+		$body_bg  = '#' . str_replace( '#', '', $body_obj->toHex() );
+		$body_lum = $body_obj->toLuminosity();
+
+		// Base font settings
+		$font_base_family    = get_theme_mod( 'font_base_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
+		// TODO: use getReadableContrastingColor() from Jetpack_Color class.
+		// See https://github.com/Automattic/jetpack/issues/1068
+		$font_base_color     = '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex();
+
+		$font_base_weight    = get_theme_mod( 'font_base_weight', '#333333' );
+		$font_base_size      = get_theme_mod( 'font_base_size', ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5 );
+		$font_base_height    = get_theme_mod( 'font_base_height', 1.4 );
+
+		$content .= 'body {font-family:' . $font_base_family . ';color:' . $font_base_color . ';font-weight:' . $font_base_weight . ';font-size:' . $font_base_size . get_theme_mod( 'font_size_units', 'px' ) . ';line-height:' . $font_base_height . ';}';
+
+		// Headers font
+		$headers_font_family = get_theme_mod( 'headers_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
+
+		$content .= 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{';
+		$content .= 'font-family: ' . $headers_font_family . ';';
+		$content .= 'color: ' .$font_base_color . ';';
+		$content .= 'font-weight: ' . get_theme_mod( 'font_headers_weight', 400 ) . ';';
+		$content .= 'line-height: ' . get_theme_mod( 'font_headers_height', 1.1 ) . ';';
+		$content .= '}';
+
+		$content .= 'h1, .h1 { font-size: ' . intval( ( 260 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h2, .h2 { font-size: ' . intval( ( 215 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h3, .h3 { font-size: ' . intval( ( 170 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h4, .h4 { font-size: ' . intval( ( 110 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h5, .h5 { font-size: ' . intval( ( 100 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h6, .h6 { font-size: ' . intval( ( 85 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+
+		// Navigation font
+		$navbar_font_family = get_theme_mod( 'font_menus_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
+		$navbar_obj = new Jetpack_Color( get_theme_mod( 'body_bg_color', '#ffffff' ) );
+
+		$content .= '.navbar{';
+		$content .= 'font-family: ' . $navbar_font_family . ';';
+		$content .= 'font-weight: ' . get_theme_mod( 'font_menus_weight', 400 ) . ';';
+		$content .= 'line-height: ' . get_theme_mod( 'font_menus_height', 1.1 ) . ';';
+		$content .= '}';
+
+		// Navigation font
+		$jumbotron_font_family = get_theme_mod( 'font_jumbotron_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
+		$jumbotron_obj = new Jetpack_Color( get_theme_mod( 'jumbo_bg', '#ffffff' ) );
+
+		$content .= '.jumbotron{';
+		$content .= 'color: ' . '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex() . ';';
+		$content .= 'font-family: ' . $navbar_font_family . ';';
+		$content .= 'font-weight: ' . get_theme_mod( 'font_jumbotron_weight', 400 ) . ';';
+		$content .= 'line-height: ' . get_theme_mod( 'font_jumbotron_height', 1.1 ) . ';';
+		$content .= '}';
+
+		// Make sure links are readable
+		$links_color = $b_p_obj->getReadableContrastingColor( $body_obj, 2 );
+		// Use "body a" instead of plain "a" to override the defaults
+		$content .= 'body a, body a:visited, body a:hover { color: #' . $links_color->toHex() . ';}';
+
 		return $content;
 
 	}
