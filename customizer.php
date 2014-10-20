@@ -430,8 +430,8 @@ function maera_customizer_settings( $controls ) {
 		'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5,
 		'priority' => 44,
 		'choices'  => array(
-			'min'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 7 : 0.1,
-			'max'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 70 : 7,
+			'min'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 10 : 0.5,
+			'max'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 30 : 5,
 			'step' => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 1 : 0.01,
 		),
 	);

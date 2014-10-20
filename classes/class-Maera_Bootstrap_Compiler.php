@@ -135,6 +135,10 @@ class Maera_Bootstrap_Compiler {
 
 		$content .= ( ! empty( get_theme_mod( 'less', '' ) ) ) ? get_theme_mod( 'less', '' ) : '';
 
+		if ( 'rem' == get_theme_mod( 'font_size_units' ) ) {
+			$content .= '.form-control { height: auto; }';
+		}
+
 		return $content;
 
 	}
@@ -202,6 +206,14 @@ class Maera_Bootstrap_Compiler {
 
 		$grid_float_breakpoint = ( $gfb == 'screen-lg-min' ) ? '0 !important' : $grid_float_breakpoint;
 
+		$_font_size = get_theme_mod( 'font_base_size', ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5 );
+		if ( 'rem' == get_theme_mod( 'font_size_units', 'px' ) ) {
+			$_font_size = ( 5 < $_font_size ) ? 1.5 : $_font_size;
+		} else {
+			$_font_size = ( 10 > $_font_size ) ? 14 : $_font_size;
+		}
+		$font_size_base = $_font_size . get_theme_mod( 'font_size_units', 'px' );
+
 		$variables = array(
 			'gray-darker'  => ( 0.4 < $body_lum ) ? 'lighten(#000, 13.5%)' : 'darken(#fff, 13.5%)',
 			'gray-dark'    => ( 0.4 < $body_lum ) ? 'lighten(#000, 20%)' : 'darken(#fff, 20%)',
@@ -225,7 +237,7 @@ class Maera_Bootstrap_Compiler {
 			'font-family-monospace'  => 'Menlo, Monaco, Consolas, "Courier New", monospace',
 			'font-family-base'       => '@font-family-sans-serif',
 
-			'font-size-base'  => get_theme_mod( 'font_base_size', ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5 ) . get_theme_mod( 'font_size_units', 'px' ),
+			'font-size-base'  => $font_size_base,
 			'font-size-large' => 'ceil((@font-size-base * 1.25))',
 			'font-size-small' => 'ceil((@font-size-base * 0.85))',
 
