@@ -17,9 +17,8 @@ class Maera_Bootstrap_Compiler {
 
 		// Instantianate the compiler and pass the shell's properties to it
 		$compiler = new Maera_Compiler( array(
-			'compiler'     => 'less_php',
+			'compiler'     => 'less',
 			'minimize_css' => false,
-			'less_path'    => MAERA_SHELL_PATH . '/assets/less/',
 		) );
 
 		if ( $wp_customize || ( 1 == @$theme_options['dev_mode'] ) ) {
@@ -29,7 +28,7 @@ class Maera_Bootstrap_Compiler {
 
 		}
 
-		add_filter( 'maera/compiler/less/post', array( $this, 'less' ) );
+		add_filter( 'maera/compiler', array( $this, 'less' ) );
 
 		// Trigger the compiler the first time the theme is enabled
 		add_action( 'after_switch_theme', array( $compiler, 'makecss' ) );
