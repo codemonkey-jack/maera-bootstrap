@@ -84,50 +84,52 @@ class Maera_Bootstrap_Compiler {
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins.less' );
 
 		// Reset
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/normalize.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/print.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/normalize.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/print.less' );
 
 		// Core CSS
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/scaffolding.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/type.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/code.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/grid.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/tables.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/forms.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/buttons.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/scaffolding.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/type.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/code.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/grid.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/tables.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/forms.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/buttons.less' );
 
 		// Components
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/component-animations.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/glyphicons.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/dropdowns.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/button-groups.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/input-groups.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/navs.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/navbar.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/breadcrumbs.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/pagination.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/pager.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/labels.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/badges.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/jumbotron.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/thumbnails.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/alerts.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/progress-bars.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/media.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/list-group.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/panels.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/wells.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/close.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/component-animations.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/glyphicons.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/dropdowns.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/button-groups.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/input-groups.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/navs.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/navbar.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/breadcrumbs.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/pagination.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/pager.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/labels.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/badges.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/jumbotron.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/thumbnails.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/alerts.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/progress-bars.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/media.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/list-group.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/panels.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/wells.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/close.less' );
 
 		// Components w/ JavaScript
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/modals.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/tooltip.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/popovers.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/carousel.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/modals.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/tooltip.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/popovers.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/carousel.less' );
 
 		// Utility classes
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/utilities.less' );
-		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/vendor/bootstrap/responsive-utilities.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/utilities.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/responsive-utilities.less' );
+
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/fonts/elusive-webfont.less' );
 
 		$content .= ( $wp_customize || ( 0 != @$theme_options['dev_mode'] ) ) ? file_get_contents( MAERA_SHELL_PATH .  '/assets/less/app.less' ) : '';
 		$content .= ( get_theme_mod( 'gradients_toggle', 0 ) ) ? file_get_contents( MAERA_SHELL_PATH . '/assets/less/gradients.less' ) : '';
@@ -316,7 +318,7 @@ class Maera_Bootstrap_Compiler {
 			'headings-line-height' => get_theme_mod( 'font_headers_height', 1.1 ),
 			'headings-color'       => 'inherit',
 
-			'icon-font-path'   => '"../fonts/"',
+			'icon-font-path'   => '"' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/fonts/"',
 			'icon-font-name'   => '"glyphicons-halflings-regular"',
 			'icon-font-svg-id' => '"glyphicons_halflingsregular"',
 
@@ -770,6 +772,8 @@ class Maera_Bootstrap_Compiler {
 			'hr-border' => '@gray-lighter',
 
 			'component-offset-horizontal' => '180px',
+
+			'elusiveWebfontPath' => '"' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/fonts/"',
 		);
 
 		return $variables;
