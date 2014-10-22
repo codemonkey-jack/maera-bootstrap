@@ -197,6 +197,10 @@ class Maera_Bootstrap_Compiler {
 		$content .= 'line-height: ' . get_theme_mod( 'font_jumbotron_height', 1.1 ) . ';';
 		$content .= '}';
 
+		$content .= '.admin-bar body{';
+		$content .= 'padding-top: ' . get_theme_mod( 'navbar_height', 50 ) . ';';
+		$content .= '}';
+
 		// Make sure links are readable
 		$links_color = $b_p_obj->getReadableContrastingColor( $body_obj, 2 );
 		// Use "body a" instead of plain "a" to override the defaults
