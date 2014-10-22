@@ -134,7 +134,8 @@ class Maera_Bootstrap_Compiler {
 		$content .= ( get_theme_mod( 'gradients_toggle', 0 ) ) ? file_get_contents( MAERA_SHELL_PATH . '/assets/less/gradients.less' ) : '';
 		$content .= ( 'static' == get_theme_mod( 'site_style' ) ) ? '@screen-xs-max: 0 !important; .container { max-width: none !important; width: @container-large-desktop; } html { overflow-x: auto !important; }' : '';
 
-		$content .= ( ! empty( get_theme_mod( 'less', '' ) ) ) ? get_theme_mod( 'less', '' ) : '';
+		$less = get_theme_mod( 'less', '' );
+		$content .= ( ! empty( $less ) ) ? $less : '';
 
 		if ( 'rem' == get_theme_mod( 'font_size_units' ) ) {
 			$content .= '.form-control { height: auto; }';
