@@ -192,7 +192,7 @@ class Maera_Bootstrap_Compiler {
 
 		$content .= '.jumbotron{';
 		$content .= 'color: ' . '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex() . ';';
-		$content .= 'font-family: ' . $navbar_font_family . ';';
+		$content .= 'font-family: ' . $jumbotron_font_family . ';';
 		$content .= 'font-weight: ' . get_theme_mod( 'font_jumbotron_weight', 400 ) . ';';
 		$content .= 'line-height: ' . get_theme_mod( 'font_jumbotron_height', 1.1 ) . ';';
 		$content .= '}';
