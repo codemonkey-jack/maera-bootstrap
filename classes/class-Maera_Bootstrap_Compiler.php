@@ -130,7 +130,7 @@ class Maera_Bootstrap_Compiler {
 
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/fonts/elusive-webfont.less' );
 
-		$content .= ( $wp_customize || ( 0 != @$theme_options['dev_mode'] ) ) ? file_get_contents( MAERA_SHELL_PATH .  '/assets/less/app.less' ) : '';
+		$content .= file_get_contents( MAERA_SHELL_PATH .  '/assets/less/app.less' );
 		$content .= ( get_theme_mod( 'gradients_toggle', 0 ) ) ? file_get_contents( MAERA_SHELL_PATH . '/assets/less/gradients.less' ) : '';
 		$content .= ( 'static' == get_theme_mod( 'site_style' ) ) ? '@screen-xs-max: 0 !important; .container { max-width: none !important; width: @container-large-desktop; } html { overflow-x: auto !important; }' : '';
 
