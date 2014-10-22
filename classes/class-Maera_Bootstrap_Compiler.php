@@ -169,12 +169,12 @@ class Maera_Bootstrap_Compiler {
 		$content .= 'line-height: ' . get_theme_mod( 'font_headers_height', 1.1 ) . ';';
 		$content .= '}';
 
-		$content .= 'h1, .h1 { font-size: ' . intval( ( 260 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
-		$content .= 'h2, .h2 { font-size: ' . intval( ( 215 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
-		$content .= 'h3, .h3 { font-size: ' . intval( ( 170 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
-		$content .= 'h4, .h4 { font-size: ' . intval( ( 110 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
-		$content .= 'h5, .h5 { font-size: ' . intval( ( 100 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
-		$content .= 'h6, .h6 { font-size: ' . intval( ( 85 / 215 ) * get_theme_mod( 'font_headers_size', 215 ) ) . '; }';
+		$content .= 'h1, .h1 { font-size: ' . ( 260 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h2, .h2 { font-size: ' . ( 215 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h3, .h3 { font-size: ' . ( 170 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h4, .h4 { font-size: ' . ( 110 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h5, .h5 { font-size: ' . ( 100 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h6, .h6 { font-size: ' . ( 85 / 100  * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
 
 		// Navigation font
 		$navbar_font_family = get_theme_mod( 'font_menus_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
