@@ -196,20 +196,42 @@ ul.nav.navbar-nav.navbar-center {
     margin: 0;
     padding: 0;
     li {
-	    line-height: 40px;
+	    // line-height: 40px;
 	    text-indent: 20px;
+	    list-style-type: none;
 	    a {
 		    display: block;
 		    text-decoration: none;
+		    padding: 5px 5px;
+		  }
+		  a:hover,
+			a:active,
+			a:focus {
+			    text-decoration: none;
+			}
 		}
-		a:hover,
-		a:active,
-		a:focus {
-		    text-decoration: none;
+		.sidebar-dropdown-menu {
+			padding-left: 0;
+			a {
+				padding-left: 20px;
+			}
 		}
-	}
 	.sidebar-brand .sitename {
 	    text-align: center;
+	    margin-top: 0;
+	}
+	.search-query {
+		width: 100%;
+	}
+	.form-search {
+		margin: 20px 0;
+	}
+	.navbar-inline-socials {
+		margin: 20px;
+		li {
+			text-indent: 0;
+			padding: 0 5px;
+		}
 	}
 }
 #menu-right-toggle {
