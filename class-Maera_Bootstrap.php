@@ -58,8 +58,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			add_filter( 'maera/image/display', array( $this, 'disable_feat_images_ppt' ), 99 );
 
-			add_action( 'maera/header/brand', array( $this, 'logo' ) );
-
 		}
 
 
@@ -126,23 +124,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
 
 			return $data;
-		}
-
-
-		/*
-		 * The site logo.
-		 * If no custom logo is uploaded, use the sitename
-		 */
-		function logo( $fallback = null ) {
-
-			$logo = get_theme_mod( 'logo', '' );
-
-			if ( $logo ) {
-				return '<img id="site-logo" src="' . $logo . '" alt="' . get_bloginfo( 'name' ) .'">';
-			} else {
-				return $fallback;
-			}
-
 		}
 
 
