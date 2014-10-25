@@ -673,10 +673,10 @@ function maera_customizer_settings( $controls ) {
 		'type'        => 'text',
 		'setting'     => 'maera_entry_meta_config',
 		'label'       => __( 'Post Meta elements', 'maera_bootstrap' ),
-		'subtitle'    => __( 'You can define a comma-separated list of meta elements you want on your posts, in the order that you want them. Accepted values: <code>author, sticky, post-format, date, category, tags, comments</code>', 'maera_bootstrap' ),
+		'subtitle'    => __( 'You can define a comma-separated list of meta elements you want on your posts, in the order that you want them. Accepted values: <code>author, sticky, date, category, tags, comments</code>', 'maera_bootstrap' ),
 		'section'     => 'blog_options',
 		'priority'    => 2,
-		'default'     => 'post-format, date, author, comments',
+		'default'     => 'date, author, comments',
 	);
 
 	$controls[] = array(
@@ -686,21 +686,6 @@ function maera_customizer_settings( $controls ) {
 		'section'     => 'blog_options',
 		'priority'    => 3,
 		'default'     => 0,
-	);
-
-	$controls[] = array(
-		'type'        => 'radio',
-		'mode'        => 'buttonset',
-		'setting'     => 'date_meta_format',
-		'label'       => __( 'Date format in meta', 'maera_bootstrap' ),
-		'subtitle'    => __( 'Show the date as a normal date, or as time difference (example: 2 weeks ago)', 'maera_bootstrap' ),
-		'section'     => 'blog_options',
-		'priority'    => 9,
-		'default'     => 1,
-		'choices'     => array(
-			0 => __( 'Date', 'maera_bootstrap' ),
-			1 => __( 'Time Difference', 'maera_bootstrap' ),
-		),
 	);
 
 	$controls[] = array(

@@ -121,6 +121,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			);
 
 			$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
+			$data['post_meta'] = Maera_Bootstrap_Structure::meta_elements();
 
 			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
 

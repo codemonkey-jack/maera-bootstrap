@@ -75,7 +75,12 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 		/**
 		 * Figure out the post meta that we want to use and inject them to our content.
 		 */
-		public function meta_elements( $post_id ) {
+		public static function meta_elements( $post_id = '' ) {
+
+			if ( '' == $post_id ) {
+				global $post;
+				$post_id = $post->ID;
+			}
 
 			$post = get_post( $post_id );
 
@@ -99,110 +104,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			// clean up the array a bit... make sure there are no spaces that may mess things up
 			$metas_array = array_map( 'trim', $metas_array );
 
-			foreach ( $metas_array as $meta ) {
-
-				if ( 'author' == $meta ) { // Author
-
-					$content .= sprintf( '<span class="post-meta-element ' . $meta . '"><span class="author vcard"><i class="el-icon-user icon"></i> <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>',
-						esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) ) ),
-						esc_attr( sprintf( __( 'View all posts by %s', 'maera_bootstrap' ), get_the_author_meta( 'display_name', $post->post_author ) ) ),
-						get_the_author_meta( 'display_name', $post->post_author )
-					);
-
-				} elseif ( 'sticky' == $meta ) { // Sticky
-
-					if ( is_sticky() ) {
-						$content .= '<span class="post-meta-element ' . $meta . '">';
-						$content .= '<i class="el-icon-flag icon"></i> ' . __( 'Sticky', 'maera_bootstrap' );
-						$content .= '</span>';
-					}
-
-				} elseif ( 'post-format' == $meta ) { // Post-Formats
-
-					if ( get_post_format() ) {
-
-						$content .= '<span class="post-meta-element ' . $meta . '">';
-
-						if ( get_post_format( $post_id ) === 'gallery' ) {
-							// Gallery
-							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'gallery' ) ) . '">' . __('Gallery','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'aside' ) {
-							// Aside
-							$content .= '<i class="el-icon-chevron-right"></i> <a href="' . esc_url( get_post_format_link( 'aside' ) ) . '">' . __('Aside','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'link' ) {
-							// Link
-							$content .= '<i class="el-icon-link"></i> <a href="' . esc_url( get_post_format_link( 'link' ) ) . '">' . __('Link','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'image' ) {
-							// Image
-							$content .= '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'image' ) ) . '">' . __('Image','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'quote' ) {
-							// Quote
-							$content .= '<i class="el-icon-quotes-alt"></i> <a href="' . esc_url( get_post_format_link( 'quote' ) ) . '">' . __('Quote','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'status' ) {
-							// Status
-							$content .= '<i class="el-icon-comment"></i> <a href="' . esc_url( get_post_format_link( 'status' ) ) . '">' . __('Status','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'video' ) {
-							// Video
-							$content .= '<i class="el-icon-video"></i> <a href="' . esc_url( get_post_format_link( 'video' ) ) . '">' . __('Video','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'audio' ) {
-							// Audio
-							$content .= '<i class="el-icon-volume-up"></i> <a href="' . esc_url( get_post_format_link( 'audio' ) ) . '">' . __('Audio','maera_bootstrap') . '</a>';
-						} elseif ( get_post_format( $post_id ) === 'chat' ) {
-							// Chat
-							$content .= '<i class="el-icon-comment-alt"></i> <a href="' . esc_url( get_post_format_link( 'chat' ) ) . '">' . __('Chat','maera_bootstrap') . '</a>';
-						}
-
-						$content .= '</span>';
-
-					}
-
-				} elseif ( 'date' == $meta ) { // Date
-
-					if ( ! has_post_format( 'link' ) ) {
-
-						$content .= '<span class="post-meta-element ' . $meta . '">';
-
-						$format_prefix = ( has_post_format( 'chat' ) || has_post_format( 'status' ) ) ? _x( '%1$s on %2$s', '1: post format name. 2: date', 'maera_bootstrap' ): '%2$s';
-
-						if ( $date_format == 0 ) {
-
-							$text = esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date( '', $post_id ) ) );
-							$icon = "el-icon-calendar icon";
-
-						} elseif ( $date_format == 1 ) {
-
-							$text = sprintf( human_time_diff( get_the_time('U', $post_id ), current_time('timestamp') ) . ' ago');
-							$icon = "el-icon-time icon";
-
-						}
-
-						$content .= sprintf( '<span class="entry-date"><i class="' . $icon . '"></i> <a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a></span>',
-							esc_url( get_permalink( $post_id ) ),
-							esc_attr( get_the_date( 'c', $post_id ) ),
-							$text
-						);
-
-						$content .= '</span>';
-
-					}
-
-				} elseif ( 'category' == $meta ) { // Category
-
-					$content .= $categories_list ? '<span class="post-meta-element ' . $meta . '"><i class="el-icon-folder-open icon"></i> ' . $categories_list . '</span>': '';
-
-				} elseif ( 'tags' == $meta ) { // Tags
-
-					$content .= $tag_list ? '<span class="post-meta-element ' . $meta . '"><i class="el-icon-tags icon"></i> ' . $tag_list . '</span>': '';
-
-				} elseif ( 'comments' == $meta ) { // Comments
-
-					$content .= '<span class="post-meta-element ' . $meta . '"><i class="el-icon-comment icon"></i> <a href="' . get_comments_link( $post_id ) . '">' . get_comments_number( $post_id ) . ' ' . __( 'Comments', 'maera_bootstrap' ) . '</a></span>';
-
-				}
-
-			}
-
-			echo $content;
+			return $metas_array;
 
 		}
 
