@@ -120,6 +120,8 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 				'id_submit'     => 'comment-submit',
 			);
 
+			$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
+
 			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
 
 			return $data;

@@ -37,11 +37,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			add_filter( 'maera/section_class/wrapper', array( $this, 'layout_classes_wrapper' ) );
 			add_action( 'wp', array( $this, 'container_class_modifier' ) );
 
-			add_filter( 'maera/image/height', array( $this, 'get_feat_image_height' ) );
-			add_filter( 'maera/image/width', array( $this, 'get_feat_image_width' ) );
-			add_filter( 'the_content', array( $this, 'inject_featured_images_content' ), 100 );
-			add_filter( 'maera/image/display', array( $this, 'display_feat_image_posts' ) );
-
 			// Post Meta
 			add_action( 'maera/entry/meta', array( $this, 'meta_elements' ), 10, 1 );
 
@@ -208,70 +203,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			}
 
 			echo $content;
-
-		}
-
-
-		/**
-		 * Inject the featured images on the content.
-		 */
-		function inject_featured_images_content( $content ) {
-
-			$r = '';
-
-			if ( has_post_thumbnail() ) {
-
-				$image = Maera_Image::featured_image( get_the_ID() );
-
-				$r .= '<div class="featured-image" style="background: url(\'' . $image['url'] . '\'); width: ' . $image['width'] . 'px; height: ' . $image['height'] . 'px;"></div>';
-
-			}
-
-			$r .= $content;
-
-			return $r;
-
-		}
-
-
-		/**
-		 * Helper function: Return the feat_img_post theme mod
-		 */
-		function display_feat_image_posts() {
-
-			if ( is_singular() ) {
-				$display = ( 1 == get_theme_mod( 'feat_img_post', 0 ) ) ? true : false;
-			} else {
-				$display = ( 1 == get_theme_mod( 'feat_img_archive', 0 ) ) ? true : false;
-			}
-
-			return $display;
-
-		}
-
-		/**
-		 * Helper function: return the featured image width
-		 */
-		function get_feat_image_width() {
-
-			if ( is_singular() ) {
-				return get_theme_mod( 'feat_img_post_width', -1 );
-			} else {
-				return get_theme_mod( 'feat_img_archive_width', -1 );
-			}
-
-		}
-
-		/**
-		 * Helper function: return the featured image height
-		 */
-		function get_feat_image_height() {
-
-			if ( is_singular() ) {
-				return get_theme_mod( 'feat_img_post_height', -1 );
-			} else {
-				return get_theme_mod( 'feat_img_archive_height', -1 );
-			}
 
 		}
 
@@ -665,7 +596,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 				'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
 				'flickr'      => __( 'Flickr', 'maera_bootstrap' ),
 				'github'      => __( 'Github', 'maera_bootstrap' ),
-				'googleplus' => __( 'Google+', 'maera_bootstrap' ),
+				'googleplus'  => __( 'Google+', 'maera_bootstrap' ),
 				'instagram'   => __( 'Instagram', 'maera_bootstrap' ),
 				'linkedin'    => __( 'LinkedIn', 'maera_bootstrap' ),
 				'myspace'     => __( 'MySpace', 'maera_bootstrap' ),
