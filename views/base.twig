@@ -16,6 +16,22 @@
 
 	{% do action( 'maera/header/after', post.ID ) %}
 
+	{% if theme_mods.header_widgets_nr != 0 %}
+		{% do action( 'maera/extra_header/before' ) %}
+		{% do action( 'maera/extra_header/before/ewa', 'pre_header', 'row' ) %}
+		<header class="page-header">
+			{% if 'boxed' == theme_mods.site_style %}<div class="container header-boxed">{% endif %}
+			<div class="header-wrapper container-fluid">
+				{% if 'wide' == theme_mods.site_style %}<div class="container">{% endif %}
+				{% do action( 'maera/extra_header/widgets/ewa', 'header', 'row' ) %}
+				{% if 'wide' == theme_mods.site_style %}</div>{% endif %}
+			</div>
+			{% if 'boxed' == theme_mods.site_style %}</div>{% endif %}
+		</header>
+		{% do action( 'maera/extra_header/after' ) %}
+		{% do action( 'maera/extra_header/after/ewa', 'post_header', 'row' ) %}
+	{% endif %}
+
 	{% do action( 'maera/wrap/before', post.ID ) %}
 	{% do action( 'maera/wrap/before/ewa', 'pre_content', 'row' ) %}
 

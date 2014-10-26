@@ -21,7 +21,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			// Breadcrumbs
 			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
 
-			add_action( 'maera/wrap/before', array( $this, 'header_html' ), 3 );
 			add_action( 'maera/wrap/before', array( $this, 'jumbotron_html' ), 5 );
 
 			add_filter( 'maera/header/class', array( $this, 'navbar_positioning_class' ) );
@@ -394,48 +393,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 				<?php
 
 			endif;
-		}
-
-
-		/*
-		 * The Header template
-		 */
-		function header_html() { ?>
-
-			<?php if ( 0 != get_theme_mod( 'header_widgets_nr', 0 ) ) : ?>
-				<?php do_action( 'maera/extra_header/before' ); ?>
-				<?php do_action( 'maera/extra_header/before/ewa', 'pre_header', 'row' ); ?>
-
-				<header class="page-header">
-
-					<?php if ( 'boxed' == get_theme_mod( 'site_style', 'wide' ) ) : ?>
-						<div class="container header-boxed">
-					<?php endif; ?>
-
-						<div class="header-wrapper container-fluid">
-
-							<?php if ( 'wide' == get_theme_mod( 'site_style', 'wide' ) ) : ?>
-								<div class="container">
-							<?php endif; ?>
-
-							<?php do_action( 'maera/extra_header/widgets/ewa', 'header', 'row' ); ?>
-
-							<?php if ( 'wide' == get_theme_mod( 'site_style', 'wide' ) ) : ?>
-								</div>
-							<?php endif; ?>
-
-						</div>
-
-					<?php if ( 'boxed' == get_theme_mod( 'site_style', 'wide' ) ) : ?>
-						</div>
-					<?php endif; ?>
-
-				</header>
-				<?php do_action( 'maera/extra_header/after' ); ?>
-				<?php do_action( 'maera/extra_header/after/ewa', 'post_header', 'row' ); ?>
-
-			<?php endif;
-
 		}
 
 
