@@ -32,6 +32,23 @@
 		{% do action( 'maera/extra_header/after/ewa', 'post_header', 'row' ) %}
 	{% endif %}
 
+	{% if 0 != theme_mods.jumbotron_widgets_nr %}
+		{% if 'boxed' == theme_mods.site_style and 1 != theme_mods.jumbotron_nocontainer %}
+			<div class="container jumbotron">
+		{% else %}
+			<div class="jumbotron">
+		{% endif %}
+		{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
+			<div class="container">
+		{% endif %}
+		{% do action( 'maera/jumbotron/content' ) %}
+		{% do action( 'maera/jumbotron/content/ewa', 'jumbotron', 'row' ) %}
+		{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
+			</div>
+		{% endif %}
+		</div>
+	{% endif %}
+
 	{% do action( 'maera/wrap/before', post.ID ) %}
 	{% do action( 'maera/wrap/before/ewa', 'pre_content', 'row' ) %}
 

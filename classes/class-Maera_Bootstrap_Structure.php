@@ -21,8 +21,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			// Breadcrumbs
 			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
 
-			add_action( 'maera/wrap/before', array( $this, 'jumbotron_html' ), 5 );
-
 			add_filter( 'maera/header/class', array( $this, 'navbar_positioning_class' ) );
 
 			add_filter( 'body_class', array( $this, 'body_class' ) );
@@ -352,47 +350,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			return $classes;
 
-		}
-
-
-		/*
-		 * The content of the Jumbotron region
-		 * according to what we've entered in the customizer
-		 */
-		function jumbotron_html() {
-
-			$site_style   = get_theme_mod( 'site_style', 'wide' );
-			// $visibility   = get_theme_mod( 'jumbotron_visibility', 1 );
-			$nocontainer  = get_theme_mod( 'jumbotron_nocontainer', 0 );
-
-			if ( 0 != get_theme_mod( 'jumbotron_widgets_nr', 0 ) ) : ?>
-
-				<div class="clearfix"></div>
-
-				<?php if ( 'boxed' == $site_style && 1 != $nocontainer ) : ?>
-					<div class="container jumbotron">
-				<?php else : ?>
-					<div class="jumbotron">
-				<?php endif; ?>
-
-					<?php if ( ( 1 != $nocontainer && 'wide' == $site_style ) || 'boxed' == $site_style ) : ?>
-						<div class="container">
-					<?php endif; ?>
-
-						<?php do_action( 'maera/jumbotron/content' ); ?>
-						<?php do_action( 'maera/jumbotron/content/ewa', 'jumbotron', 'row' ); ?>
-
-					<?php if ( ( 1 != $nocontainer && 'wide' == $site_style ) || 'boxed' == $site_style ) : ?>
-						</div>
-					<?php endif; ?>
-
-					</div>
-
-
-				</div>
-				<?php
-
-			endif;
 		}
 
 
