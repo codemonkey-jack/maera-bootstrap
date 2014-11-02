@@ -1,5 +1,4 @@
 {#<?php#}
-{% import 'shell.html.twig' as shell %}
 {% include 'html-header.twig' %}
 
 <body class="{{ body_class }}" data-source="base.twig">
@@ -56,14 +55,14 @@
 		{% include 'header.twig' %}
 	{% endif %}
 
-	{{ shell.open_container( 'div', 'wrap-main-section', 'wrap main-section' ) }}
+	{{ shell.container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
 
 		{% do action( 'maera/content/before', post.ID ) %}
 		{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
 
 		<div class="content" id="content" itemprop="mainContentOfPage">
 
-			{{ shell.open_row( 'div', null, 'bg' ) }}
+			{{ shell.row_open( 'div', null, 'bg' ) }}
 
 				<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 					{% do action( 'maera/main/before', post.ID ) %}
@@ -91,14 +90,14 @@
 
 				{{ shell.clearfix }}
 
-			{{ shell.close_row( 'div' ) }}
+			{{ shell.row_close( 'div' ) }}
 
 		</div><!-- /#content -->
 
 		{% do action( 'maera/content/after' ) %}
 		{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
 
-	{{ shell.close_container( 'div' ) }}
+	{{ shell.container_close( 'div' ) }}
 
 	{% do action( 'maera/footer/before', post.ID ) %}
 	{% do action( 'maera/footer/before/ewa', 'pre_footer', 'row' ) %}

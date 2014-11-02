@@ -7,7 +7,7 @@
 {#
 	Open container.
 #}
-{% macro open_container(element, id, extra_classes, properties) %}
+{% macro container_open(element, id, extra_classes, properties) %}
 	<{{ element|default('div') }} class="{{ 'container'|apply_filters( 'maera/container_class' ) }}{{ extra_classes ? ' '~extra_classes : '' }}"{{ id ? ' id="'~id~'"' : '' }}{{ properties ? ' '~properties : '' }}>
 {% endmacro %}
 
@@ -15,7 +15,7 @@
 {#
 	Close container.
 #}
-{% macro close_container(element) %}
+{% macro container_close(element) %}
 	</{{ element|default('div') }}>
 {% endmacro %}
 
@@ -23,7 +23,7 @@
 {#
 	Open row.
 #}
-{% macro open_row(element, id, extra_classes, properties) %}
+{% macro row_open(element, id, extra_classes, properties) %}
 	<{{ element|default('div') }} class="row{{ extra_classes ? ' '~extra_classes : '' }}"{{ id ? ' id="'~id~'"' : '' }}{{ properties ? ' '~properties : '' }}>
 {% endmacro %}
 
@@ -31,7 +31,7 @@
 {#
 	Close row
 #}
-{% macro close_row(element) %}
+{% macro row_close(element) %}
 	</{{ element|default('div') }}>
 {% endmacro %}
 
@@ -39,7 +39,7 @@
 {#
 	Open column
 #}
-{% macro open_col(element, sizes, id, extra_classes, properties) %}
+{% macro column_open(element, sizes, id, extra_classes, properties) %}
 	<{{ element|default('div') }} class="{{ _self.column_classes( sizes ) }}{{ extra_classes ? ' '~extra_classes : '' }}"{{ id ? ' id="'~id~'"' : '' }}{{ properties ? ' '~properties : '' }}>
 {% endmacro %}
 
@@ -47,7 +47,7 @@
 {#
 	Close column
 #}
-{% macro close_col(element) %}
+{% macro column_close(element) %}
 	</{{ element|default('div') }}>
 {% endmacro %}
 
@@ -75,7 +75,7 @@
 {#
 	Make dropdown buttons
 #}
-{% macro make_dropdown_button(color, size, type, extra, label, content) %}
+{% macro button_dropdown(color, size, type, extra, label, content) %}
 
 	<div class="btn-group">
 		<button type="button" class="dropdown-toggle {{ _self.button_classes(color, size, type) }}" data-toggle="dropdown">
@@ -147,56 +147,56 @@
 {#
 	Open panel
 #}
-{% macro open_panel(extra_classes, id) %}
+{% macro panel_open(extra_classes, id) %}
 	<div class="panel{{ extra_classes ? ' '~extra_classes : '' }}"{{ id ? ' id="'~id~'"' : '' }}>
 {% endmacro %}
 
 {#
 	Close panel
 #}
-{% macro close_panel() %}
+{% macro panel_close() %}
 	</div>
 {% endmacro %}
 
 {#
 	Open panel heading
 #}
-{% macro open_panel_heading(extra_classes) %}
+{% macro panel_heading_open(extra_classes) %}
 	<div class="panel-heading{{ extra_classes ? ' '~extra_classes : '' }}">
 {% endmacro %}
 
 {#
 	Close panel heading
 #}
-{% macro close_panel_heading() %}
+{% macro panel_heading_close() %}
 	</div>
 {% endmacro %}
 
 {#
 	Open panel body
 #}
-{% macro open_panel_body(extra_classes) %}
+{% macro panel_body_open(extra_classes) %}
 	<div class="panel-body{{ extra_classes ? ' '~extra_classes : '' }}">
 {% endmacro %}
 
 {#
 	Close panel body
 #}
-{% macro close_panel_body() %}
+{% macro panel_body_close() %}
 	</div>
 {% endmacro %}
 
 {#
 	Open panel footer
 #}
-{% macro open_panel_footer(extra_classes) %}
+{% macro panel_footer_open(extra_classes) %}
 	<div class="panel-body{{ extra_classes ? ' '~extra_classes : '' }}">
 {% endmacro %}
 
 {#
 	Close panel footer
 #}
-{% macro close_panel_footer() %}
+{% macro panel_footer_close() %}
 	</div>
 {% endmacro %}
 

@@ -9,7 +9,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 		private static $instance;
 
-
 		/**
 		 * Class constructor
 		 */
