@@ -16,9 +16,10 @@ class Maera_Bootstrap_Compiler {
 		$theme_options = get_option( 'maera_admin_options', array() );
 
 		// Instantianate the compiler and pass the shell's properties to it
-		$compiler = new Maera_Compiler( array(
+		$compiler = new Pre_Processors_Compiler( array(
 			'compiler'     => 'less',
 			'minimize_css' => false,
+			'uname'        => 'maera',
 		) );
 
 		if ( $wp_customize || ( 1 == @$theme_options['dev_mode'] ) ) {

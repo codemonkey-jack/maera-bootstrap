@@ -18,6 +18,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			add_theme_support( 'maera_image' );
 			add_theme_support( 'maera_color' );
 			add_theme_support( 'maera_cwa' );
+			add_theme_support( 'less_compiler' );
 
 			if ( ! defined( 'MAERA_SHELL_PATH' ) ) {
 				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
