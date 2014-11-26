@@ -1,0 +1,11 @@
+{% macro button_dropdown(color, size, type, extra, label, content) %}
+
+	<div class="btn-group">
+		<button type="button" class="dropdown-toggle {{ _self.button_classes(color, size, type) }}" data-toggle="dropdown">
+			{{ label }} <span class="caret"></span>
+		</button>
+
+		<ul class="dropdown-menu" role="menu">{{ content }}</ul>
+	</div>
+
+{% endmacro %}
