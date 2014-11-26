@@ -27,9 +27,8 @@
 		{% if post.terms('category') %}
 			<span class="post-meta-element category">
 				<i class="el-icon-folder-open icon"></i>
-				<ul>
 					{% for category in post.terms('category') %}
-						<li><a href="{{ category.link }}">{{ category.name }}</a></li>
+						<a href="{{ category.link }}">{{ category.name }}</a>
 					{% endfor %}
 				</ul>
 			</span>
@@ -38,11 +37,9 @@
 		{% if post.terms('tags') %}
 			<span class="post-meta-element tags">
 				<i class="el-icon-folder-open icon"></i>
-				<ul>
 					{% for tag in post.terms('tags') %}
-						<li><a href="{{ tag.link }}">{{ tag.name }}</a></li>
+						<a href="{{ tag.link }}">{{ tag.name }}</a>
 					{% endfor %}
-				</ul>
 			</span>
 		{% endif %}
 	{% endif %}
