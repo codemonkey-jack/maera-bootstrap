@@ -15,6 +15,10 @@ class Maera_Bootstrap_Compiler {
 
 		$theme_options = get_option( 'maera_admin_options', array() );
 
+		// Early exit if the lessphp plugin is not installed
+		if ( ! class_exists( 'Pre_Processors_Compiler' ) ) {
+			return;
+		}
 		// Instantianate the compiler and pass the shell's properties to it
 		$compiler = new Pre_Processors_Compiler( array(
 			'compiler'     => 'less',

@@ -14,15 +14,13 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 		 */
 		public function __construct() {
 
-			add_theme_support( 'kirki' );
-			add_theme_support( 'maera_image' );
-			add_theme_support( 'maera_color' );
-			add_theme_support( 'maera_cwa' );
-			add_theme_support( 'less_compiler' );
-
 			if ( ! defined( 'MAERA_SHELL_PATH' ) ) {
 				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
 			}
+
+			$this->required_plugins();
+
+			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 			// Include the customizer
 			include_once( MAERA_SHELL_PATH . '/customizer.php' );
@@ -71,6 +69,42 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			}
 
 			return self::$instance;
+		}
+
+
+		/**
+		 * Add theme supports
+		 */
+		function theme_supports() {
+
+			add_theme_support( 'kirki' );
+			add_theme_support( 'maera_image' );
+			add_theme_support( 'maera_color' );
+			add_theme_support( 'maera_cwa' );
+			add_theme_support( 'less_compiler' );
+
+		}
+
+
+		/**
+		* Build the array of required plugins.
+		* You can use the 'maera/required_plugins' filter to add or remove plugins.
+		*/
+		function required_plugins() {
+
+			$plugins[] = array(
+				'name' => 'Breadcrumb Trail',
+				'file' => 'breadcrumb-trail.php',
+				'slug' => 'breadcrumb-trail'
+			);
+			$plugins[] = array(
+				'name' => 'Less & scss compilers',
+				'file' => 'less-plugin.php',
+				'slug' => 'lessphp'
+			);
+
+			$plugins = new Maera_Required_Plugins( $plugins );
+
 		}
 
 
