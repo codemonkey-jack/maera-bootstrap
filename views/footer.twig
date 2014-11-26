@@ -3,8 +3,6 @@
 {% from 'container_close.html.twig' import container_close as container_close %}
 {% from 'row_open.html.twig' import row_open as row_open %}
 {% from 'row_close.html.twig' import row_close as row_close %}
-{% from 'column_open.html.twig' import column_open as column_open %}
-{% from 'column_close.html.twig' import column_close as column_close %}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
 {{ container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
@@ -30,9 +28,7 @@
 
 	{{ container_open( 'div', 'footer-copyright' ) }}
 		{{ row_open( 'div' ) }}
-			{{ column_open( 'div', 'large', 'copyright-bar' ) }}
-				{{ theme_mods.footer_text|replace({'[year]': now|date('Y') ,'[sitename]': bloginfo('name') }) }}
-			{{ column_close( 'div' ) }}
+			{{ theme_mods.footer_text|replace({'[year]': now|date('Y') ,'[sitename]': bloginfo('name') }) }}
 			{{ clearfix() }}
 		{{ row_close( 'div' ) }}
 	{{ container_close( 'div' ) }}
