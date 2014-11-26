@@ -110,7 +110,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 			$css = get_theme_mod( 'css', '' );
 
 			if ( ! empty( $css ) ) {
-				wp_add_inline_style( 'maera_bootstrap', $css );
+				wp_add_inline_style( 'maera', $css );
 			}
 		}
 
