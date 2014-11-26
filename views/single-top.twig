@@ -2,16 +2,8 @@
 {% set width  = theme_mods.feat_img_post_width %}
 {% set height = theme_mods.feat_img_post_height %}
 
-{% if theme_mods.feat_img_post %}
-	{% if post.thumbnail %}
-		{# make auto-calculated values auto-calculate. #}
-		{% if width == -1 %}{% set width = content_width %}{% endif %}
-		{% if width == 0 %}{% set width = post.get_thumbnail.width %}{% endif %}
-		{% set retina_width  = 2 * width %}
-		{% set retina_height = 2 * width %}
-		{% if height == 0 %}{% set height = '' %}{% endif %}
-		{% set retina_height = '' %}
-
-		<img class="featured-image" src="{{ post.get_thumbnail.get_src|resize(width, height) }}" srcset="{{ post.get_thumbnail.get_src|resize(width, height) }} 1x, {{ post.get_thumbnail.get_src|resize(retina_width, retina_height) }} 2x">
-	{% endif %}
+{% if post.thumbnail and theme_mods.feat_img_post %}
+	{% set width = theme_mods.feat_img_post_width == 0 ? post.thumbnail.width : thumbnail.width %}
+	{% set height = theme_mods.feat_img_post_height == 0 ? post.thumbnail.height : thumbnail.height %}
+	<img class="featured-image" src="{{ post.get_thumbnail.get_src|resize(width, height) }}" srcset="{{ post.get_thumbnail.get_src|resize(width, height) }} 1x, {{ post.get_thumbnail.get_src|resize(retina_width, retina_height) }} 2x">
 {% endif %}
