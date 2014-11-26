@@ -1,6 +1,11 @@
 {#<?php#}
+{% from 'container_open.html.twig' import container_open as container_open %}
+{% from 'container_close.html.twig' import container_close as container_close %}
+{% from 'row_open.html.twig' import row_open as row_open %}
+{% from 'row_close.html.twig' import row_close as row_close %}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
 {% include 'html-header.twig' %}
-{% import 'shell.html.twig' as shell %}
 
 <body class="{{ body_class }}" data-source="base.twig">
 
@@ -56,14 +61,14 @@
 		{% include 'header.twig' %}
 	{% endif %}
 
-	{{ shell.container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
+	{{ container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
 
 		{% do action( 'maera/content/before', post.ID ) %}
 		{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
 
 		<div class="content" id="content" itemprop="mainContentOfPage">
 
-			{{ shell.row_open( 'div', null, 'bg' ) }}
+			{{ row_open( 'div', null, 'bg' ) }}
 
 				<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 					{% do action( 'maera/main/before', post.ID ) %}
@@ -89,16 +94,16 @@
 				</aside>
 
 
-				{{ shell.clearfix }}
+				{{ clearfix }}
 
-			{{ shell.row_close( 'div' ) }}
+			{{ row_close( 'div' ) }}
 
 		</div><!-- /#content -->
 
 		{% do action( 'maera/content/after' ) %}
 		{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
 
-	{{ shell.container_close( 'div' ) }}
+	{{ container_close( 'div' ) }}
 
 	{% do action( 'maera/footer/before', post.ID ) %}
 	{% do action( 'maera/footer/before/ewa', 'pre_footer', 'row' ) %}

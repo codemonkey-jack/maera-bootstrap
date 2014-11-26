@@ -1,7 +1,13 @@
 {#<?php#}
-{% import 'shell.html.twig' as shell %}
+{% from 'container_open.html.twig' import container_open as container_open %}
+{% from 'container_close.html.twig' import container_close as container_close %}
+{% from 'row_open.html.twig' import row_open as row_open %}
+{% from 'row_close.html.twig' import row_close as row_close %}
+{% from 'column_open.html.twig' import column_open as column_open %}
+{% from 'column_close.html.twig' import column_close as column_close %}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
 
-{{ shell.container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
+{{ container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
 	{% do action( 'maera/footer/content/ewa', 'footer', 'row' ) %}
 	{% do action( 'maera/footer/content' ) %}
 
@@ -22,13 +28,13 @@
 		{% set blank = null %}
 	{% endif %}
 
-	{{ shell.container_open( 'div', 'footer-copyright' ) }}
-		{{ shell.row_open( 'div' ) }}
-			{{ shell.column_open( 'div', 'large', 'copyright-bar' ) }}
+	{{ container_open( 'div', 'footer-copyright' ) }}
+		{{ row_open( 'div' ) }}
+			{{ column_open( 'div', 'large', 'copyright-bar' ) }}
 				{{ theme_mods.footer_text|replace({'[year]': now|date('Y') ,'[sitename]': bloginfo('name') }) }}
-			{{ shell.column_close( 'div' ) }}
-			{{ shell.clearfix() }}
-		{{ shell.row_close( 'div' ) }}
-	{{ shell.container_close( 'div' ) }}
+			{{ column_close( 'div' ) }}
+			{{ clearfix() }}
+		{{ row_close( 'div' ) }}
+	{{ container_close( 'div' ) }}
 
-{{ shell.container_close( 'div' ) }}
+{{ container_close( 'div' ) }}

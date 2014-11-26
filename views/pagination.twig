@@ -1,11 +1,10 @@
 {#<?php#}
-{% import 'shell.html.twig' as shell %}
-
+{% from 'icon.html.twig' import icon as icon %}
 <ul class="pager" itemprop="pagination">
 	{% if pagination.prev %}
 		<li class="previous">
 			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">
-				{{ shell.icon('chevron-left') }} {{ __( 'Previous', 'maera_bootstrap' ) }}
+				{{ icon('chevron-left') }} {{ __( 'Previous', 'maera_bootstrap' ) }}
 			</a>
 		</li>
 	{% endif %}
@@ -13,7 +12,7 @@
 	{% if pagination.next %}
 		<li class="next">
 			<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">
-				{{ __( 'Next', 'maera_bootstrap' ) }} {{ shell.icon('chevron-right') }}
+				{{ __( 'Next', 'maera_bootstrap' ) }} {{ icon('chevron-right') }}
 			</a>
 		</li>
 	{% endif %}
