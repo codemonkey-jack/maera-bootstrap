@@ -1013,16 +1013,6 @@ function maera_customizer_settings( $controls ) {
 	//-------------------------------------------------
 
 	$controls[] = array(
-		'type'     => 'checkbox',
-		'setting'  => 'retina_toggle',
-		'label'    => __( 'Enable Retina mode', 'maera_bootstrap' ),
-		'description' => __( 'When checked, your site\'s featured images will be retina ready. Requires images to be uploaded at 2x the typical size desired. (uses retina.js) Default: On', 'maera_bootstrap' ),
-		'section'  => 'advanced',
-		'priority' => 1,
-		'default'  => 1,
-	);
-
-	$controls[] = array(
 		'type'     => 'slider',
 		'setting'  => 'border_radius',
 		'label'    => __( 'Border-Radius', 'maera_bootstrap' ),
