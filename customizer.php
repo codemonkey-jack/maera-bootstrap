@@ -81,16 +81,6 @@ function maera_customizer_settings( $controls ) {
 	//-------------------------------------------------
 
 	$controls[] = array(
-		'type'        => 'image',
-		'setting'     => 'logo',
-		'label'       => __( 'Logo', 'maera_bootstrap' ),
-		'subtitle' => __( 'Upload your site\'s logo', 'maera_bootstrap' ),
-		'section'     => 'branding',
-		'priority'    => 10,
-		'default'     => null
-	);
-
-	$controls[] = array(
 		'type'     => 'radio',
 		'mode'     => 'buttonset',
 		'setting'  => 'widgets_mode',
