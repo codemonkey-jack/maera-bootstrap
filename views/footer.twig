@@ -1,4 +1,6 @@
 {#<?php#}
+{% import 'shell.html.twig' as shell %}
+
 {{ shell.container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
 	{% do action( 'maera/footer/content/ewa', 'footer', 'row' ) %}
 	{% do action( 'maera/footer/content' ) %}
