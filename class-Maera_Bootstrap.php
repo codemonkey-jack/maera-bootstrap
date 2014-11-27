@@ -56,7 +56,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Excerpt
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
 			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10, 2 );
-			add_filter( 'body_class', array( $this, 'body_class' ) );
 
 			add_filter( 'maera/image/display', array( $this, 'disable_feat_images_ppt' ), 99 );
 
@@ -110,15 +109,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$plugins = new Maera_Required_Plugins( $plugins );
 
 		}
-
-		/**
-		 * Add the 'bootstrap' class to the body
-		 */
-		function body_class( $classes ) {
-			$classes[] = 'bootstrap';
-			return $classes;
-		}
-
 
 		/**
 		 * Register all scripts and additional stylesheets (if necessary)

@@ -294,8 +294,11 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			$navbar_position = get_theme_mod( 'navbar_position', 'normal' );
 			$classes[] = 'body-nav-' . $navbar_position;
+			// Add the 'bootstrap' class
+			$classes[] = 'bootstrap';
 
 			return $classes;
+
 		}
 
 
