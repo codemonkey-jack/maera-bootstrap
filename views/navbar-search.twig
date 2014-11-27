@@ -1,0 +1,8 @@
+$navbar_search = get_theme_mod( 'navbar_search' );
+
+{% if theme_mods.navbar_search == 1 %}
+	<form role="search" method="get" id="searchform" class="form-search navbar-right navbar-form" action="{{ site.link }}">
+		<label class="hide" for="s">{{ __('Search for:', 'maera_bootstrap') }}</label>
+		<input type="text" value="{% if function('is_search') %}{{ function('get_search_query') }}" name="s" id="s" class="form-control search-query" placeholder="{{ __('Search', 'maera_bootstrap') }} {{ site.name }}">
+	</form>
+{% endif %}

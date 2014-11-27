@@ -15,8 +15,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			add_action( 'maera/header/inside/begin', array( $this, 'social_links_navbar_content' ), 10 );
 			add_action( 'maera/sidebar/inside/end', array( $this, 'social_links_navbar_content' ), 10 );
 			add_filter( 'maera/header/menu/class', array( $this, 'navbar_links_alignment' ) );
-			add_action( 'maera/header/inside/begin', array( $this, 'navbar_search' ), 5 );
-			add_action( 'maera/sidebar/inside/begin', array( $this, 'navbar_search' ), 5 );
 
 			// Breadcrumbs
 			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
@@ -347,20 +345,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 		}
 
-
-		/**
-		 * Include the NavBar Search
-		 */
-		function navbar_search() {
-			$navbar_search = get_theme_mod( 'navbar_search' );
-
-			if ( $navbar_search == 1 ) { ?>
-				<form role="search" method="get" id="searchform" class="form-search navbar-right navbar-form" action="<?php echo home_url('/'); ?>">
-					<label class="hide" for="s"><?php _e('Search for:', 'maera_bootstrap'); ?></label>
-					<input type="text" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="form-control search-query" placeholder="<?php _e('Search', 'maera_bootstrap'); ?> <?php bloginfo('name'); ?>">
-				</form>
-			<?php }
-		}
 
 		/**
 		* Build the social links

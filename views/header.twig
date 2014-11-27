@@ -25,6 +25,8 @@
 
 				<div class="sidebar-header">{% include 'navbar-brand.twig' %}</div>
 
+				{% include 'navbar-search.twig' %}
+
 				{% do action( 'maera/sidebar/inside/begin' ) %}
 
 				<ul class="{{ 'nav'|apply_filters('maera/sidebar/menu/class') }}">
@@ -114,6 +116,8 @@
 			{% do action( 'maera/header/main/before' ) %}
 
 			<nav class="nav-main navbar-collapse collapse" role="navigation">
+
+				{% include 'navbar-search.twig' %}
 
 				{% do action( 'maera/header/inside/begin' ) %}
 
