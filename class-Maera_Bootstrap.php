@@ -60,6 +60,8 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			add_filter( 'maera/image/display', array( $this, 'disable_feat_images_ppt' ), 99 );
 
+			add_action( 'wp_footer', array( $this, 'custom_js' ) );
+
 		}
 
 
@@ -124,6 +126,19 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
 			wp_enqueue_style( 'bootstrap-accessibility' );
+
+		}
+
+		/**
+		 * Implement the custom js field output and place it to the footer.
+		 */
+		function custom_js() {
+
+			$js = get_theme_mod( 'js', '' );
+
+			if ( ! empty( $js ) ) {
+				echo '<script>' . $js . '</script>';
+			}
 
 		}
 
