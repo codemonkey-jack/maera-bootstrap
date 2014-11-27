@@ -22,7 +22,7 @@ class Maera_Bootstrap_Compiler {
 		// Instantianate the compiler and pass the shell's properties to it
 		$compiler = new Pre_Processors_Compiler( array(
 			'compiler'     => 'less',
-			'minimize_css' => false,
+			'minimize_css' => ( 1 == get_theme_mod( 'minimize_css' ) ) ? true : false,
 			'uname'        => 'maera',
 		) );
 
