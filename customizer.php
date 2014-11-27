@@ -103,16 +103,6 @@ class Maera_Bootstrap_Customizer {
 	function settings_advanced( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'checkbox',
-			'setting'  => 'wai_aria',
-			'label'    => __( 'Enable accessibility scripts', 'maera_bootstrap' ),
-			'section'  => 'advanced',
-			'subtitle' => __( 'When enabled, paypal\'s bootstrap-accessibility plugin is loaded', 'maera_bootstrap' ),
-			'default'  => 1,
-			'priority' => 19,
-		);
-
-		$controls[] = array(
 			'type'     => 'textarea',
 			'setting'  => 'css',
 			'label'    => __( 'Custom CSS', 'maera_bootstrap' ),
