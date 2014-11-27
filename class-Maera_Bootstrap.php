@@ -31,6 +31,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Images.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
 			global $bs_structure;
