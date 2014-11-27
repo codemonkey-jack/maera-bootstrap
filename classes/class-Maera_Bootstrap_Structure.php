@@ -16,9 +16,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			add_action( 'maera/sidebar/inside/end', array( $this, 'social_links_navbar_content' ), 10 );
 			add_filter( 'maera/header/menu/class', array( $this, 'navbar_links_alignment' ) );
 
-			// Breadcrumbs
-			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
-
 			add_filter( 'maera/header/class', array( $this, 'navbar_positioning_class' ) );
 
 			add_filter( 'body_class', array( $this, 'body_class' ) );
@@ -346,38 +343,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			$classes .= ( 'fixed-top' == $position || 'fixed-bottom' == $position ) ? ' navbar-' . $position : ' navbar-static-top';
 
 			return $classes;
-
-		}
-
-
-		/**
-		 * Configure and initialize the Breadcrumbs
-		 */
-		function breadcrumbs() {
-
-			$breadcrumbs = get_theme_mod( 'breadcrumbs', 0 );
-
-			if ( 0 != $breadcrumbs && ! is_home() && ! is_front_page() ) {
-
-				$args = array(
-					'container'       => 'ol',
-					'separator'       => '</li><li>',
-					'before'          => '<li>',
-					'after'           => '</li>',
-					'show_on_front'   => true,
-					'network'         => false,
-					'show_title'      => true,
-					'show_browse'     => true,
-					'echo'            => true,
-					'labels'          => array(
-						'browse'      => '',
-						'home'        => '<i class="el-icon-home"></i>',
-					),
-				);
-
-				maera_breadcrumb_trail( $args );
-
-			}
 
 		}
 
