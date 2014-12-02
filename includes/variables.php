@@ -352,7 +352,7 @@ function maera_bootstrap_get_variables() {
 	'jumbotron-color'         => 'inherit',
 	'jumbotron-bg'            => '#' . $jumbotron_obj->toHex(),
 	'jumbotron-heading-color' => 'inherit',
-	'jumbotron-font-size'     => 'ceil((@font-size-base * 1.5))',
+	'jumbotron-font-size'     => get_theme_mod( 'font_jumbotron_size', 20 ),
 
 	'state-success-text'   => '@brand-success',
 	'state-success-bg'     => 'mix(@body-bg, @brand-success, 70%)',
