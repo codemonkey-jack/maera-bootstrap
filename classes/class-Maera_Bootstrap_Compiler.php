@@ -85,7 +85,42 @@ class Maera_Bootstrap_Compiler {
 
 		}
 
-		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins.less' );
+		// Utilities
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/hide-text.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/opacity.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/image.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/labels.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/reset-filter.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/resize.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/responsive-visibility.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/size.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/tab-focus.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/text-emphasis.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/text-overflow.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/vendor-prefixes.less' );
+
+		// Components
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/alerts.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/buttons.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/panels.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/pagination.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/list-group.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/nav-divider.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/forms.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/progress-bar.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/table-row.less' );
+
+		// Skins
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/background-variant.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/border-radius.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/gradients.less' );
+
+		// Layout
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/clearfix.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/center-block.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/nav-vertical-align.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/grid-framework.less' );
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/grid.less' );
 
 		// Reset
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/normalize.less' );

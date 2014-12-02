@@ -66,11 +66,12 @@ function maera_bootstrap_get_variables() {
 	$font_size_base = get_theme_mod( 'font_base_size', 14 ) . 'px';
 
 	$variables = array(
-	'gray-darker'  => ( 0.4 < $body_lum ) ? 'lighten(#000, 13.5%)' : 'darken(#fff, 13.5%)',
-	'gray-dark'    => ( 0.4 < $body_lum ) ? 'lighten(#000, 20%)' : 'darken(#fff, 20%)',
-	'gray'         => ( 0.4 < $body_lum ) ? 'lighten(#000, 33.5%)' : 'darken(#fff, 33.5%)',
-	'gray-light'   => ( 0.4 < $body_lum ) ? 'lighten(#000, 60%)' : 'darken(#fff, 60%)',
-	'gray-lighter' => ( 0.4 < $body_lum ) ? 'lighten(#000, 93.5%)' : 'darken(#fff, 93.5%)',
+	'gray-base'    => $body_bg,
+	'gray-darker'  => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 13.5%)' : 'darken(' . $body_bg . ', 13.5%)',
+	'gray-dark'    => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 20%)' : 'darken(' . $body_bg . ', 20%)',
+	'gray'         => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 33.5%)' : 'darken(' . $body_bg . ', 33.5%)',
+	'gray-light'   => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 60%)' : 'darken(' . $body_bg . ', 60%)',
+	'gray-lighter' => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 93.5%)' : 'darken(' . $body_bg . ', 93.5%)',
 
 	'brand-primary' => '#' . $b_p_obj->getReadableContrastingColor(3)->toHex(),
 	'brand-success' => '#' . $color_success->getReadableContrastingColor(3)->toHex(),
@@ -82,6 +83,7 @@ function maera_bootstrap_get_variables() {
 	'text-color'       => '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex(),
 	'link-color'       => '#' . $b_p_obj->getReadableContrastingColor( $body_obj, 2 )->toHex(),
 	'link-hover-color' => ( 0.3 < $brand_primary_lum ) ? 'darken(@link-color, 15%)' : 'lighten(@link-color, 15%)',
+	'link-hover-decoration' => 'underline',
 
 	'font-family-sans-serif' => get_theme_mod( 'font_base_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' ),
 	'font-family-serif'      => 'Georgia, "Times New Roman", Times, serif',
@@ -179,6 +181,8 @@ function maera_bootstrap_get_variables() {
 	'input-color'         => '@gray',
 	'input-border'        => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 20%)' : 'lighten(@body-bg, 20%)',
 	'input-border-radius' => '@border-radius-base',
+	'input-border-radius-large' => 'border-radius-large',
+	'input-border-radius-small' => 'border-radius-small',
 	'input-border-focus'  => ( 0.6 < $brand_primary_lum ) ? 'lighten(@brand-primary, 10%)' : 'darken(@brand-primary, 10%)',
 
 	'input-color-placeholder' => '@gray-light',
@@ -192,6 +196,8 @@ function maera_bootstrap_get_variables() {
 
 	'input-group-addon-bg'           => '@gray-lighter',
 	'input-group-addon-border-color' => '@input-border',
+
+	'cursor-disabled' => 'not-allowed',
 
 	'dropdown-bg'              => '@body-bg',
 	'dropdown-border'          => 'rgba(0,0,0,.15)',
@@ -211,11 +217,10 @@ function maera_bootstrap_get_variables() {
 
 	'zindex-navbar'           => '1000',
 	'zindex-dropdown'         => '1000',
-	'zindex-popover'          => '1010',
-	'zindex-tooltip'          => '1030',
+	'zindex-popover'          => '1060',
+	'zindex-tooltip'          => '1070',
 	'zindex-navbar-fixed'     => '1030',
-	'zindex-modal-background' => '1040',
-	'zindex-modal'            => '1050',
+	'zindex-modal'            => '1040',
 
 	'screen-xs'     => '480px',
 	'screen-xs-min' => '@screen-xs',
@@ -278,11 +283,11 @@ function maera_bootstrap_get_variables() {
 	'navbar-default-toggle-icon-bar-bg'  => '#' . $nav_col_obj->getGrayscaleContrastingColor(7)->toHex(),
 	'navbar-default-toggle-border-color' => '@navbar-default-toggle-hover-bg',
 
-	'navbar-inverse-color'  => '@gray-light',
+	'navbar-inverse-color'  => 'lighten(@gray-light, 15%)',
 	'navbar-inverse-bg'     => '#222',
 	'navbar-inverse-border' => 'darken(@navbar-inverse-bg, 10%)',
 
-	'navbar-inverse-link-color'          => '@gray-light',
+	'navbar-inverse-link-color'          => 'lighten(@gray-light, 15%)',
 	'navbar-inverse-link-hover-color'    => '@body-bg',
 	'navbar-inverse-link-hover-bg'       => 'transparent',
 	'navbar-inverse-link-active-color'   => '@navbar-inverse-link-hover-color',
@@ -303,8 +308,6 @@ function maera_bootstrap_get_variables() {
 
 	'nav-disabled-link-color'       => '@gray-light',
 	'nav-disabled-link-hover-color' => '@gray-light',
-
-	'nav-open-link-hover-color' => '@body-bg',
 
 	'nav-tabs-border-color' => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 13.35%)' : 'lighten(@body-bg, 13.35%)',
 
@@ -386,7 +389,7 @@ function maera_bootstrap_get_variables() {
 	'popover-title-bg' => 'darken(@popover-bg, 3%)',
 
 	'popover-arrow-width' => '10px',
-	'popover-arrow-color' => '@body-bg',
+	'popover-arrow-color' => '@popover-bg',
 
 	'popover-arrow-outer-width'          => '(@popover-arrow-width + 1)',
 	'popover-arrow-outer-color'          => 'fadein(@popover-border-color, 5%)',
@@ -402,7 +405,7 @@ function maera_bootstrap_get_variables() {
 	'label-color'            => '@body-bg',
 	'label-link-hover-color' => '@body-bg',
 
-	'modal-inner-padding' => round( get_theme_mod( 'padding_base', 6 ) * ( 20/6 ) ) . 'px',
+	'modal-inner-padding' => round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
 
 	'modal-title-padding'     => round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
 	'modal-title-line-height' => '@line-height-base',
@@ -443,6 +446,8 @@ function maera_bootstrap_get_variables() {
 	'progress-bg'        => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 4%)' : 'lighten(@body-bg, 4%)',
 	'progress-bar-color' => '@body-bg',
 
+	'progress-border-radius' => 'border-radius-base',
+
 	'progress-bar-bg'         => '@brand-primary',
 	'progress-bar-success-bg' => '@brand-success',
 	'progress-bar-warning-bg' => '@brand-warning',
@@ -459,12 +464,19 @@ function maera_bootstrap_get_variables() {
 	'list-group-active-border'     => '@list-group-active-bg',
 	'list-group-active-text-color' => 'lighten(@list-group-active-bg, 40%)',
 
+	'list-group-disabled-color'      => 'gray-light',
+	'list-group-disabled-bg'         => 'gray-lighter',
+	'list-group-disabled-text-color' => 'list-group-disabled-color',
+
 	'list-group-link-color'         => '@gray',
+	'list-group-link-hover-color'   => '@list-group-link-color',
 	'list-group-link-heading-color' => '@gray-dark',
 
-	'panel-bg'            => '@body-bg',
-	'panel-body-padding'  => round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
-	'panel-border-radius' => '@border-radius-base',
+	'panel-bg'              => '@body-bg',
+	'panel-body-padding'    => round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
+	'panel-heading-padding' => round( get_theme_mod( 'padding_base', 6 ) * ( 10/6 ) ) . 'px ' . round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
+	'panel-footer-padding'  => '@panel-heading-padding',
+	'panel-border-radius'   => '@border-radius-base',
 
 	'panel-inner-border' => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 13.35%)' : 'lighten(@body-bg, 13.35%)',
 	'panel-footer-bg'    => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 4%)' : 'lighten(@body-bg, 4%)',
@@ -549,6 +561,8 @@ function maera_bootstrap_get_variables() {
 	'pre-border-color'          => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 20%)' : 'lighten(@body-bg, 20%)',
 	'pre-scrollable-max-height' => '340px',
 
+	'component-offset-horizontal' => '180px',
+
 	'text-muted'               => '@gray-light',
 	'abbr-border-color'        => '@gray-light',
 	'headings-small-color'     => '@gray-light',
@@ -559,7 +573,8 @@ function maera_bootstrap_get_variables() {
 
 	'hr-border' => '@gray-lighter',
 
-	'component-offset-horizontal' => '180px',
+	'dl-horizontal-offset' => '@component-offset-horizontal',
+
 
 	'elusiveWebfontPath' => '"' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/fonts/"',
 	);
