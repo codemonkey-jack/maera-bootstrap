@@ -35,9 +35,6 @@ class Maera_Bootstrap_Customizer {
 	 */
 	function customizer_sections( $wp_customize ) {
 
-		// Remove the "Navigation" menu so that we may add it manually using a different priority
-		$wp_customize->remove_section( 'nav' );
-
 		$panels = array(
 			'structure'   => array( 'title' => __( 'Structure', 'maera_bootstrap' ),   'description' => __( 'Set the structure options', 'maera_bootstrap' ),       'priority' => 10 ),
 			'backgrounds' => array( 'title' => __( 'Backgrounds', 'maera_bootstrap' ), 'description' => __( 'Set the site backgrounds', 'maera_bootstrap' ),        'priority' => 20 ),
@@ -52,7 +49,6 @@ class Maera_Bootstrap_Customizer {
 			'layout'          => array( 'title' => __( 'Layout', 'maera_bootstrap' ),          'priority' => 15, 'panel' => 'structure' ),
 			'layout_advanced' => array( 'title' => __( 'Advanced Layout', 'maera_bootstrap' ), 'priority' => 20, 'panel' => 'structure' ),
 			'structure_jumbo' => array( 'title' => __( 'Jumbotron', 'maera_bootstrap' ),       'priority' => 30, 'panel' => 'structure' ),
-			'nav'             => array( 'title' => __( 'Navigation', 'maera_bootstrap' ),      'priority' => 35, 'panel' => 'structure' ),
 
 			'html_bg'    => array( 'title' => __( 'HTML', 'maera_bootstrap' ),         'priority' => 10, 'panel' => 'backgrounds' ),
 			'body_bg'    => array( 'title' => __( 'Body', 'maera_bootstrap' ),         'priority' => 15, 'panel' => 'backgrounds' ),
