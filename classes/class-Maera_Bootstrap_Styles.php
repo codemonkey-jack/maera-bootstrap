@@ -19,6 +19,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 			// Styles
 			add_filter( 'maera/styles', array( $this, 'header_css' ) );
 			add_filter( 'maera/styles', array( $this, 'layout_css' ) );
+			add_filter( 'maera/styles', array( $this, 'navbar_css' ) );
 
 			add_action( 'wp_print_styles', array( $this, 'google_font' ) );
 
@@ -68,6 +69,20 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 				$styles .= $el . ',' . $el . ' a,' . $el . ' h1,' . $el . ' h2,' . $el . ' h3,' . $el . ' h4,' . $el . ' h5,' . $el . ' h6{ color:' . '#222222' . ';}';
 
 			}
+
+			return $styles;
+
+		}
+
+		/**
+		 * Navbar additional CSS
+		 */
+		function navbar_css( $styles ) {
+
+			$font_size = get_theme_mod( 'font_menus_size', 14 );
+			$styles .= ( 14 != $font_size ) ? '.nav-main{font-size:' . $font_size . 'px;}' : '';
+
+			return $styles;
 
 		}
 
