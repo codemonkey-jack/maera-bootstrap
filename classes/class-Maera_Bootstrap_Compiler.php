@@ -142,10 +142,6 @@ class Maera_Bootstrap_Compiler {
 		$less = get_theme_mod( 'less', '' );
 		$content .= ( ! empty( $less ) ) ? $less : '';
 
-		if ( 'rem' == get_theme_mod( 'font_size_units' ) ) {
-			$content .= '.form-control { height: auto; }';
-		}
-
 		$body_obj = new Jetpack_Color( get_theme_mod( 'body_bg_color', '#ffffff' ) );
 		$b_p_obj  = new Jetpack_Color( get_theme_mod( 'color_brand_primary', '#428bca' ) );
 
@@ -159,10 +155,10 @@ class Maera_Bootstrap_Compiler {
 		$font_base_color     = '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex();
 
 		$font_base_weight    = get_theme_mod( 'font_base_weight', '#333333' );
-		$font_base_size      = get_theme_mod( 'font_base_size', ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5 );
+		$font_base_size      = get_theme_mod( 'font_base_size', 14 );
 		$font_base_height    = get_theme_mod( 'font_base_height', 1.4 );
 
-		$content .= 'body {font-family:' . $font_base_family . ';color:' . $font_base_color . ';font-weight:' . $font_base_weight . ';font-size:' . $font_base_size . get_theme_mod( 'font_size_units', 'px' ) . ';line-height:' . $font_base_height . ';}';
+		$content .= 'body {font-family:' . $font_base_family . ';color:' . $font_base_color . ';font-weight:' . $font_base_weight . ';font-size:' . $font_base_size . 'px;line-height:' . $font_base_height . ';}';
 
 		// Headers font
 		$headers_font_family = get_theme_mod( 'headers_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );

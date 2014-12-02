@@ -63,13 +63,7 @@ function maera_bootstrap_get_variables() {
 
 	$grid_float_breakpoint = ( $gfb == 'screen-lg-min' ) ? '0 !important' : $grid_float_breakpoint;
 
-	$_font_size = get_theme_mod( 'font_base_size', ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5 );
-	if ( 'rem' == get_theme_mod( 'font_size_units', 'px' ) ) {
-		$_font_size = ( 5 < $_font_size ) ? 1.5 : $_font_size;
-	} else {
-		$_font_size = ( 10 > $_font_size ) ? 14 : $_font_size;
-	}
-	$font_size_base = $_font_size . get_theme_mod( 'font_size_units', 'px' );
+	$font_size_base = get_theme_mod( 'font_base_size', 14 ) . 'px';
 
 	$variables = array(
 	'gray-darker'  => ( 0.4 < $body_lum ) ? 'lighten(#000, 13.5%)' : 'darken(#fff, 13.5%)',

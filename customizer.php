@@ -475,12 +475,12 @@ class Maera_Bootstrap_Customizer {
 			'setting'  => 'font_menus_size',
 			'subtitle' => __( 'Font Size', 'maera_bootstrap' ),
 			'section'  => 'typo_nav',
-			'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5,
+			'default'  => 14,
 			'priority' => 44,
 			'choices'  => array(
-				'min'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 10 : 0.5,
-				'max'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 30 : 5,
-				'step' => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 1 : 0.01,
+				'min'  => 10,
+				'max'  => 30,
+				'step' => 1,
 			),
 		);
 
@@ -585,21 +585,6 @@ class Maera_Bootstrap_Customizer {
 	function settings_typo_base( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
-			'setting'  => 'font_size_units',
-			'label'    => __( 'Font-size units', 'maera_bootstrap' ),
-			'section'  => 'typo_base',
-			'subtitle' => __( 'Choose if you want to set font sizes as pixels or ems. This will apply to all settings. Please note that if you change this setting you will have to save and refresh this page. Once you do, please review ALL your font-size settings and set them accordingly.', 'maera_bootstrap' ),
-			'default'  => 'px',
-			'choices'  => array(
-				'px'   => 'Pixels',
-				'rem'  => '(r)Ems',
-			),
-			'priority' => 18,
-		);
-
-		$controls[] = array(
 			'type'     => 'select',
 			'setting'  => 'font_base_family',
 			'label'    => __( 'Base font', 'maera_bootstrap' ),
@@ -639,12 +624,12 @@ class Maera_Bootstrap_Customizer {
 			'setting'  => 'font_base_size',
 			'label'    => __( 'Base Font Size', 'maera_bootstrap' ),
 			'section'  => 'typo_base',
-			'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 14 : 1.5,
+			'default'  => 14,
 			'priority' => 25,
 			'choices'  => array(
-				'min'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 7 : 0.1,
-				'max'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 70 : 7,
-				'step' => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 1 : 0.01,
+				'min'  => 7,
+				'max'  => 48,
+				'step' => 1,
 			),
 		);
 
@@ -977,12 +962,12 @@ class Maera_Bootstrap_Customizer {
 			'setting'  => 'font_jumbotron_size',
 			'subtitle' => __( 'Font Size', 'maera_bootstrap' ),
 			'section'  => 'typo_jumbo',
-			'default'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 20 : 1.8,
+			'default'  => 20,
 			'priority' => 24,
 			'choices'  => array(
-				'min'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 7 : 0.1,
-				'max'  => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 70 : 7,
-				'step' => ( 'px' == get_theme_mod( 'font_size_units', 'px' ) ) ? 1 : 0.01,
+				'min'  => 7,
+				'max'  => 48,
+				'step' => 1,
 			),
 		);
 
