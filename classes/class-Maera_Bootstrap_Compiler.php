@@ -205,12 +205,12 @@ class Maera_Bootstrap_Compiler {
 		$content .= 'line-height: ' . get_theme_mod( 'font_headers_height', 1.1 ) . ';';
 		$content .= '}';
 
-		$content .= 'h1, .h1 { font-size: ' . ( 260 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
-		$content .= 'h2, .h2 { font-size: ' . ( 215 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
-		$content .= 'h3, .h3 { font-size: ' . ( 170 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
-		$content .= 'h4, .h4 { font-size: ' . ( 110 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
-		$content .= 'h5, .h5 { font-size: ' . ( 100 / 100 * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
-		$content .= 'h6, .h6 { font-size: ' . ( 85 / 100  * get_theme_mod( 'font_headers_size', 1 ) ) . '; }';
+		$content .= 'h1, .h1 { font-size: ' . ( 2.6  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
+		$content .= 'h2, .h2 { font-size: ' . ( 2.15 * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
+		$content .= 'h3, .h3 { font-size: ' . ( 1.7  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
+		$content .= 'h4, .h4 { font-size: ' . ( 1.1  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
+		$content .= 'h5, .h5 { font-size: ' . ( 1    * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
+		$content .= 'h6, .h6 { font-size: ' . ( .85  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
 
 		// Navigation font
 		$navbar_font_family = get_theme_mod( 'font_menus_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
