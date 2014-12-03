@@ -2,14 +2,14 @@
 	{% if meta == 'author' %}
 		<span class="post-meta-element author">
 			<span class="author vcard">
-				<i class="el-icon-user icon"></i>
+				<i class="glyphicon glyphicon-user"></i>
 				<a class="url fn n" href="{{ post.author.link }}" title="{{ post.author.name }}" rel="author">{{ post.author.name }}</a>
 			</span>
 		</span>
 	{% elseif meta == 'sticky' %}
 		{% if function('is_sticky') %}
 			<span class="post-meta-element sticky">
-				<i class="el-icon-flag icon"></i>
+				<i class="glyphicon glyphicon-flag"></i>
 				{{ __( 'Sticky', 'maera_bootstrap' ) }}
 			</span>
 		{% endif %}
@@ -18,7 +18,7 @@
 		{% else %}
 			<span class="post-meta-element date">
 				<span class="entry-date">
-					<i class="el-icon-calendar icon"></i>
+					<i class="glyphicon glyphicon-calendar"></i>
 					<a href="{{ post.link }}" rel="bookmark"><time class="entry-date" datetime="{{ post.post_date|date }}">{{ post.post_date|date }}</time></a>
 				</span>
 			</span>
@@ -26,9 +26,10 @@
 	{% elseif meta == 'category' %}
 		{% if post.terms('category') %}
 			<span class="post-meta-element category">
-				<i class="el-icon-folder-open icon"></i>
+				<i class="glyphicon glyphicon-folder-open"></i>
+				<ul class="list-inline">
 					{% for category in post.terms('category') %}
-						<a href="{{ category.link }}">{{ category.name }}</a>
+						<li><a href="{{ category.link }}">{{ category.name }}</a></li>
 					{% endfor %}
 				</ul>
 			</span>
@@ -36,7 +37,7 @@
 	{% elseif meta == 'tags' %}
 		{% if post.terms('tags') %}
 			<span class="post-meta-element tags">
-				<i class="el-icon-folder-open icon"></i>
+				<i class="glyphicon glyphicon-folder-open"></i>
 					{% for tag in post.terms('tags') %}
 						<a href="{{ tag.link }}">{{ tag.name }}</a>
 					{% endfor %}
