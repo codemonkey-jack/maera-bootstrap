@@ -66,7 +66,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 				$bg = kirki_get_rgba( $color, $opacity );
 			}
 
-			$styles = 'body.bootstrap #wrap-main-section{background:' . $bg . ';}';
+			$styles .= 'body.bootstrap #wrap-main-section{background:' . $bg . ';}';
 
 			return $styles;
 
@@ -100,7 +100,17 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 		function navbar_css( $styles ) {
 
 			$font_size = get_theme_mod( 'font_menus_size', 14 );
+
+			$color   = get_theme_mod( 'navbar_bg', '#f8f8f8' );
+			$opacity = get_theme_mod( 'navbar_bg_opacity', 100 );
+
+			$bg = $color;
+			if ( 100 != $opacity && function_exists( 'kirki_get_rgba' ) ) {
+				$bg = kirki_get_rgba( $color, $opacity );
+			}
+
 			$styles .= ( 14 != $font_size ) ? '.nav-main{font-size:' . $font_size . 'px;}' : '';
+			$styles .= '#banner-header{background:' . $bg . ';}';
 
 			return $styles;
 
