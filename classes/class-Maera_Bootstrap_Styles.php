@@ -60,6 +60,8 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 
 			$color   = get_theme_mod( 'body_bg_color', '#ffffff' );
 			$opacity = get_theme_mod( 'body_bg_opacity', 100 );
+			$navbar_position = get_theme_mod( 'navbar_position', 'normal' );
+
 
 			$bg = $color;
 			if ( 100 != $opacity && function_exists( 'kirki_get_rgba' ) ) {
@@ -67,6 +69,11 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 			}
 
 			$styles .= 'body.bootstrap #wrap-main-section{background:' . $bg . ';}';
+
+			if ( $navbar_position == 'fixed-top' ) {
+				$navbar_height = get_theme_mod( 'navbar_height', 50 );
+				$styles .= 'body.body-nav-fixed-top{padding-top:' . $navbar_height . 'px;}';				
+			}
 
 			return $styles;
 
