@@ -671,17 +671,6 @@ class Maera_Bootstrap_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'multicheck',
-			'setting'  => 'font_headers_google_subsets',
-			'label'    => __( 'Google-Font subsets', 'maera_bootstrap' ),
-			'description' => __( 'The subsets used from Google\'s API.', 'maera_bootstrap' ),
-			'section'  => 'typo_headers',
-			'default'  => 'latin',
-			'priority' => 32,
-			'choices'  => Kirki_Fonts::get_google_font_subsets(),
-		);
-
-		$controls[] = array(
 			'type'     => 'slider',
 			'setting'  => 'font_headers_weight',
 			'label'    => __( 'Font Weight.', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . 400,
