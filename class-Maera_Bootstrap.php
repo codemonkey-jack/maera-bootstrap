@@ -127,6 +127,8 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
 			wp_enqueue_style( 'bootstrap-accessibility' );
 
+			wp_enqueue_style( 'dashicons' );
+
 		}
 
 		/**

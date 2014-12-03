@@ -575,8 +575,6 @@ function maera_bootstrap_get_variables() {
 
 	'dl-horizontal-offset' => '@component-offset-horizontal',
 
-
-	'elusiveWebfontPath' => '"' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/fonts/"',
 	);
 
 	return $variables;
