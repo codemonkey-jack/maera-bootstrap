@@ -23,7 +23,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		/**
 		 * Return an array of the extra widget area regions
 		 */
-		function extra_widget_areas_array( $areas ) {
+		function extra_widget_areas_array( $areas = array() ) {
 
 			$areas['body_top'] = array(
 				'name'     => __( 'Body Top', 'maera_bootstrap' ),
