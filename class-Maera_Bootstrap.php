@@ -151,7 +151,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Get the layout we're using (sidebar arrangement).
 			$layout = apply_filters( 'maera/layout/modifier', get_theme_mod( 'layout', 1 ) );
 
-			If ( 0 == $layout ) {
+			if ( 0 == $layout ) {
 
 				$data['sidebar']['primary']   = null;
 				$data['sidebar']['secondary'] = null;
@@ -166,10 +166,14 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 				'id_submit'     => 'comment-submit',
 			);
 
+			$sidebar_secondary = Timber::get_widgets( 'sidebar_secondary' );
+
 			$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
 			$data['post_meta'] = Maera_Bootstrap_Structure::meta_elements();
 
 			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
+
+			$data['sidebar']['secondary'] = apply_filters( 'maera/sidebar/secondary', $sidebar_secondary );
 
 			return $data;
 		}

@@ -14,16 +14,17 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 
 			// Widgets
 			add_filter( 'maera/widgets/areas', array( $this, 'extra_widget_areas_array' ), 12 );
-			add_action( 'maera/widgets/class', array( $this, 'widgets_class' ) );
-			add_action( 'maera/widgets/title/before', array( $this, 'widgets_before_title' ) );
-			add_action( 'maera/widgets/title/after', array( $this, 'widgets_after_title' ) );
+			add_filter( 'maera/widgets/class', array( $this, 'widgets_class' ) );
+			add_filter( 'maera/widgets/title/before', array( $this, 'widgets_before_title' ) );
+			add_filter( 'maera/widgets/title/after', array( $this, 'widgets_after_title' ) );
+			add_action( 'widgets_init', array( $this, 'maera_secondary_sidebar' ) );
 		}
 
 
 		/**
 		 * Return an array of the extra widget area regions
 		 */
-		function extra_widget_areas_array( $areas ) {
+		function extra_widget_areas_array( $areas = array() ) {
 
 			$areas['body_top'] = array(
 				'name'     => __( 'Body Top', 'maera_bootstrap' ),
@@ -153,6 +154,25 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 				return '</h3>';
 			}
 
+		}
+
+		/**
+		 * Register secondary sidebar
+		 */
+		function maera_secondary_sidebar() {
+			global $maera_i18n;
+			$class        = apply_filters( 'maera/widgets/class', '' );
+			$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="widget-title">' );
+			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
+			// Sidebars
+			register_sidebar( array(
+				'name'          => $maera_i18n['secondarysidebar'],
+				'id'            => 'sidebar_secondary',
+				'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => $before_title,
+				'after_title'   => $after_title,
+			) );
 		}
 
 	}
