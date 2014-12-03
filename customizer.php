@@ -557,21 +557,26 @@ class Maera_Bootstrap_Customizer {
 	function settings_body_bg( $controls ) {
 
 		$controls[] = array(
-			'type'         => 'background',
-			'setting'      => 'body_bg',
-			'label'        => __( 'Body Background', 'maera_bootstrap' ),
+			'type'         => 'color',
+			'setting'      => 'body_bg_color',
+			'label'        => __( 'Background Color', 'maera_bootstrap' ),
 			'section'      => 'body_bg',
-			'default'      => array(
-				'color'    => '#ffffff',
-				'image'    => null,
-				'repeat'   => 'repeat',
-				'size'     => 'inherit',
-				'attach'   => 'inherit',
-				'position' => 'left-top',
-				'opacity'  => 100,
-			),
-			'priority' => 31,
-			'output' => 'body.bootstrap #wrap-main-section',
+			'default'      => '#ffffff',
+			'priority'     => 31,
+		);
+
+		$controls[] = array(
+			'type'         => 'slider',
+			'setting'      => 'body_bg_opacity',
+			'label'        => __( 'Opacity', 'maera_bootstrap' ),
+			'section'      => 'body_bg',
+			'default'      => 1,
+			'priority'     => 33,
+			'choices'      => array(
+				'min'  => 0,
+				'max'  => 100,
+				'step' => 1,
+			)
 		);
 
 		return $controls;

@@ -20,6 +20,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 			add_filter( 'maera/styles', array( $this, 'header_css' ) );
 			add_filter( 'maera/styles', array( $this, 'layout_css' ) );
 			add_filter( 'maera/styles', array( $this, 'navbar_css' ) );
+			add_filter( 'maera/styles', array( $this, 'body_css' ) );
 
 			add_action( 'wp_print_styles', array( $this, 'google_font' ) );
 
@@ -49,6 +50,25 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 
 			wp_register_style( 'maera_google_font', Kirki_Fonts::get_google_font_uri( $font_families, $font_weights, $font_subsets ) );
 	 		wp_enqueue_style( 'maera_google_font' );
+
+		}
+
+		/**
+		 * Body styles
+		 */
+		function body_css( $styles ) {
+
+			$color   = get_theme_mod( 'body_bg_color', '#ffffff' );
+			$opacity = get_theme_mod( 'body_bg_opacity', 100 );
+
+			$bg = $color;
+			if ( 100 != $opacity && function_exists( 'kirki_get_rgba' ) ) {
+				$bg = kirki_get_rgba( $color, $opacity );
+			}
+
+			$styles = 'body.bootstrap #wrap-main-section{background:' . $bg . ';}';
+
+			return $styles;
 
 		}
 
