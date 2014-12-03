@@ -31,6 +31,8 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			add_filter( 'maera/content_width', array( $this, 'content_width_px' ) );
 
+			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
+
 		}
 
 
@@ -346,10 +348,36 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 		}
 
+		/**
+		 * Configure and initialize the Breadcrumbs
+		 */
+		function breadcrumbs() {
+
+			$args = array(
+				'container'       => 'ol',
+				'separator'       => '</li><li>',
+				'before'          => '<li>',
+				'after'           => '</li>',
+				'show_on_front'   => false,
+				'network'         => false,
+				'show_title'      => true,
+				'show_browse'     => true,
+				'echo'            => true,
+				'labels'          => array(
+					'browse'      => '',
+					'home'        => '<i class="glyphicon glyphicon-home"></i>',
+				),
+			);
+
+			if ( function_exists( 'breadcrumb_trail' ) ) {
+				breadcrumb_trail( $args );
+			}
+
+		}
 
 		/**
-		* Build the social links
-		*/
+		 * Build the social links
+		 */
 		function social_links_builder( $before = '', $after = '', $separator = '' ) {
 
 			$social_links = array(
