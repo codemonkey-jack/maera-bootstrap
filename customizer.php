@@ -30,6 +30,21 @@ class Maera_Bootstrap_Customizer {
 		add_filter( 'kirki/controls', array( $this, 'settings_general' ) );
 
 	}
+
+	function layouts() {
+
+		$layouts = array(
+			0 => get_template_directory_uri() . '/assets/images/1c.png',
+			1 => get_template_directory_uri() . '/assets/images/2cr.png',
+			2 => get_template_directory_uri() . '/assets/images/2cl.png',
+			3 => get_template_directory_uri() . '/assets/images/3cl.png',
+			4 => get_template_directory_uri() . '/assets/images/3cr.png',
+			5 => get_template_directory_uri() . '/assets/images/3cm.png',
+		);
+
+		return $layouts;
+
+	}
 	/*
 	 * Create the sections
 	 */
@@ -144,15 +159,6 @@ class Maera_Bootstrap_Customizer {
 
 	function settings_layout( $controls ) {
 
-		$layouts = array(
-			0 => get_template_directory_uri() . '/assets/images/1c.png',
-			1 => get_template_directory_uri() . '/assets/images/2cr.png',
-			2 => get_template_directory_uri() . '/assets/images/2cl.png',
-			3 => get_template_directory_uri() . '/assets/images/3cl.png',
-			4 => get_template_directory_uri() . '/assets/images/3cr.png',
-			5 => get_template_directory_uri() . '/assets/images/3cm.png',
-		);
-
 		$controls[] = array(
 			'type'     => 'radio',
 			'mode'     => 'buttonset',
@@ -178,7 +184,7 @@ class Maera_Bootstrap_Customizer {
 			'section'  => 'layout',
 			'priority' => 3,
 			'default'  => 1,
-			'choices'  => $layouts,
+			'choices'  => $this->layouts(),
 		);
 
 		$controls[] = array(
@@ -319,7 +325,7 @@ class Maera_Bootstrap_Customizer {
 					'section'  => 'layout_advanced',
 					'priority' => 92,
 					'default'  => $layout,
-					'choices'  => $layouts,
+					'choices'  => $this->layouts(),
 				);
 			}
 		}
