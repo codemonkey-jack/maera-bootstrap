@@ -36,6 +36,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Timber.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Scripts.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Meta.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Layout.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
@@ -47,6 +48,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$bs_excerpt   = new Maera_BS_Excerpt();
 			$bs_timber    = new Maera_BS_Timber();
 			$bs_scripts   = new Maera_BS_Scripts();
+			$bs_layout    = new Maera_BS_Layout();
 
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
