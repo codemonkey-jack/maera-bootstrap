@@ -343,7 +343,6 @@ class Maera_Bootstrap_Customizer {
 			'section'  => 'nav',
 			'default'  => 'normal',
 			'choices'  => array(
-				'none'          => __( 'None', 'maera_bootstrap' ),
 				'normal'        => __( 'Normal', 'maera_bootstrap' ),
 				'full'          => __( 'Full-Width', 'maera_bootstrap' ),
 				'fixed-top'     => __( 'Fixed (top)', 'maera_bootstrap' ),

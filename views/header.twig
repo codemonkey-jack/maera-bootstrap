@@ -1,6 +1,5 @@
 {#<?php#}
-{% if theme_mods.navbar_position == 'none' %}
-{% elseif ( theme_mods.navbar_position == 'right-slide' or theme_mods.navbar_position == 'left-slide' ) %}
+{% if ( theme_mods.navbar_position == 'right-slide' or theme_mods.navbar_position == 'left-slide' ) %}
 
 	{% do action( 'maera/sidebar/before' ) %}
 		{% if theme_mods.navbar_position == 'right-slide' %}

@@ -435,7 +435,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 			$content = $before = $after = $separator = '';
 
 			$social_mode = get_theme_mod( 'navbar_social', 'off' );
-			$navbar_position = get_theme_mod( 'navbar_position', 'none' );
+			$navbar_position = get_theme_mod( 'navbar_position', 'normal' );
 
 			if ( 'inline' == $social_mode ) {
 				if ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) {
