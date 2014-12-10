@@ -674,7 +674,7 @@ class Maera_Bootstrap_Customizer {
 			'setting'  => 'font_headers_weight',
 			'label'    => __( 'Font Weight.', 'maera_bootstrap' ) . ' ' . __( 'Default: ', 'maera_bootstrap' ) . 400,
 			'section'  => 'typo_headers',
-			'default'  => 500,
+			'default'  => 400,
 			'priority' => 34,
 			'choices'  => array(
 				'min'  => 100,
