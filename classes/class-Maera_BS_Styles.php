@@ -1,11 +1,11 @@
 <?php
 
-if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
+if ( ! class_exists( 'Maera_BS_Styles' ) ) {
 
 	/**
 	* The Bootstrap Shell module
 	*/
-	class Maera_Bootstrap_Styles {
+	class Maera_BS_Styles {
 
 
 		/**
@@ -72,7 +72,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Styles' ) ) {
 
 			if ( $navbar_position == 'fixed-top' ) {
 				$navbar_height = get_theme_mod( 'navbar_height', 50 );
-				$styles .= 'body.body-nav-fixed-top{padding-top:' . $navbar_height . 'px;}';				
+				$styles .= 'body.body-nav-fixed-top{padding-top:' . $navbar_height . 'px;}';
 			}
 
 			return $styles;

@@ -28,40 +28,30 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Include other classes
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Styles.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Styles.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Images.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Timber.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Scripts.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Meta.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Layout.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
-			global $bs_structure;
 			$bs_structure = new Maera_Bootstrap_Structure();
-			global $bs_widgets;
 			$bs_widgets   = new Maera_Bootstrap_Widgets();
-			global $bs_styles;
-			$bs_styles    = new Maera_Bootstrap_Styles();
-			global $bs_conpiler;
+			$bs_styles    = new Maera_BS_Styles();
 			$bs_compiler  = new Maera_Bootstrap_Compiler();
-
-			$images = new Maera_Bootstrap_Images();
+			$bs_images    = new Maera_BS_Images();
+			$bs_excerpt   = new Maera_BS_Excerpt();
+			$bs_timber    = new Maera_BS_Timber();
+			$bs_scripts   = new Maera_BS_Scripts();
+			$bs_layout    = new Maera_BS_Layout();
 
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
-
-			// Enqueue the scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 110 );
-
-			// Add the shell Timber modifications
-			add_filter( 'timber_context', array( $this, 'timber_extras' ), 20 );
-
-			// Excerpt
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10, 2 );
-
-			add_filter( 'maera/image/display', array( $this, 'disable_feat_images_ppt' ), 99 );
-
-			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
 			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
 				1  => 'col-md-1',
@@ -125,127 +115,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			);
 
 			$plugins = new Maera_Required_Plugins( $plugins );
-
-		}
-
-		/**
-		 * Register all scripts and additional stylesheets (if necessary)
-		 */
-		function scripts() {
-
-			wp_register_script( 'bootstrap-min', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap.min.js', false, null, true  );
-			wp_enqueue_script( 'bootstrap-min' );
-
-			wp_register_script( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
-			wp_enqueue_script( 'bootstrap-accessibility' );
-
-			wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
-			wp_enqueue_style( 'bootstrap-accessibility' );
-
-			wp_enqueue_style( 'dashicons' );
-
-		}
-
-		/**
-		 * Implement the custom js field output and place it to the footer.
-		 */
-		function custom_js() {
-
-			$js = get_theme_mod( 'js', '' );
-
-			if ( ! empty( $js ) ) {
-				echo '<script>' . $js . '</script>';
-			}
-
-		}
-
-
-		/**
-		 * Timber extras.
-		 */
-		function timber_extras( $data ) {
-
-			// Get the layout we're using (sidebar arrangement).
-			$layout = apply_filters( 'maera/layout/modifier', get_theme_mod( 'layout', 1 ) );
-
-			// get secondary sidebar
-			$sidebar_secondary = Timber::get_widgets( 'sidebar_secondary' );
-			$data['sidebar']['secondary'] = apply_filters( 'maera/sidebar/secondary', $sidebar_secondary );
-
-			if ( 0 == $layout ) {
-
-				$data['sidebar']['primary']   = null;
-				$data['sidebar']['secondary'] = null;
-
-				// Add a filter for the layout.
-				add_filter( 'maera/layout/modifier', 'maera_return_0' );
-
-			} elseif ( $layout < 3 ) {
-				$data['sidebar']['secondary'] = null;
-			}
-
-			$comment_form_args = array(
-				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'maera_bootstrap' ) . '</label><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
-				'id_submit'     => 'comment-submit',
-			);
-
-			$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
-			$data['post_meta'] = Maera_Bootstrap_Structure::meta_elements();
-
-			$data['teaser_mode'] = get_theme_mod( 'blog_post_mode', 'excerpt' );
-
-			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
-
-			return $data;
-		}
-
-
-		/**
-		 * Excerpt length
-		 */
-		function excerpt_length() {
-
-			return get_theme_mod( 'post_excerpt_length', 55 );
-
-		}
-
-
-		/**
-		 * The "more" text
-		 */
-		function excerpt_more( $more, $post_id = 0 ) {
-
-			$continue_text = get_theme_mod( 'post_excerpt_link_text', 'Continued' );
-			return ' &hellip; <a href="' . get_permalink( $post_id ) . '">' . $continue_text . '</a>';
-
-		}
-
-
-		/**
-		 * Disable featured images per post type.
-		 * This is a simple fanction that parses the array of disabled options from the customizer
-		 * and then sets their display to 0 if we've selected them in our array.
-		 */
-		function disable_feat_images_ppt() {
-			global $post;
-
-			$current_post_type = get_post_type( $post );
-			$images_ppt        = get_theme_mod( 'feat_img_per_post_type', '' );
-
-			// Get the array of disabled featured images per post type
-			$disabled = ( '' != $images_ppt ) ? explode( ',', $images_ppt ) : '';
-
-			// Get the default switch values for singulars and archives
-			$default = ( is_singular() ) ? get_theme_mod( 'feat_img_post', 0 ) : get_theme_mod( 'feat_img_archive', 0 );
-
-			// If the current post type exists in our array of disabled post types, then set its displaying to false
-			if ( $disabled ) {
-				$display = ( in_array( $current_post_type, $disabled ) ) ? 0 : $default;
-			} else {
-				$display = $default;
-			}
-
-			return $display;
 
 		}
 
