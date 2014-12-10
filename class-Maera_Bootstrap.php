@@ -33,6 +33,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Timber.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
@@ -40,17 +41,15 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$bs_widgets   = new Maera_Bootstrap_Widgets();
 			$bs_styles    = new Maera_Bootstrap_Styles();
 			$bs_compiler  = new Maera_Bootstrap_Compiler();
-			$images       = new Maera_BS_Images();
-			$excerpt      = new Maera_BS_Excerpt();
+			$bs_images    = new Maera_BS_Images();
+			$bs_excerpt   = new Maera_BS_Excerpt();
+			$bs_timber    = new Maera_BS_Timber();
 
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
 
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 110 );
-
-			// Add the shell Timber modifications
-			add_filter( 'timber_context', array( $this, 'timber_extras' ), 20 );
 
 			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
@@ -148,46 +147,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 				echo '<script>' . $js . '</script>';
 			}
 
-		}
-
-
-		/**
-		 * Timber extras.
-		 */
-		function timber_extras( $data ) {
-
-			// Get the layout we're using (sidebar arrangement).
-			$layout = apply_filters( 'maera/layout/modifier', get_theme_mod( 'layout', 1 ) );
-
-			// get secondary sidebar
-			$sidebar_secondary = Timber::get_widgets( 'sidebar_secondary' );
-			$data['sidebar']['secondary'] = apply_filters( 'maera/sidebar/secondary', $sidebar_secondary );
-
-			if ( 0 == $layout ) {
-
-				$data['sidebar']['primary']   = null;
-				$data['sidebar']['secondary'] = null;
-
-				// Add a filter for the layout.
-				add_filter( 'maera/layout/modifier', 'maera_return_0' );
-
-			} elseif ( $layout < 3 ) {
-				$data['sidebar']['secondary'] = null;
-			}
-
-			$comment_form_args = array(
-				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'maera_bootstrap' ) . '</label><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
-				'id_submit'     => 'comment-submit',
-			);
-
-			$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
-			$data['post_meta'] = Maera_Bootstrap_Structure::meta_elements();
-
-			$data['teaser_mode'] = get_theme_mod( 'blog_post_mode', 'excerpt' );
-
-			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
-
-			return $data;
 		}
 
 	}
