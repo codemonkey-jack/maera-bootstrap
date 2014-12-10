@@ -34,6 +34,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Timber.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Scripts.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
@@ -44,14 +45,13 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$bs_images    = new Maera_BS_Images();
 			$bs_excerpt   = new Maera_BS_Excerpt();
 			$bs_timber    = new Maera_BS_Timber();
+			$bs_scripts   = new Maera_BS_Scripts();
 
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
 
 			// Enqueue the scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 110 );
-
-			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
 			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
 				1  => 'col-md-1',
@@ -133,19 +133,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			wp_enqueue_style( 'bootstrap-accessibility' );
 
 			wp_enqueue_style( 'dashicons' );
-
-		}
-
-		/**
-		 * Implement the custom js field output and place it to the footer.
-		 */
-		function custom_js() {
-
-			$js = get_theme_mod( 'js', '' );
-
-			if ( ! empty( $js ) ) {
-				echo '<script>' . $js . '</script>';
-			}
 
 		}
 
