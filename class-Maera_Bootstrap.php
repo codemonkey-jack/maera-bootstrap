@@ -28,7 +28,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Include other classes
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Styles.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Styles.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
@@ -40,7 +40,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Instantianate addon classes
 			$bs_structure = new Maera_Bootstrap_Structure();
 			$bs_widgets   = new Maera_Bootstrap_Widgets();
-			$bs_styles    = new Maera_Bootstrap_Styles();
+			$bs_styles    = new Maera_BS_Styles();
 			$bs_compiler  = new Maera_Bootstrap_Compiler();
 			$bs_images    = new Maera_BS_Images();
 			$bs_excerpt   = new Maera_BS_Excerpt();
