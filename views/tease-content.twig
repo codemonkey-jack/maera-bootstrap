@@ -1,4 +1,6 @@
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
+{% set preview_readmode = theme_mods.post_excerpt_link_text %}
+{% set preview_length   = theme_mods.post_excerpt_length %}
 
 {% if teaser_mode == 'full' %}
 	{{ post.content }}
@@ -9,7 +11,7 @@
 			{% set height = theme_mods.feat_img_archive_height == 0 ? post.thumbnail.height : thumbnail.height %}
 			<img class="featured-image" src="{{ post.thumbnail.src|resize(width, height) }}" srcset="{{ post.thumbnail.src|resize(width, height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(width, height)|retina(2) }}  2x">
 		{% endif %}
-		{{ post.get_preview }}
+		{{ post.get_preview(preview_length, false, preview_readmode) }}
 		{{ clearfix() }}
 	</div>
 {% endif %}
