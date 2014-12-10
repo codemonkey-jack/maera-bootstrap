@@ -1,6 +1,6 @@
 <?php
 
-class Maera_Bootstrap_Images {
+class Maera_BS_Images {
 
 	function __construct() {
 

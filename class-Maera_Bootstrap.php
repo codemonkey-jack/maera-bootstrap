@@ -32,19 +32,16 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
 
 			// Instantianate addon classes
-			global $bs_structure;
 			$bs_structure = new Maera_Bootstrap_Structure();
-			global $bs_widgets;
 			$bs_widgets   = new Maera_Bootstrap_Widgets();
-			global $bs_styles;
 			$bs_styles    = new Maera_Bootstrap_Styles();
-			global $bs_conpiler;
 			$bs_compiler  = new Maera_Bootstrap_Compiler();
-
-			$images = new Maera_Bootstrap_Images();
+			$images       = new Maera_BS_Images();
+			$excerpt      = new Maera_BS_Excerpt();
 
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
@@ -57,7 +54,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			// Excerpt
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10, 2 );
 
 			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
@@ -204,17 +200,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 		function excerpt_length() {
 
 			return get_theme_mod( 'post_excerpt_length', 55 );
-
-		}
-
-
-		/**
-		 * The "more" text
-		 */
-		function excerpt_more( $more, $post_id = 0 ) {
-
-			$continue_text = get_theme_mod( 'post_excerpt_link_text', 'Continued' );
-			return ' &hellip; <a href="' . get_permalink( $post_id ) . '">' . $continue_text . '</a>';
 
 		}
 
