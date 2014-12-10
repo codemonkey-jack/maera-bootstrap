@@ -31,7 +31,9 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 			add_filter( 'maera/content_width', array( $this, 'content_width_px' ) );
 
-			add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
+			if ( 0 != get_theme_mod( 'breadcrumbs', 0 ) ) {
+				add_action( 'maera/content/before', array( $this, 'breadcrumbs' ) );
+			}
 
 		}
 

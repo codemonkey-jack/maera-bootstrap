@@ -746,7 +746,7 @@ class Maera_Bootstrap_Customizer {
 		$controls[] = array(
 			'type'        => 'checkbox',
 			'setting'     => 'breadcrumbs',
-			'label'       => __( 'Show Breadcrumbs', 'maera_bootstrap' ),
+			'label'       => __( 'Show Breadcrumbs. Please note that this setting requires you to save your options and refresh the page. Breadcrumbs are not displayed on the homepage.', 'maera_bootstrap' ),
 			'section'     => 'blog_options',
 			'priority'    => 3,
 			'default'     => 0,
