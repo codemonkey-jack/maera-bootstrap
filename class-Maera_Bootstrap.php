@@ -59,8 +59,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
 			add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10, 2 );
 
-			add_filter( 'maera/image/display', array( $this, 'disable_feat_images_ppt' ), 99 );
-
 			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
 			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
@@ -217,35 +215,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			$continue_text = get_theme_mod( 'post_excerpt_link_text', 'Continued' );
 			return ' &hellip; <a href="' . get_permalink( $post_id ) . '">' . $continue_text . '</a>';
-
-		}
-
-
-		/**
-		 * Disable featured images per post type.
-		 * This is a simple fanction that parses the array of disabled options from the customizer
-		 * and then sets their display to 0 if we've selected them in our array.
-		 */
-		function disable_feat_images_ppt() {
-			global $post;
-
-			$current_post_type = get_post_type( $post );
-			$images_ppt        = get_theme_mod( 'feat_img_per_post_type', '' );
-
-			// Get the array of disabled featured images per post type
-			$disabled = ( '' != $images_ppt ) ? explode( ',', $images_ppt ) : '';
-
-			// Get the default switch values for singulars and archives
-			$default = ( is_singular() ) ? get_theme_mod( 'feat_img_post', 0 ) : get_theme_mod( 'feat_img_archive', 0 );
-
-			// If the current post type exists in our array of disabled post types, then set its displaying to false
-			if ( $disabled ) {
-				$display = ( in_array( $current_post_type, $disabled ) ) ? 0 : $default;
-			} else {
-				$display = $default;
-			}
-
-			return $display;
 
 		}
 
