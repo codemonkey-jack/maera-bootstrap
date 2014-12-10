@@ -50,9 +50,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
 
-			// Enqueue the scripts
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 110 );
-
 			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
 				1  => 'col-md-1',
 				2  => 'col-md-2',
@@ -115,24 +112,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			);
 
 			$plugins = new Maera_Required_Plugins( $plugins );
-
-		}
-
-		/**
-		 * Register all scripts and additional stylesheets (if necessary)
-		 */
-		function scripts() {
-
-			wp_register_script( 'bootstrap-min', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap.min.js', false, null, true  );
-			wp_enqueue_script( 'bootstrap-min' );
-
-			wp_register_script( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
-			wp_enqueue_script( 'bootstrap-accessibility' );
-
-			wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
-			wp_enqueue_style( 'bootstrap-accessibility' );
-
-			wp_enqueue_style( 'dashicons' );
 
 		}
 
