@@ -52,9 +52,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			// Add the shell Timber modifications
 			add_filter( 'timber_context', array( $this, 'timber_extras' ), 20 );
 
-			// Excerpt
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
-
 			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
 			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
@@ -191,16 +188,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );
 
 			return $data;
-		}
-
-
-		/**
-		 * Excerpt length
-		 */
-		function excerpt_length() {
-
-			return get_theme_mod( 'post_excerpt_length', 55 );
-
 		}
 
 	}
