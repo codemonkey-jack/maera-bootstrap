@@ -36,7 +36,7 @@ class Maera_BS_Timber {
 		);
 
 		$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
-		$data['post_meta'] = Maera_Bootstrap_Structure::meta_elements();
+		$data['post_meta'] = Maera_BS_Meta::meta_elements();
 
 		$data['teaser_mode'] = get_theme_mod( 'blog_post_mode', 'excerpt' );
 
