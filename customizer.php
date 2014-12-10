@@ -1142,6 +1142,25 @@ class Maera_Bootstrap_Customizer {
 			),
 		);
 
+		$widgets_class = new Maera_Bootstrap_Widgets();
+		$extra_widget_areas = $widgets_class->extra_widget_areas_array();
+
+		$i = 1;
+
+		foreach ( $extra_widget_areas as $area => $settings ) {
+
+			$controls[] = array(
+				'type'     => 'checkbox',
+				'setting'  => $area . '_toggle',
+				'label'    => $area,
+				'section'  => 'custom_widget_areas',
+				'default'  => $settings['default'],
+				'priority' => $i,
+			);
+
+			$i++;
+		}
+
 		return $controls;
 
 	}

@@ -26,6 +26,7 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/customizer.php' );
 
 			// Include other classes
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Styles.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
@@ -62,6 +63,21 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			add_action( 'wp_footer', array( $this, 'custom_js' ) );
 
+			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
+				1  => 'col-md-1',
+				2  => 'col-md-2',
+				3  => 'col-md-3',
+				4  => 'col-md-4',
+				5  => 'col-md-5',
+				6  => 'col-md-6',
+				7  => 'col-md-7',
+				8  => 'col-md-8',
+				9  => 'col-md-9',
+				10 => 'col-md-10',
+				11 => 'col-md-11',
+				12 => 'col-md-12',
+			) );
+
 		}
 
 
@@ -86,7 +102,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			add_theme_support( 'kirki' );
 			add_theme_support( 'maera_image' );
 			add_theme_support( 'maera_color' );
-			add_theme_support( 'maera_cwa' );
 			add_theme_support( 'less_compiler' );
 
 		}
