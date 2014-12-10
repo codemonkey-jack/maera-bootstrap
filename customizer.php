@@ -576,7 +576,7 @@ class Maera_Bootstrap_Customizer {
 			'setting'      => 'body_bg_opacity',
 			'label'        => __( 'Opacity', 'maera_bootstrap' ),
 			'section'      => 'body_bg',
-			'default'      => 1,
+			'default'      => 100,
 			'priority'     => 33,
 			'choices'      => array(
 				'min'  => 0,
