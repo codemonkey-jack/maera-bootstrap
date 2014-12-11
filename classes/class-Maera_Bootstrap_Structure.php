@@ -12,14 +12,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 		 */
 		public function __construct() {
 
-			add_action( 'maera/header/inside/begin', array( $this, 'social_links_navbar_content' ), 10 );
-			add_action( 'maera/sidebar/inside/end', array( $this, 'social_links_navbar_content' ), 10 );
-			add_filter( 'maera/header/menu/class', array( $this, 'navbar_links_alignment' ) );
-
-			add_filter( 'maera/header/class', array( $this, 'navbar_positioning_class' ) );
-
 			add_filter( 'body_class', array( $this, 'body_class' ) );
-
 			add_filter( 'maera/content_width', array( $this, 'content_width_px' ) );
 
 			if ( 0 != get_theme_mod( 'breadcrumbs', 0 ) ) {
@@ -76,20 +69,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 
 		}
 
-
-		/**
-		 * Navbar Positioning classes
-		 */
-		function navbar_positioning_class( $classes ) {
-
-			$position = get_theme_mod( 'navbar_position', 'normal' );
-
-			$classes .= ( 'fixed-top' == $position || 'fixed-bottom' == $position ) ? ' navbar-' . $position : ' navbar-static-top';
-
-			return $classes;
-
-		}
-
 		/**
 		 * Configure and initialize the Breadcrumbs
 		 */
@@ -115,109 +94,6 @@ if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
 				breadcrumb_trail( $args );
 			}
 
-		}
-
-		/**
-		 * Build the social links
-		 */
-		function social_links_builder( $before = '', $after = '', $separator = '' ) {
-
-			$social_links = array(
-				'blogger'     => __( 'Blogger', 'maera_bootstrap' ),
-				'deviantart'  => __( 'DeviantART', 'maera_bootstrap' ),
-				'digg'        => __( 'Digg', 'maera_bootstrap' ),
-				'dribbble'    => __( 'Dribbble', 'maera_bootstrap' ),
-				'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
-				'flickr'      => __( 'Flickr', 'maera_bootstrap' ),
-				'github'      => __( 'Github', 'maera_bootstrap' ),
-				'googleplus'  => __( 'Google+', 'maera_bootstrap' ),
-				'instagram'   => __( 'Instagram', 'maera_bootstrap' ),
-				'linkedin'    => __( 'LinkedIn', 'maera_bootstrap' ),
-				'myspace'     => __( 'MySpace', 'maera_bootstrap' ),
-				'pinterest'   => __( 'Pinterest', 'maera_bootstrap' ),
-				'reddit'      => __( 'Reddit', 'maera_bootstrap' ),
-				'rss'         => __( 'RSS', 'maera_bootstrap' ),
-				'skype'       => __( 'Skype', 'maera_bootstrap' ),
-				'soundcloud'  => __( 'SoundCloud', 'maera_bootstrap' ),
-				'tumblr'      => __( 'Tumblr', 'maera_bootstrap' ),
-				'twitter'     => __( 'Twitter', 'maera_bootstrap' ),
-				'vimeo'       => __( 'Vimeo', 'maera_bootstrap' ),
-				'vkontakte'   => __( 'Vkontakte', 'maera_bootstrap' ),
-				'youtube'     => __( 'YouTube', 'maera_bootstrap' ),
-			);
-
-			$content = $before;
-
-			foreach ( $social_links as $social_link => $label ) {
-				$link = get_theme_mod( $social_link . '_link', '' );
-
-				if ( '' != esc_url( $link ) ) {
-					$content .= '<a role="link" aria-labelledby="' . $label . '" href="' . $link . '" target="_blank" title="' . $label . '"><i class="el-icon-' . $social_link . '"></i>';
-
-					if ( 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ) {
-						$content .= '&nbsp;'.$label;
-					}
-					$content .= '</a>';
-					$content .= $separator;
-				}
-			}
-
-			$content .= $after;
-
-			return $content;
-
-		}
-
-
-		/**
-		 * Social links in navbars
-		 */
-		function social_links_navbar_content() {
-
-			$content = $before = $after = $separator = '';
-
-			$social_mode = get_theme_mod( 'navbar_social', 'off' );
-			$navbar_position = get_theme_mod( 'navbar_position', 'normal' );
-
-			if ( 'inline' == $social_mode ) {
-				if ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) {
-					$before    = '<ul class="nav navbar-nav navbar-inline-socials"><li>';
-				} else {
-					$before    = '<ul class="nav navbar-nav navbar-right navbar-inline-socials"><li>';
-				}
-				$after     = '</li></ul>';
-				$separator = '</li><li>';
-			} elseif ( 'dropdown' == $social_mode ) {
-				if ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) {
-					$before    = '<ul class="nav navbar-nav navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>';
-				} else {
-					$before    = '<ul class="nav navbar-nav navbar-right navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>';
-				}
-				$after     = '</li></ul></li></ul>';
-				$separator = '</li><li>';
-			} elseif ( 'off' == $social_mode ) {
-				return;
-			}
-
-			$content = $this->social_links_builder( $before, $after, $separator );
-
-			echo $content;
-		}
-
-		/**
-		 * Take care of the alignment of navbar menu items
-		 */
-		function navbar_links_alignment( $classes ) {
-
-			$align = get_theme_mod( 'navbar_nav_align', 'left' );
-
-			if ( 'center' == $align ) {
-				$classes .= ' navbar-center';
-			} else if ( 'right' == $align ) {
-				$classes .= ' navbar-right';
-			}
-
-			return $classes;
 		}
 
 	}

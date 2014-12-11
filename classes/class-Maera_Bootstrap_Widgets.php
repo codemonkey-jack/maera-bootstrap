@@ -11,13 +11,11 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		 * Class constructor
 		 */
 		public function __construct() {
-
-			// Widgets
-			// add_filter( 'maera/widgets/areas', array( $this, 'extra_widget_areas_array' ), 12 );
 			add_filter( 'maera/widgets/class', array( $this, 'widgets_class' ) );
 			add_filter( 'maera/widgets/title/before', array( $this, 'widgets_before_title' ) );
 			add_filter( 'maera/widgets/title/after', array( $this, 'widgets_after_title' ) );
 			add_action( 'widgets_init', array( $this, 'maera_widget_areas' ) );
+			add_action( 'init', array( $this, 'extra_widget_areas' ) );
 		}
 
 
@@ -192,6 +190,33 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 				}
 
 			}
+
+		}
+
+		function extra_widget_areas() {
+			$extra_widget_areas = $this->extra_widget_areas_array();
+
+			$widget_width = new Maera_Widget_Dropdown(
+			array(
+				'id'      => 'maera_widget_width',
+				'label'   => __( 'Width' ),
+				'choices' => array(
+					1   => array( 'label' => 1,  'classes' => 'col-md-1' ),
+					2   => array( 'label' => 2,  'classes' => 'col-md-2' ),
+					3   => array( 'label' => 3,  'classes' => 'col-md-3' ),
+					4   => array( 'label' => 4,  'classes' => 'col-md-4' ),
+					5   => array( 'label' => 5,  'classes' => 'col-md-5' ),
+					6   => array( 'label' => 6,  'classes' => 'col-md-6' ),
+					7   => array( 'label' => 7,  'classes' => 'col-md-7' ),
+					8   => array( 'label' => 8,  'classes' => 'col-md-8' ),
+					9   => array( 'label' => 9,  'classes' => 'col-md-9' ),
+					10  => array( 'label' => 10, 'classes' => 'col-md-10' ),
+					11  => array( 'label' => 11, 'classes' => 'col-md-11' ),
+					12  => array( 'label' => 12, 'classes' => 'col-md-12' ),
+				),
+				'default' => 12,
+				)
+			);
 
 		}
 
