@@ -53,20 +53,27 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			global $extra_widget_areas;
 			$extra_widget_areas = $bs_widgets->extra_widget_areas_array();
 
-			$widget_width = new Maera_Widget_Dropdown( 'maera_widget_width', __( 'Width' ), array(
-				1  => 'col-md-1',
-				2  => 'col-md-2',
-				3  => 'col-md-3',
-				4  => 'col-md-4',
-				5  => 'col-md-5',
-				6  => 'col-md-6',
-				7  => 'col-md-7',
-				8  => 'col-md-8',
-				9  => 'col-md-9',
-				10 => 'col-md-10',
-				11 => 'col-md-11',
-				12 => 'col-md-12',
-			) );
+			$widget_width = new Maera_Widget_Dropdown(
+				array(
+					'id'      => 'maera_widget_width',
+					'label'   => __( 'Width' ),
+					'choices' => array(
+						1   => array( 'label' => 1,  'classes' => 'col-md-1' ),
+						2   => array( 'label' => 2,  'classes' => 'col-md-2' ),
+						3   => array( 'label' => 3,  'classes' => 'col-md-3' ),
+						4   => array( 'label' => 4,  'classes' => 'col-md-4' ),
+						5   => array( 'label' => 5,  'classes' => 'col-md-5' ),
+						6   => array( 'label' => 6,  'classes' => 'col-md-6' ),
+						7   => array( 'label' => 7,  'classes' => 'col-md-7' ),
+						8   => array( 'label' => 8,  'classes' => 'col-md-8' ),
+						9   => array( 'label' => 9,  'classes' => 'col-md-9' ),
+						10  => array( 'label' => 10, 'classes' => 'col-md-10' ),
+						11  => array( 'label' => 11, 'classes' => 'col-md-11' ),
+						12  => array( 'label' => 12, 'classes' => 'col-md-12' ),
+					),
+					'default' => 12,
+				)
+			);
 
 		}
 
