@@ -1026,29 +1026,7 @@ class Maera_Bootstrap_Customizer {
 			'priority' => 1,
 		);
 
-		$social_links = array(
-			'blogger'     => __( 'Blogger', 'maera_bootstrap' ),
-			'deviantart'  => __( 'DeviantART', 'maera_bootstrap' ),
-			'digg'        => __( 'Digg', 'maera_bootstrap' ),
-			'dribbble'    => __( 'Dribbble', 'maera_bootstrap' ),
-			'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
-			'flickr'      => __( 'Flickr', 'maera_bootstrap' ),
-			'github'      => __( 'Github', 'maera_bootstrap' ),
-			'googleplus'  => __( 'Google+', 'maera_bootstrap' ),
-			'instagram'   => __( 'Instagram', 'maera_bootstrap' ),
-			'linkedin'    => __( 'LinkedIn', 'maera_bootstrap' ),
-			'myspace'     => __( 'MySpace', 'maera_bootstrap' ),
-			'pinterest'   => __( 'Pinterest', 'maera_bootstrap' ),
-			'reddit'      => __( 'Reddit', 'maera_bootstrap' ),
-			'rss'         => __( 'RSS', 'maera_bootstrap' ),
-			'skype'       => __( 'Skype', 'maera_bootstrap' ),
-			'soundcloud'  => __( 'SoundCloud', 'maera_bootstrap' ),
-			'tumblr'      => __( 'Tumblr', 'maera_bootstrap' ),
-			'twitter'     => __( 'Twitter', 'maera_bootstrap' ),
-			'vimeo'       => __( 'Vimeo', 'maera_bootstrap' ),
-			'vkontakte'   => __( 'Vkontakte', 'maera_bootstrap' ),
-			'youtube'     => __( 'YouTube', 'maera_bootstrap' ),
-		);
+		$social_links = Maera_BS_Social::social_networks();
 
 		$i = 0;
 		foreach ( $social_links as $social_link => $label ) {

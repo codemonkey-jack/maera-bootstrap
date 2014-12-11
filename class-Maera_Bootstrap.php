@@ -22,9 +22,6 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
-			// Include the customizer
-			include_once( MAERA_SHELL_PATH . '/customizer.php' );
-
 			// Include other classes
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
@@ -40,6 +37,9 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Navbar.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Social.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
+
+			// Include the customizer
+			include_once( MAERA_SHELL_PATH . '/customizer.php' );
 
 			// Instantianate addon classes
 			$bs_structure = new Maera_Bootstrap_Structure();

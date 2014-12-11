@@ -7,12 +7,8 @@ class Maera_BS_Social {
 		add_action( 'maera/sidebar/inside/end', array( $this, 'social_links_navbar_content' ), 10 );
 	}
 
-	/**
-	* Build the social links
-	*/
-	function social_links_builder( $before = '', $after = '', $separator = '' ) {
-
-		$social_links = array(
+	public static function social_networks() {
+		return array(
 			'blogger'     => __( 'Blogger', 'maera_bootstrap' ),
 			'deviantart'  => __( 'DeviantART', 'maera_bootstrap' ),
 			'digg'        => __( 'Digg', 'maera_bootstrap' ),
@@ -35,6 +31,14 @@ class Maera_BS_Social {
 			'vkontakte'   => __( 'Vkontakte', 'maera_bootstrap' ),
 			'youtube'     => __( 'YouTube', 'maera_bootstrap' ),
 		);
+	}
+
+	/**
+	 * Build the social links
+	 */
+	function social_links_builder( $before = '', $after = '', $separator = '' ) {
+
+		$social_links = self::social_networks();
 
 		$content = $before;
 
@@ -43,7 +47,7 @@ class Maera_BS_Social {
 
 			if ( '' != esc_url( $link ) ) {
 				$content .= '<a role="link" aria-labelledby="' . $label . '" href="' . $link . '" target="_blank" title="' . $label . '"><i class="el-icon-' . $social_link . '"></i>';
-				$content .= 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ? '&nbsp;' . $label . '';
+				$content .= 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ? '&nbsp;' . $label : '';
 				$content .= '</a>';
 				$content .= $separator;
 			}
