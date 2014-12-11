@@ -43,10 +43,7 @@ class Maera_BS_Social {
 
 			if ( '' != esc_url( $link ) ) {
 				$content .= '<a role="link" aria-labelledby="' . $label . '" href="' . $link . '" target="_blank" title="' . $label . '"><i class="el-icon-' . $social_link . '"></i>';
-
-				if ( 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ) {
-					$content .= '&nbsp;'.$label;
-				}
+				$content .= 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ? '&nbsp;' . $label . '';
 				$content .= '</a>';
 				$content .= $separator;
 			}
@@ -68,29 +65,29 @@ class Maera_BS_Social {
 		$social_mode = get_theme_mod( 'navbar_social', 'off' );
 		$navbar_position = get_theme_mod( 'navbar_position', 'normal' );
 
+		// Early exit if social is set to off.
+		if ( 'off' == $social_mode ) {
+			return;
+		}
+
 		if ( 'inline' == $social_mode ) {
-			if ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) {
-				$before    = '<ul class="nav navbar-nav navbar-inline-socials"><li>';
-			} else {
-				$before    = '<ul class="nav navbar-nav navbar-right navbar-inline-socials"><li>';
-			}
+
+			$before = ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) ? '<ul class="nav navbar-nav navbar-inline-socials"><li>' : '<ul class="nav navbar-nav navbar-right navbar-inline-socials"><li>';
 			$after     = '</li></ul>';
 			$separator = '</li><li>';
+
 		} elseif ( 'dropdown' == $social_mode ) {
-			if ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) {
-				$before    = '<ul class="nav navbar-nav navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>';
-			} else {
-				$before    = '<ul class="nav navbar-nav navbar-right navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>';
-			}
+
+			$before = ( $navbar_position == 'right-slide' || $navbar_position == 'left-slide' ) ? '<ul class="nav navbar-nav navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>' : '<ul class="nav navbar-nav navbar-right navbar-dropdown-socials"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="el-icon-network"></i>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu" role="menu"><li>';
 			$after     = '</li></ul></li></ul>';
 			$separator = '</li><li>';
-		} elseif ( 'off' == $social_mode ) {
-			return;
+
 		}
 
 		$content = $this->social_links_builder( $before, $after, $separator );
 
 		echo $content;
+
 	}
 
 }
