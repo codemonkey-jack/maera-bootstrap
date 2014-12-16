@@ -6,45 +6,20 @@
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
 {{ container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
-
 	{% do action( 'maera/content/before', post.ID ) %}
 	{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
-
 	<div class="content" id="content" itemprop="mainContentOfPage">
-
 		{{ row_open( 'div', null, 'bg' ) }}
-
 			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 				{% do action( 'maera/main/before', post.ID ) %}
-				<main class="{{ 'main'|apply_filters( 'maera/section_class/content' ) }}" role="main">
-
-					{% if title %}<h1>{{title}}</h1>{% endif %}
-					{% block content %}
-						{{ __( 'Sorry, no content', 'maera_bootstrap' ) }}
-					{% endblock %}
-
-				</main><!-- /.main -->
+				{% block main %}{{ __( 'Sorry, no content', 'maera' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
-
-				{# PRIMARY SIDEBAR #}
-				<aside id="sidebar-primary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/primary' ) }}" role="complementary">
-					{{ sidebar.primary }}
-				</aside>
+				{% include 'sidebar-primary.twig' %}
 			</div>
-
-			{# SECONDARY SIDEBAR #}
-			<aside id="sidebar-secondary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/secondary' ) }}" role="complementary">
-				{{ sidebar.secondary }}
-			</aside>
-
-
+			{% include 'sidebar-secondary.twig' %}
 			{{ clearfix() }}
-
 		{{ row_close( 'div' ) }}
-
 	</div><!-- /#content -->
-
 	{% do action( 'maera/content/after' ) %}
 	{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
-
 {{ container_close( 'div' ) }}
