@@ -5,62 +5,6 @@
 {% from 'row_close.html.twig' import row_close as row_close %}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
-{% include 'html-header.twig' %}
-
-<body class="{{ body_class }}" data-source="base.twig">
-
-	<a href="#content" class="sr-only skip-link screen-reader-text">{{ __( 'Skip to main content', 'maera_bootstrap' ) }}</a>
-
-	{% do action( 'get_header' ) %}
-
-	{% do action( 'maera/header/before', post.ID ) %}
-
-	{% if theme_mods.navbar_position != 'after-headers' %}
-		{% include 'header.twig' %}
-	{% endif %}
-
-	{% do action( 'maera/header/after', post.ID ) %}
-
-	{% if theme_mods.header_widgets_nr != 0 %}
-		{% do action( 'maera/extra_header/before' ) %}
-		{% do action( 'maera/extra_header/before/ewa', 'pre_header', 'row' ) %}
-		<header class="page-header">
-			{% if 'boxed' == theme_mods.site_style %}<div class="container header-boxed">{% endif %}
-			<div class="header-wrapper container-fluid">
-				{% if 'wide' == theme_mods.site_style %}<div class="container">{% endif %}
-				{% do action( 'maera/extra_header/widgets/ewa', 'header', 'row' ) %}
-				{% if 'wide' == theme_mods.site_style %}</div>{% endif %}
-			</div>
-			{% if 'boxed' == theme_mods.site_style %}</div>{% endif %}
-		</header>
-		{% do action( 'maera/extra_header/after' ) %}
-		{% do action( 'maera/extra_header/after/ewa', 'post_header', 'row' ) %}
-	{% endif %}
-
-	{% if 0 != theme_mods.jumbotron_widgets_nr %}
-		{% if 'boxed' == theme_mods.site_style and 1 != theme_mods.jumbotron_nocontainer %}
-			<div class="container jumbotron">
-		{% else %}
-			<div class="jumbotron">
-		{% endif %}
-		{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
-			<div class="container">
-		{% endif %}
-		{% do action( 'maera/jumbotron/content' ) %}
-		{% do action( 'maera/jumbotron/content/ewa', 'jumbotron', 'row' ) %}
-		{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
-			</div>
-		{% endif %}
-		</div>
-	{% endif %}
-
-	{% do action( 'maera/wrap/before', post.ID ) %}
-	{% do action( 'maera/wrap/before/ewa', 'pre_content', 'row' ) %}
-
-	{% if theme_mods.navbar_position == 'after-headers' %}
-		{% include 'header.twig' %}
-	{% endif %}
-
 	{{ container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
 
 		{% do action( 'maera/content/before', post.ID ) %}

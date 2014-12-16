@@ -1,9 +1,0 @@
-{# Get the image width and height from the customizer options #}
-{% set width  = theme_mods.feat_img_post_width %}
-{% set height = theme_mods.feat_img_post_height %}
-
-{% if post.thumbnail and theme_mods.feat_img_post %}
-	{% set width = theme_mods.feat_img_post_width == 0 ? post.thumbnail.width : thumbnail.width %}
-	{% set height = theme_mods.feat_img_post_height == 0 ? post.thumbnail.height : thumbnail.height %}
-	<img class="featured-image" src="{{ post.thumbnail.src|resize(width, height) }}" srcset="{{ post.thumbnail.src|resize(width, height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(width, height)|retina(2) }}  2x">
-{% endif %}
