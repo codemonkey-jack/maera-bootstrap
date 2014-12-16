@@ -5,59 +5,46 @@
 {% from 'row_close.html.twig' import row_close as row_close %}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
-	{{ container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
+{{ container_open( 'div', 'wrap-main-section', 'wrap main-section' ) }}
 
-		{% do action( 'maera/content/before', post.ID ) %}
-		{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
+	{% do action( 'maera/content/before', post.ID ) %}
+	{% do action( 'maera/content/before/ewa', 'pre_main', 'row' ) %}
 
-		<div class="content" id="content" itemprop="mainContentOfPage">
+	<div class="content" id="content" itemprop="mainContentOfPage">
 
-			{{ row_open( 'div', null, 'bg' ) }}
+		{{ row_open( 'div', null, 'bg' ) }}
 
-				<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
-					{% do action( 'maera/main/before', post.ID ) %}
-					<main class="{{ 'main'|apply_filters( 'maera/section_class/content' ) }}" role="main">
+			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
+				{% do action( 'maera/main/before', post.ID ) %}
+				<main class="{{ 'main'|apply_filters( 'maera/section_class/content' ) }}" role="main">
 
-						{% if title %}<h1>{{title}}</h1>{% endif %}
-						{% block content %}
-							{{ __( 'Sorry, no content', 'maera_bootstrap' ) }}
-						{% endblock %}
+					{% if title %}<h1>{{title}}</h1>{% endif %}
+					{% block content %}
+						{{ __( 'Sorry, no content', 'maera_bootstrap' ) }}
+					{% endblock %}
 
-					</main><!-- /.main -->
-					{% do action( 'maera/main/after', post.ID ) %}
+				</main><!-- /.main -->
+				{% do action( 'maera/main/after', post.ID ) %}
 
-					{# PRIMARY SIDEBAR #}
-					<aside id="sidebar-primary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/primary' ) }}" role="complementary">
-						{{ sidebar.primary }}
-					</aside>
-				</div>
-
-				{# SECONDARY SIDEBAR #}
-				<aside id="sidebar-secondary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/secondary' ) }}" role="complementary">
-					{{ sidebar.secondary }}
+				{# PRIMARY SIDEBAR #}
+				<aside id="sidebar-primary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/primary' ) }}" role="complementary">
+					{{ sidebar.primary }}
 				</aside>
+			</div>
+
+			{# SECONDARY SIDEBAR #}
+			<aside id="sidebar-secondary" class="{{ 'sidebar'|apply_filters( 'maera/section_class/secondary' ) }}" role="complementary">
+				{{ sidebar.secondary }}
+			</aside>
 
 
-				{{ clearfix() }}
+			{{ clearfix() }}
 
-			{{ row_close( 'div' ) }}
+		{{ row_close( 'div' ) }}
 
-		</div><!-- /#content -->
+	</div><!-- /#content -->
 
-		{% do action( 'maera/content/after' ) %}
-		{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
+	{% do action( 'maera/content/after' ) %}
+	{% do action( 'maera/content/after/ewa', 'post_main', 'row' ) %}
 
-	{{ container_close( 'div' ) }}
-
-	{% do action( 'maera/footer/before', post.ID ) %}
-	{% do action( 'maera/footer/before/ewa', 'pre_footer', 'row' ) %}
-	<footer class="page-footer">
-		{% do action( 'maera/footer/start', post.ID ) %}
-		{% include 'footer.twig' %}
-		{% do action( 'maera/footer/end', post.ID ) %}
-	</footer>
-	{% do action( 'maera/footer/after', post.ID ) %}
-	{% do action( 'maera/footer/after/ewa', 'post_footer', 'row' ) %}
-	{{ function( 'wp_footer' ) }}
-</body>
-</html>
+{{ container_close( 'div' ) }}

@@ -5,32 +5,40 @@
 {% from 'row_close.html.twig' import row_close as row_close %}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
-{{ container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
-	{% do action( 'maera/footer/content/ewa', 'footer', 'row' ) %}
-	{% do action( 'maera/footer/content' ) %}
+{% do action( 'maera/footer/before', post.ID ) %}
+{% do action( 'maera/footer/before/ewa', 'pre_footer', 'row' ) %}
+<footer class="page-footer">
+	{% do action( 'maera/footer/start', post.ID ) %}
+	{{ container_open( 'div', 'wrap-footer-section', 'wrap footer-section' ) }}
+		{% do action( 'maera/footer/content/ewa', 'footer', 'row' ) %}
+		{% do action( 'maera/footer/content' ) %}
+		{% if theme_mods.footer_social_toggle == 1 %}
+			{% set social = true %}
+		{% else %}
+			{% set social = false %}
+		{% endif %}
 
+		{% set social_width = theme_mods.footer_social_width %}
+		{% set width = 12 - social_width %}
 
+		{% if theme_mods.footer_social_new_window_toggle == 1 %}
+			{% set blank = ' target="_blank"' %}
+		{% else %}
+			{% set blank = null %}
+		{% endif %}
 
-	{% if theme_mods.footer_social_toggle == 1 %}
-		{% set social = true %}
-	{% else %}
-		{% set social = false %}
-	{% endif %}
+		{{ container_open( 'div', 'footer-copyright' ) }}
+			{{ row_open( 'div' ) }}
+				{{ theme_mods.footer_text|replace({'[year]': now|date('Y') ,'[sitename]': bloginfo('name') }) }}
+				{{ clearfix() }}
+			{{ row_close( 'div' ) }}
+		{{ container_close( 'div' ) }}
 
-	{% set social_width = theme_mods.footer_social_width %}
-	{% set width = 12 - social_width %}
-
-	{% if theme_mods.footer_social_new_window_toggle == 1 %}
-		{% set blank = ' target="_blank"' %}
-	{% else %}
-		{% set blank = null %}
-	{% endif %}
-
-	{{ container_open( 'div', 'footer-copyright' ) }}
-		{{ row_open( 'div' ) }}
-			{{ theme_mods.footer_text|replace({'[year]': now|date('Y') ,'[sitename]': bloginfo('name') }) }}
-			{{ clearfix() }}
-		{{ row_close( 'div' ) }}
 	{{ container_close( 'div' ) }}
-
-{{ container_close( 'div' ) }}
+	{% do action( 'maera/footer/end', post.ID ) %}
+</footer>
+{% do action( 'maera/footer/after', post.ID ) %}
+{% do action( 'maera/footer/after/ewa', 'post_footer', 'row' ) %}
+{{ function( 'wp_footer' ) }}
+</body>
+</html>
