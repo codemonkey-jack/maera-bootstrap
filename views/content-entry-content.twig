@@ -1,4 +1,3 @@
-{% from 'clearfix.html.twig' import clearfix as clearfix %}
 {% set preview_readmode = theme_mods.post_excerpt_link_text %}
 {% set preview_length   = theme_mods.post_excerpt_length %}
 
@@ -14,6 +13,6 @@
 			</a>
 		{% endif %}
 		{{ post.get_preview(preview_length, false, preview_readmode) }}
-		{{ clearfix() }}
+		<div class="clearfix"></div>
 	</div>
 {% endif %}
