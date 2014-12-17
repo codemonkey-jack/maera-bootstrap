@@ -20,10 +20,14 @@ class Maera_Bootstrap_Customizer {
 		add_filter( 'kirki/controls', array( $this, 'settings_blog_options' ) );
 		add_filter( 'kirki/controls', array( $this, 'settings_feat_archive' ) );
 		add_filter( 'kirki/controls', array( $this, 'settings_feat_single' ) );
-		add_filter( 'kirki/controls', array( $this, 'settings_jumbo_bg' ) );
-		add_filter( 'kirki/controls', array( $this, 'settings_structure_jumbo' ) );
-		add_filter( 'kirki/controls', array( $this, 'settings_typo_jumbo' ) );
-		add_filter( 'kirki/controls', array( $this, 'settings_header_bg' ) );
+		if ( is_active_sidebar('jumbotron') ) {
+			add_filter( 'kirki/controls', array( $this, 'settings_jumbo_bg' ) );
+			add_filter( 'kirki/controls', array( $this, 'settings_structure_jumbo' ) );
+			add_filter( 'kirki/controls', array( $this, 'settings_typo_jumbo' ) );
+		}
+		if ( is_active_sidebar('header') ) {
+			add_filter( 'kirki/controls', array( $this, 'settings_header_bg' ) );
+		}
 		add_filter( 'kirki/controls', array( $this, 'settings_social' ) );
 		add_filter( 'kirki/controls', array( $this, 'settings_footer_bg' ) );
 		add_filter( 'kirki/controls', array( $this, 'settings_branding' ) );
