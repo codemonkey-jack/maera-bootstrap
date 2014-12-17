@@ -204,8 +204,8 @@ function maera_bootstrap_get_variables() {
 	'dropdown-fallback-border' => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 20%)' : 'lighten(@body-bg, 20%)',
 	'dropdown-divider-bg'      => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 10.2%)' : 'lighten(@body-bg, 10.2%)',
 
-	'dropdown-link-color'       => '@gray-dark',
-	'dropdown-link-hover-color' => 'darken(@gray-dark, 5%)',
+	'dropdown-link-color'       => '@navbar-default-color',
+	'dropdown-link-hover-color' => '#' . $nav_col_obj->getGrayscaleContrastingColor(11)->toHex(),
 	'dropdown-link-hover-bg'    => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 4%)' : 'lighten(@body-bg, 4%)',
 
 	'dropdown-link-active-color' => '@component-active-color',

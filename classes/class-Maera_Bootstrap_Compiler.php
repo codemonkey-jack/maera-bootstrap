@@ -238,7 +238,7 @@ class Maera_Bootstrap_Compiler {
 		// Make sure links are readable
 		$links_color = $b_p_obj->getReadableContrastingColor( $body_obj, 2 );
 		// Use "body a" instead of plain "a" to override the defaults
-		$content .= 'body a, body a:visited, body a:hover { color: #' . $links_color->toHex() . ';}';
+		$content .= 'a, a:visited, a:hover { color: #' . $links_color->toHex() . ';}';
 
 		return $content;
 

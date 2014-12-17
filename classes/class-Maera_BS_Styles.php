@@ -116,7 +116,7 @@ if ( ! class_exists( 'Maera_BS_Styles' ) ) {
 				$bg = kirki_get_rgba( $color, $opacity );
 			}
 
-			$styles .= ( 14 != $font_size ) ? '.nav-main{font-size:' . $font_size . 'px;}' : '';
+			$styles .= ( 14 != $font_size ) ? '.nav-main,.dropdown-menu{font-size:' . $font_size . 'px;}' : '';
 			$styles .= '#banner-header{background:' . $bg . ';}';
 
 			return $styles;
