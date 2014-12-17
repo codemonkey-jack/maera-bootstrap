@@ -1,7 +1,7 @@
 {% set preview_readmode = theme_mods.post_excerpt_link_text %}
 {% set preview_length   = theme_mods.post_excerpt_length %}
 
-{% if teaser_mode == 'full' %}
+{% if theme_mods.blog_post_mode == 'full' %}
 	{{ post.content }}
 {% else %}
 	<div class="entry-summary" itemprop="description">
