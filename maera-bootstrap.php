@@ -36,9 +36,9 @@ function maera_bootstrap_texdomain() {
 	$custom_path = WP_LANG_DIR . '/maera-' . get_locale() . '.mo';
 
 	if ( file_exists( $custom_path ) ) {
-		load_textdomain( 'maera_bootstrap', $custom_path );
+		load_textdomain( 'maera_bs', $custom_path );
 	} else {
-		load_plugin_textdomain( 'maera_bootstrap', false, $lang_dir );
+		load_plugin_textdomain( 'maera_bs', false, $lang_dir );
 	}
 }
 add_action( 'plugins_loaded', 'maera_bootstrap_texdomain' );

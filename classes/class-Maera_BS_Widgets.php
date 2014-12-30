@@ -25,17 +25,17 @@ if ( ! class_exists( 'Maera_BS_Widgets' ) ) {
 		public static function extra_widget_areas_array() {
 
 			$areas = array(
-				'body_top'    => array( 'name' => __( 'Body Top', 'maera_bootstrap' ) ),
-				'pre_header'  => array( 'name' => __( 'Pre-Header', 'maera_bootstrap' ) ),
-				'header'      => array( 'name' => __( 'Header', 'maera_bootstrap' ) ),
-				'post_header' => array( 'name' => __( 'Post-Header', 'maera_bootstrap' ) ),
-				'jumbotron'   => array( 'name' => __( 'Jumbotron', 'maera_bootstrap' ) ),
-				'pre_content' => array( 'name' => __( 'Pre-Content', 'maera_bootstrap' ) ),
-				'pre_main'    => array( 'name' => __( 'Pre-Main', 'maera_bootstrap' ) ),
-				'post_main'   => array( 'name' => __( 'Post-Main', 'maera_bootstrap' ) ),
-				'pre_footer'  => array( 'name' => __( 'Pre-Footer', 'maera_bootstrap' ) ),
-				'footer'      => array( 'name' => __( 'Footer', 'maera_bootstrap' ) ),
-				'post_footer' => array( 'name' => __( 'Post-Footer', 'maera_bootstrap' ) ),
+				'body_top'    => array( 'name' => __( 'Body Top', 'maera_bs' ) ),
+				'pre_header'  => array( 'name' => __( 'Pre-Header', 'maera_bs' ) ),
+				'header'      => array( 'name' => __( 'Header', 'maera_bs' ) ),
+				'post_header' => array( 'name' => __( 'Post-Header', 'maera_bs' ) ),
+				'jumbotron'   => array( 'name' => __( 'Jumbotron', 'maera_bs' ) ),
+				'pre_content' => array( 'name' => __( 'Pre-Content', 'maera_bs' ) ),
+				'pre_main'    => array( 'name' => __( 'Pre-Main', 'maera_bs' ) ),
+				'post_main'   => array( 'name' => __( 'Post-Main', 'maera_bs' ) ),
+				'pre_footer'  => array( 'name' => __( 'Pre-Footer', 'maera_bs' ) ),
+				'footer'      => array( 'name' => __( 'Footer', 'maera_bs' ) ),
+				'post_footer' => array( 'name' => __( 'Post-Footer', 'maera_bs' ) ),
 			);
 
 			return $areas;
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Maera_BS_Widgets' ) ) {
 			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
 			// Sidebars
 			register_sidebar( array(
-				'name'          => __( 'Secondary Sidebar', 'maera_bootstrap' ),
+				'name'          => __( 'Secondary Sidebar', 'maera_bs' ),
 				'id'            => 'sidebar_secondary',
 				'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
 				'after_widget'  => '</section>',

@@ -9,9 +9,9 @@ class Maera_BS_Social {
 
 	public static function social_networks() {
 		return array(
-			'facebook'    => __( 'Facebook', 'maera_bootstrap' ),
-			'twitter'     => __( 'Twitter', 'maera_bootstrap' ),
-			'googleplus'  => __( 'Google+', 'maera_bootstrap' ),
+			'facebook'    => __( 'Facebook', 'maera_bs' ),
+			'twitter'     => __( 'Twitter', 'maera_bs' ),
+			'googleplus'  => __( 'Google+', 'maera_bs' ),
 		);
 	}
 
