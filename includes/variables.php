@@ -66,12 +66,12 @@ function maera_bootstrap_get_variables() {
 	$font_size_base = get_theme_mod( 'font_base_size', 14 ) . 'px';
 
 	$variables = array(
-	'gray-base'    => $body_bg,
-	'gray-darker'  => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 13.5%)' : 'darken(' . $body_bg . ', 13.5%)',
-	'gray-dark'    => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 20%)' : 'darken(' . $body_bg . ', 20%)',
-	'gray'         => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 33.5%)' : 'darken(' . $body_bg . ', 33.5%)',
-	'gray-light'   => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 60%)' : 'darken(' . $body_bg . ', 60%)',
-	'gray-lighter' => ( 0.4 < $body_lum ) ? 'lighten(' . $body_bg . ', 93.5%)' : 'darken(' . $body_bg . ', 93.5%)',
+	'gray-base'    => ( 0.4 < $body_lum ) ? '#000000' : '#FFFFFF',
+	'gray-darker'  => ( 0.4 < $body_lum ) ? 'darken(' . $body_bg . ', 13.5%)' : 'lighten(' . $body_bg . ', 13.5%)',
+	'gray-dark'    => ( 0.4 < $body_lum ) ? 'darken(' . $body_bg . ', 20%)' : 'lighten(' . $body_bg . ', 20%)',
+	'gray'         => ( 0.4 < $body_lum ) ? 'darken(' . $body_bg . ', 33.5%)' : 'lighten(' . $body_bg . ', 33.5%)',
+	'gray-light'   => ( 0.4 < $body_lum ) ? 'darken(' . $body_bg . ', 60%)' : 'lighten(' . $body_bg . ', 60%)',
+	'gray-lighter' => ( 0.4 < $body_lum ) ? 'darken(' . $body_bg . ', 93.5%)' : 'lighten(' . $body_bg . ', 93.5%)',
 
 	'brand-primary' => '#' . $b_p_obj->getReadableContrastingColor(3)->toHex(),
 	'brand-success' => '#' . $color_success->getReadableContrastingColor(3)->toHex(),
@@ -178,7 +178,7 @@ function maera_bootstrap_get_variables() {
 
 	'input-bg'            => '@body-bg',
 	'input-bg-disabled'   => '@gray-lighter',
-	'input-color'         => '@gray',
+	'input-color'         => '@gray-dark',
 	'input-border'        => ( 0.3 < $body_lum ) ? 'darken(@body-bg, 20%)' : 'lighten(@body-bg, 20%)',
 	'input-border-radius' => '@border-radius-base',
 	'input-border-radius-large' => 'border-radius-large',
