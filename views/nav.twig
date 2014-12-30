@@ -34,7 +34,7 @@
 
 						{% if item.get_children %}
 
-							<li class="{{ item.classes|join(' ') }}"><a href="{{ item.get_path }}">{{ item.title }} </a>
+							<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ item.get_path }}">{{ item.title }} </a>
 								<ul class="sidebar-dropdown-menu">
 									{% for child in item.get_children %}
 										<li class="{{ item.classes|join(' ') }}"><a href="{{ child.get_path }}">{{ child.title }}</a></li>
@@ -44,7 +44,7 @@
 
 						{% else %}
 
-							<li class="{{ item.classes|join(' ') }}"><a href="{{ item.get_path }}">{{ item.title }}</a>
+							<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ item.get_path }}">{{ item.title }}</a>
 
 						{% endif %}
 
@@ -125,17 +125,17 @@
 
 						{% if item.get_children %}
 
-							<li class="dropdown {{ item.classes|join(' ') }}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <b class="caret"></b></a>
+							<li class="dropdown {{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									{% for child in item.get_children %}
-										<li class="{{ item.classes|join(' ') }}"><a href="{{ child.get_path }}">{{ child.title }}</a></li>
+										<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ child.get_path }}">{{ child.title }}</a></li>
 									{% endfor %}
 								</ul>
 							</li>
 
 						{% else %}
 
-							<li class="{{ item.classes|join(' ') }}"><a href="{{ item.get_path }}">{{ item.title }}</a>
+							<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ item.get_path }}">{{ item.title }}</a>
 
 						{% endif %}
 
