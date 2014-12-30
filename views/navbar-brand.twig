@@ -1,6 +1,6 @@
 <a href="{{ site.url }}" class="site-name-logo navbar-brand">
-	{% if site_logo %}
-		<img id="brand-logo" src="{{ TimberImage(site_logo.id).src }}" alt="{{ site.name }}">
+	{% if function('jetpack_the_site_logo') %}
+		{{ function('jetpack_the_site_logo') }}
 	{% else %}
 		{{ site.name }}
 	{% endif %}
