@@ -1136,7 +1136,7 @@ class Maera_Bootstrap_Customizer {
 				'setting'  => $area . '_toggle',
 				'label'    => $area,
 				'section'  => 'custom_widget_areas',
-				'default'  => $settings['default'],
+				'default'  => 0,
 				'priority' => $i,
 			);
 

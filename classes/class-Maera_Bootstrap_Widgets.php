@@ -22,84 +22,20 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		/**
 		 * Return an array of the extra widget area regions
 		 */
-		public static function extra_widget_areas_array( $areas = array() ) {
+		public static function extra_widget_areas_array() {
 
-			$areas['body_top'] = array(
-				'name'     => __( 'Body Top', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/header/before/ewa',
-				'priority' => 20,
-				'class'    => 'row',
-			);
-			$areas['pre_header'] = array(
-				'name'     => __( 'Pre-Header', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/extra_header/before/ewa',
-				'priority' => 20,
-				'class'    => 'row',
-			);
-			$areas['header'] = array(
-				'name'     => __( 'Header', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/extra_header/widgets/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['post_header'] = array(
-				'name'     => __( 'Post-Header', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/extra_header/after/ewa',
-				'priority' => 15,
-				'class'    => 'row',
-			);
-			$areas['jumbotron'] = array(
-				'name'     => __( 'Jumbotron', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/jumbotron/content/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['pre_content'] = array(
-				'name'     => __( 'Pre-Content', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/wrap/before/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['pre_main'] = array(
-				'name'     => __( 'Pre-Main', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/content/before/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['post_main'] = array(
-				'name'     => __( 'Post-Main', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/content/after/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['pre_footer'] = array(
-				'name'     => __( 'Pre-Footer', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/footer/before/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['footer'] = array(
-				'name'     => __( 'Footer', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/footer/content/ewa',
-				'priority' => 10,
-				'class'    => 'row',
-			);
-			$areas['post_footer'] = array(
-				'name'     => __( 'Post-Footer', 'maera_bootstrap' ),
-				'default'  => 0,
-				'action'   => 'maera/footer/after/ewa',
-				'priority' => 10,
-				'class'    => 'row',
+			$areas = array(
+				'body_top'    => array( 'name' => __( 'Body Top', 'maera_bootstrap' ) ),
+				'pre_header'  => array( 'name' => __( 'Pre-Header', 'maera_bootstrap' ) ),
+				'header'      => array( 'name' => __( 'Header', 'maera_bootstrap' ) ),
+				'post_header' => array( 'name' => __( 'Post-Header', 'maera_bootstrap' ) ),
+				'jumbotron'   => array( 'name' => __( 'Jumbotron', 'maera_bootstrap' ) ),
+				'pre_content' => array( 'name' => __( 'Pre-Content', 'maera_bootstrap' ) ),
+				'pre_main'    => array( 'name' => __( 'Pre-Main', 'maera_bootstrap' ) ),
+				'post_main'   => array( 'name' => __( 'Post-Main', 'maera_bootstrap' ) ),
+				'pre_footer'  => array( 'name' => __( 'Pre-Footer', 'maera_bootstrap' ) ),
+				'footer'      => array( 'name' => __( 'Footer', 'maera_bootstrap' ) ),
+				'post_footer' => array( 'name' => __( 'Post-Footer', 'maera_bootstrap' ) ),
 			);
 
 			return $areas;

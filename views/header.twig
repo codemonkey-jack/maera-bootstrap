@@ -17,18 +17,18 @@
 
 	{% if theme_mods.header_widgets_nr != 0 %}
 	{% do action( 'maera/extra_header/before' ) %}
-	{% do action( 'maera/extra_header/before/ewa', 'pre_header', 'row' ) %}
+	{% if sidebar.pre_header %}{{ sidebar.pre_header }}{% endif %}
 	<header class="page-header">
 		{% if 'boxed' == theme_mods.site_style %}<div class="container header-boxed">{% endif %}
 			<div class="header-wrapper container-fluid">
 				{% if 'wide' == theme_mods.site_style %}<div class="container">{% endif %}
-					{% do action( 'maera/extra_header/widgets/ewa', 'header', 'row' ) %}
+					{% if sidebar.header %}{{ sidebar.header }}{% endif %}
 					{% if 'wide' == theme_mods.site_style %}</div>{% endif %}
 				</div>
 				{% if 'boxed' == theme_mods.site_style %}</div>{% endif %}
 			</header>
 			{% do action( 'maera/extra_header/after' ) %}
-			{% do action( 'maera/extra_header/after/ewa', 'post_header', 'row' ) %}
+			{% if sidebar.post_header %}{{ sidebar.post_header }}{% endif %}
 			{% endif %}
 
 			{% if 0 != theme_mods.jumbotron_widgets_nr %}
@@ -41,7 +41,7 @@
 					<div class="container">
 						{% endif %}
 						{% do action( 'maera/jumbotron/content' ) %}
-						{% do action( 'maera/jumbotron/content/ewa', 'jumbotron', 'row' ) %}
+						{% if sidebar.jumbotron %}{{ sidebar.jumbotron }}{% endif %}
 						{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
 					</div>
 					{% endif %}
@@ -49,7 +49,7 @@
 				{% endif %}
 
 				{% do action( 'maera/wrap/before', post.ID ) %}
-				{% do action( 'maera/wrap/before/ewa', 'pre_content', 'row' ) %}
+				{% if sidebar.pre_content %}{{ sidebar.pre_content }}{% endif %}
 
 				{% if theme_mods.navbar_position == 'after-headers' %}
 				{% include 'nav.twig' %}
