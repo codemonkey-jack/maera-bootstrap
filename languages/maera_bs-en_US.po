@@ -1,0 +1,791 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maera Bootstrap Shell\n"
+"POT-Creation-Date: 2014-12-30 12:53+0200\n"
+"PO-Revision-Date: 2014-12-30 12:54+0200\n"
+"Last-Translator: Stathopoulos Aristeides\n"
+"Language-Team: Stathopoulos Aristeides\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/class-Maera_BS_Meta.php:21 classes/class-Maera_BS_Meta.php:22
+msgid ", "
+msgstr ", "
+
+#: classes/class-Maera_BS_Social.php:12
+msgid "Facebook"
+msgstr "Facebook"
+
+#: classes/class-Maera_BS_Social.php:13
+msgid "Twitter"
+msgstr "Twitter"
+
+#: classes/class-Maera_BS_Social.php:14
+msgid "Google+"
+msgstr "Google+"
+
+#: classes/class-Maera_BS_Timber.php:29
+msgctxt "noun"
+msgid "Comment"
+msgstr "Comment"
+
+#: classes/class-Maera_BS_Widgets.php:28
+msgid "Body Top"
+msgstr "Body Top"
+
+#: classes/class-Maera_BS_Widgets.php:29
+msgid "Pre-Header"
+msgstr "Pre-Header"
+
+#: classes/class-Maera_BS_Widgets.php:30
+msgid "Header"
+msgstr "Header"
+
+#: classes/class-Maera_BS_Widgets.php:31
+msgid "Post-Header"
+msgstr "Post-Header"
+
+#: classes/class-Maera_BS_Widgets.php:32 customizer.php:70 customizer.php:76
+#: customizer.php:85
+msgid "Jumbotron"
+msgstr "Jumbotron"
+
+#: classes/class-Maera_BS_Widgets.php:33
+msgid "Pre-Content"
+msgstr "Pre-Content"
+
+#: classes/class-Maera_BS_Widgets.php:34
+msgid "Pre-Main"
+msgstr "Pre-Main"
+
+#: classes/class-Maera_BS_Widgets.php:35
+msgid "Post-Main"
+msgstr "Post-Main"
+
+#: classes/class-Maera_BS_Widgets.php:36
+msgid "Pre-Footer"
+msgstr "Pre-Footer"
+
+#: classes/class-Maera_BS_Widgets.php:37 customizer.php:77 customizer.php:86
+msgid "Footer"
+msgstr "Footer"
+
+#: classes/class-Maera_BS_Widgets.php:38
+msgid "Post-Footer"
+msgstr "Post-Footer"
+
+#: classes/class-Maera_BS_Widgets.php:102
+msgid "Secondary Sidebar"
+msgstr "Secondary Sidebar"
+
+#: classes/class-Maera_BS_Widgets.php:137
+msgid "Width"
+msgstr "Width"
+
+#: classes/class-Maera_Widget_Dropdown.php:68
+msgid "No selection"
+msgstr "No selection"
+
+#: customizer.php:58
+msgid "Structure"
+msgstr "Structure"
+
+#: customizer.php:58
+msgid "Set the structure options"
+msgstr "Set the structure options"
+
+#: customizer.php:59
+msgid "Backgrounds"
+msgstr "Backgrounds"
+
+#: customizer.php:59
+msgid "Set the site backgrounds"
+msgstr "Set the site backgrounds"
+
+#: customizer.php:60
+msgid "Typography"
+msgstr "Typography"
+
+#: customizer.php:60
+msgid "Set the site typography options"
+msgstr "Set the site typography options"
+
+#: customizer.php:61
+msgid "Blog"
+msgstr "Blog"
+
+#: customizer.php:61
+msgid "Set the blog options"
+msgstr "Set the blog options"
+
+#: customizer.php:65
+msgid "Branding"
+msgstr "Branding"
+
+#: customizer.php:67
+msgid "General"
+msgstr "General"
+
+#: customizer.php:68 customizer.php:186
+msgid "Layout"
+msgstr "Layout"
+
+#: customizer.php:69
+msgid "Advanced Layout"
+msgstr "Advanced Layout"
+
+#: customizer.php:72
+msgid "HTML"
+msgstr "HTML"
+
+#: customizer.php:73
+msgid "Body"
+msgstr "Body"
+
+#: customizer.php:74 customizer.php:83
+msgid "Navbar"
+msgstr "Navbar"
+
+#: customizer.php:75 customizer.php:84
+msgid "Extra Header"
+msgstr "Extra Header"
+
+#: customizer.php:79
+msgid "Colors"
+msgstr "Colors"
+
+#: customizer.php:81
+msgid "Base"
+msgstr "Base"
+
+#: customizer.php:82
+msgid "Headers"
+msgstr "Headers"
+
+#: customizer.php:88
+msgid "Blog Options"
+msgstr "Blog Options"
+
+#: customizer.php:89
+msgid "Featured Images on archives"
+msgstr "Featured Images on archives"
+
+#: customizer.php:90
+msgid "Featured Images on posts"
+msgstr "Featured Images on posts"
+
+#: customizer.php:92
+msgid "Social Links"
+msgstr "Social Links"
+
+#: customizer.php:93
+msgid "Advanced"
+msgstr "Advanced"
+
+#: customizer.php:123
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: customizer.php:124
+msgid ""
+"You can write your custom CSS here. This code will appear in a script tag "
+"appended in the header section of the page."
+msgstr ""
+"You can write your custom CSS here. This code will appear in a script tag "
+"appended in the header section of the page."
+
+#: customizer.php:133
+msgid "Custom LESS"
+msgstr "Custom LESS"
+
+#: customizer.php:134
+msgid ""
+"You can write your custom LESS here. This code will be compiled with the "
+"other LESS files of the theme and be appended to the header."
+msgstr ""
+"You can write your custom LESS here. This code will be compiled with the "
+"other LESS files of the theme and be appended to the header."
+
+#: customizer.php:143
+msgid "Custom JS"
+msgstr "Custom JS"
+
+#: customizer.php:144
+msgid ""
+"You can write your custom JavaScript/jQuery here. The code will be included "
+"in a script tag appended to the bottom of the page."
+msgstr ""
+"You can write your custom JavaScript/jQuery here. The code will be included "
+"in a script tag appended to the bottom of the page."
+
+#: customizer.php:153
+msgid "Minimize CSS"
+msgstr "Minimize CSS"
+
+#: customizer.php:154
+msgid ""
+"Minimize the generated CSS. This should be always be checked for production "
+"sites."
+msgstr ""
+"Minimize the generated CSS. This should be always be checked for production "
+"sites."
+
+#: customizer.php:170
+msgid "Site Style"
+msgstr "Site Style"
+
+#: customizer.php:171
+msgid ""
+"Wide and boxed Layouts are responsive while fluid layouts are full-width."
+msgstr ""
+"Wide and boxed Layouts are responsive while fluid layouts are full-width."
+
+#: customizer.php:176
+msgid "Wide"
+msgstr "Wide"
+
+#: customizer.php:177
+msgid "Boxed"
+msgstr "Boxed"
+
+#: customizer.php:178
+msgid "Fluid"
+msgstr "Fluid"
+
+#: customizer.php:187
+msgid ""
+"Select your main layout. Please note that if no widgets are present in a "
+"sidebar then that sidebar will not be displayed. "
+msgstr ""
+"Select your main layout. Please note that if no widgets are present in a "
+"sidebar then that sidebar will not be displayed. "
+
+#: customizer.php:197
+msgid "Primary Sidebar Width"
+msgstr "Primary Sidebar Width"
+
+#: customizer.php:212
+msgid "Secondary Sidebar Width"
+msgstr "Secondary Sidebar Width"
+
+#: customizer.php:234
+msgid "Widgets mode"
+msgstr "Widgets mode"
+
+#: customizer.php:235
+msgid "How do you want your widgets to be displayed?"
+msgstr "How do you want your widgets to be displayed?"
+
+#: customizer.php:240
+msgid "None"
+msgstr "None"
+
+#: customizer.php:241
+msgid "Well"
+msgstr "Well"
+
+#: customizer.php:242
+msgid "Panel"
+msgstr "Panel"
+
+#: customizer.php:249
+msgid "Small Screen / Tablet view"
+msgstr "Small Screen / Tablet view"
+
+#: customizer.php:250
+msgid "The width of Tablet screens. Default: 768px"
+msgstr "The width of Tablet screens. Default: 768px"
+
+#: customizer.php:264
+msgid "Desktop Container Width"
+msgstr "Desktop Container Width"
+
+#: customizer.php:265
+msgid "The width of normal screens. Default: 992px"
+msgstr "The width of normal screens. Default: 992px"
+
+#: customizer.php:279
+msgid "Large Desktop Container Width"
+msgstr "Large Desktop Container Width"
+
+#: customizer.php:280
+msgid "The width of Large Desktop screens. Default: 1200px"
+msgstr "The width of Large Desktop screens. Default: 1200px"
+
+#: customizer.php:294
+msgid "Gutter"
+msgstr "Gutter"
+
+#: customizer.php:295
+msgid "The spacing between grid columns. Default: 30px"
+msgstr "The spacing between grid columns. Default: 30px"
+
+#: customizer.php:309
+msgid "Per Post-Type layouts"
+msgstr "Per Post-Type layouts"
+
+#: customizer.php:310
+msgid ""
+"After you enable this setting you will have to save your settings and "
+"refresh your page in order to see the new options."
+msgstr ""
+"After you enable this setting you will have to save your settings and "
+"refresh your page in order to see the new options."
+
+#: customizer.php:327
+msgid "layout"
+msgstr "layout"
+
+#: customizer.php:345
+msgid "NavBar Positioning"
+msgstr "NavBar Positioning"
+
+#: customizer.php:346
+msgid ""
+"Using this option you can set the navbar to be fixed to top, fixed to bottom "
+"or normal. When you're using one of the 'fixed' options, the navbar will "
+"stay fixed on the top or bottom of the page. Default: Normal"
+msgstr ""
+"Using this option you can set the navbar to be fixed to top, fixed to bottom "
+"or normal. When you're using one of the 'fixed' options, the navbar will "
+"stay fixed on the top or bottom of the page. Default: Normal"
+
+#: customizer.php:350
+msgid "Normal"
+msgstr "Normal"
+
+#: customizer.php:351 customizer.php:922
+msgid "Full-Width"
+msgstr "Full-Width"
+
+#: customizer.php:352
+msgid "Fixed (top)"
+msgstr "Fixed (top)"
+
+#: customizer.php:353
+msgid "Fixed (bottom)"
+msgstr "Fixed (bottom)"
+
+#: customizer.php:354
+msgid "After Extra Headers"
+msgstr "After Extra Headers"
+
+#: customizer.php:355
+msgid "Left Slide"
+msgstr "Left Slide"
+
+#: customizer.php:356
+msgid "Right Slide"
+msgstr "Right Slide"
+
+#: customizer.php:364
+msgid "Responsive NavBar Threshold"
+msgstr "Responsive NavBar Threshold"
+
+#: customizer.php:365
+msgid "Point at which the navbar becomes uncollapsed"
+msgstr "Point at which the navbar becomes uncollapsed"
+
+#: customizer.php:369
+msgid "Never"
+msgstr "Never"
+
+#: customizer.php:370
+msgid "Extra Small"
+msgstr "Extra Small"
+
+#: customizer.php:371
+msgid "Small"
+msgstr "Small"
+
+#: customizer.php:372
+msgid "Desktop"
+msgstr "Desktop"
+
+#: customizer.php:373
+msgid "Large Desktop"
+msgstr "Large Desktop"
+
+#: customizer.php:374
+msgid "Always"
+msgstr "Always"
+
+#: customizer.php:382
+msgid "Display search form on the NavBar"
+msgstr "Display search form on the NavBar"
+
+#: customizer.php:392
+msgid "Menus alignment"
+msgstr "Menus alignment"
+
+#: customizer.php:396
+msgid "Left"
+msgstr "Left"
+
+#: customizer.php:397
+msgid "Center"
+msgstr "Center"
+
+#: customizer.php:398
+msgid "Right"
+msgstr "Right"
+
+#: customizer.php:406
+msgid "NavBar Height"
+msgstr "NavBar Height"
+
+#: customizer.php:407
+msgid "Select the height of your navbars in pixels."
+msgstr "Select the height of your navbars in pixels."
+
+#: customizer.php:427
+msgid "NavBar Background Color"
+msgstr "NavBar Background Color"
+
+#: customizer.php:428
+msgid "Pick a background color for the NavBar. Default: #f8f8f8."
+msgstr "Pick a background color for the NavBar. Default: #f8f8f8."
+
+#: customizer.php:437
+msgid "NavBar Background Opacity"
+msgstr "NavBar Background Opacity"
+
+#: customizer.php:457
+msgid "Menus font"
+msgstr "Menus font"
+
+#: customizer.php:467 customizer.php:948
+msgid "Font Weight"
+msgstr "Font Weight"
+
+#: customizer.php:481 customizer.php:693 customizer.php:962
+msgid "Font Size"
+msgstr "Font Size"
+
+#: customizer.php:495 customizer.php:708 customizer.php:976
+msgid "Line Height"
+msgstr "Line Height"
+
+#: customizer.php:515
+msgid "Brand Colors: Primary"
+msgstr "Brand Colors: Primary"
+
+#: customizer.php:516
+msgid ""
+"Select your primary branding color. Also referred to as an accent color. "
+"This will affect various areas of your site, including the color of your "
+"primary buttons, link color, the background of some elements and many more."
+msgstr ""
+"Select your primary branding color. Also referred to as an accent color. "
+"This will affect various areas of your site, including the color of your "
+"primary buttons, link color, the background of some elements and many more."
+
+#: customizer.php:527
+msgid "Enable Gradients"
+msgstr "Enable Gradients"
+
+#: customizer.php:528
+msgid ""
+"Enable or disable gradients. These are applied to navbars, buttons and other "
+"elements. Please note that gradients will not be applied in the preview mode "
+"and can only be seen on the live site."
+msgstr ""
+"Enable or disable gradients. These are applied to navbars, buttons and other "
+"elements. Please note that gradients will not be applied in the preview mode "
+"and can only be seen on the live site."
+
+#: customizer.php:533
+msgid "Flat"
+msgstr "Flat"
+
+#: customizer.php:534
+msgid "Gradients"
+msgstr "Gradients"
+
+#: customizer.php:547
+msgid "General Background"
+msgstr "General Background"
+
+#: customizer.php:571
+msgid "Background Color"
+msgstr "Background Color"
+
+#: customizer.php:580
+msgid "Opacity"
+msgstr "Opacity"
+
+#: customizer.php:600
+msgid "Base font"
+msgstr "Base font"
+
+#: customizer.php:610
+msgid "Google-Font subsets"
+msgstr "Google-Font subsets"
+
+#: customizer.php:611
+msgid "The subsets used from Google's API."
+msgstr "The subsets used from Google's API."
+
+#: customizer.php:621
+msgid "Base Font Weight"
+msgstr "Base Font Weight"
+
+#: customizer.php:635
+msgid "Base Font Size"
+msgstr "Base Font Size"
+
+#: customizer.php:649
+msgid "Base Line Height"
+msgstr "Base Line Height"
+
+#: customizer.php:669
+msgid "Font-Family"
+msgstr "Font-Family"
+
+#: customizer.php:679
+msgid "Font Weight."
+msgstr "Font Weight."
+
+#: customizer.php:679 customizer.php:693 customizer.php:708
+msgid "Default: "
+msgstr "Default: "
+
+#: customizer.php:694
+msgid ""
+"The size defined here applies to H5. All other header elements are "
+"calculated porportionally, based on the base font size."
+msgstr ""
+"The size defined here applies to H5. All other header elements are "
+"calculated porportionally, based on the base font size."
+
+#: customizer.php:729
+msgid "Archives Display Mode"
+msgstr "Archives Display Mode"
+
+#: customizer.php:730
+msgid "Display the excerpt or the full post on post archives."
+msgstr "Display the excerpt or the full post on post archives."
+
+#: customizer.php:735
+msgid "Excerpt"
+msgstr "Excerpt"
+
+#: customizer.php:736
+msgid "Full Post"
+msgstr "Full Post"
+
+#: customizer.php:743
+msgid "Post Meta elements"
+msgstr "Post Meta elements"
+
+#: customizer.php:744
+msgid ""
+"You can define a comma-separated list of meta elements you want on your "
+"posts, in the order that you want them. Accepted values: <code>author, "
+"sticky, date, category, tags, comments</code>"
+msgstr ""
+"You can define a comma-separated list of meta elements you want on your "
+"posts, in the order that you want them. Accepted values: <code>author, "
+"sticky, date, category, tags, comments</code>"
+
+#: customizer.php:753
+msgid ""
+"Show Breadcrumbs. Please note that this setting requires you to save your "
+"options and refresh the page. Breadcrumbs are not displayed on the homepage."
+msgstr ""
+"Show Breadcrumbs. Please note that this setting requires you to save your "
+"options and refresh the page. Breadcrumbs are not displayed on the homepage."
+
+#: customizer.php:762
+msgid "Post excerpt length"
+msgstr "Post excerpt length"
+
+#: customizer.php:763
+msgid "Choose how many words should be used for post excerpt. Default: 55"
+msgstr "Choose how many words should be used for post excerpt. Default: 55"
+
+#: customizer.php:777
+msgid "\"more\" text"
+msgstr "\"more\" text"
+
+#: customizer.php:778
+msgid "Text to display in case of excerpt too long. Default: Continued"
+msgstr "Text to display in case of excerpt too long. Default: Continued"
+
+#: customizer.php:781
+msgid "Continued"
+msgstr "Continued"
+
+#: customizer.php:793 customizer.php:852
+msgid "Display Featured Images"
+msgstr "Display Featured Images"
+
+#: customizer.php:794
+msgid ""
+"Display featured Images on post archives ( such as categories, tags, month "
+"view etc )."
+msgstr ""
+"Display featured Images on post archives ( such as categories, tags, month "
+"view etc )."
+
+#: customizer.php:803 customizer.php:862
+msgid "Featured Image Width"
+msgstr "Featured Image Width"
+
+#: customizer.php:804 customizer.php:863
+msgid "Set to -1 for max width and 0 for original width. Default: -1"
+msgstr "Set to -1 for max width and 0 for original width. Default: -1"
+
+#: customizer.php:818 customizer.php:877
+msgid "Featured Image Height"
+msgstr "Featured Image Height"
+
+#: customizer.php:819
+msgid ""
+"Set to 0 to resize the image using the original image proportions. Default: 0"
+msgstr ""
+"Set to 0 to resize the image using the original image proportions. Default: 0"
+
+#: customizer.php:835
+msgid "Disable featured images per post type."
+msgstr "Disable featured images per post type."
+
+#: customizer.php:836
+msgid ""
+"CAUTION: This setting will also disable displaying the featured images on "
+"single posts as well."
+msgstr ""
+"CAUTION: This setting will also disable displaying the featured images on "
+"single posts as well."
+
+#: customizer.php:853
+msgid "Display featured Images on simgle posts."
+msgstr "Display featured Images on simgle posts."
+
+#: customizer.php:878
+msgid "Set to 0 to use the original image proportions. Default: 0"
+msgstr "Set to 0 to use the original image proportions. Default: 0"
+
+#: customizer.php:898
+msgid "Jumbotron Background"
+msgstr "Jumbotron Background"
+
+#: customizer.php:923
+msgid ""
+"When selected, the Jumbotron is no longer restricted by the width of your "
+"page, taking over the full width of your screen. This option is useful when "
+"you have assigned a slider widget on the Jumbotron area and you want its "
+"width to be the maximum width of the screen. Default: OFF."
+msgstr ""
+"When selected, the Jumbotron is no longer restricted by the width of your "
+"page, taking over the full width of your screen. This option is useful when "
+"you have assigned a slider widget on the Jumbotron area and you want its "
+"width to be the maximum width of the screen. Default: OFF."
+
+#: customizer.php:938
+msgid "Jumbotron font"
+msgstr "Jumbotron font"
+
+#: customizer.php:996
+msgid "Header Background"
+msgstr "Header Background"
+
+#: customizer.php:1021
+msgid "Display social links in the NavBar."
+msgstr "Display social links in the NavBar."
+
+#: customizer.php:1022
+msgid "Social network links can be set-up in the \"Social\" section."
+msgstr "Social network links can be set-up in the \"Social\" section."
+
+#: customizer.php:1026
+msgid "Off"
+msgstr "Off"
+
+#: customizer.php:1027
+msgid "Inline"
+msgstr "Inline"
+
+#: customizer.php:1028
+msgid "Dropdown"
+msgstr "Dropdown"
+
+#: customizer.php:1041
+msgid "link"
+msgstr "link"
+
+#: customizer.php:1060
+msgid "Footer Background"
+msgstr "Footer Background"
+
+#: customizer.php:1083
+msgid "Footer Text"
+msgstr "Footer Text"
+
+#: customizer.php:1088
+msgid ""
+"The text that will be displayed in your footer. You can use [year] and "
+"[sitename] and they will be replaced appropriately. Default: &copy; [year] "
+"[sitename]"
+msgstr ""
+"The text that will be displayed in your footer. You can use [year] and "
+"[sitename] and they will be replaced appropriately. Default: &copy; [year] "
+"[sitename]"
+
+#: customizer.php:1100
+msgid "Border-Radius"
+msgstr "Border-Radius"
+
+#: customizer.php:1101
+msgid ""
+"You can adjust the corner-radius of all elements in your site here. This "
+"will affect buttons, navbars, widgets and many more. Default: 4"
+msgstr ""
+"You can adjust the corner-radius of all elements in your site here. This "
+"will affect buttons, navbars, widgets and many more. Default: 4"
+
+#: customizer.php:1115
+msgid "Padding Base"
+msgstr "Padding Base"
+
+#: customizer.php:1116
+msgid ""
+"You can adjust the padding base. This affects buttons size and lots of other "
+"cool stuff too! Default: 6"
+msgstr ""
+"You can adjust the padding base. This affects buttons size and lots of other "
+"cool stuff too! Default: 6"
+
+#: views/base.twig:12
+msgid "Sorry, no content"
+msgstr "Sorry, no content"
+
+#: views/content-single-entry-meta.twig:13
+msgid "Sticky"
+msgstr "Sticky"
+
+#: views/header.twig:6
+msgid "Skip to main content"
+msgstr "Skip to main content"
+
+#: views/navbar-search.twig:3
+msgid "Search for:"
+msgstr "Search for:"
+
+#: views/pagination.twig:7
+msgid "Previous"
+msgstr "Previous"
+
+#: views/pagination.twig:15
+msgid "Next"
+msgstr "Next"
