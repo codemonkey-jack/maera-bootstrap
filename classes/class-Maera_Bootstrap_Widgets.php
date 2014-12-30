@@ -22,7 +22,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		/**
 		 * Return an array of the extra widget area regions
 		 */
-		function extra_widget_areas_array( $areas = array() ) {
+		public static function extra_widget_areas_array( $areas = array() ) {
 
 			$areas['body_top'] = array(
 				'name'     => __( 'Body Top', 'maera_bootstrap' ),
@@ -158,13 +158,12 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		 * Register secondary sidebar
 		 */
 		function maera_widget_areas() {
-			global $maera_i18n;
 			$class        = apply_filters( 'maera/widgets/class', '' );
 			$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="widget-title">' );
 			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
 			// Sidebars
 			register_sidebar( array(
-				'name'          => $maera_i18n['secondarysidebar'],
+				'name'          => __( 'Secondary Sidebar', 'maera_bootstrap' ),
 				'id'            => 'sidebar_secondary',
 				'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
 				'after_widget'  => '</section>',
@@ -172,7 +171,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 				'after_title'   => $after_title,
 			) );
 
-			$extra_widget_areas = $this->extra_widget_areas_array();
+			$extra_widget_areas = self::extra_widget_areas_array();
 
 			foreach ( $extra_widget_areas as $extra_widget_area => $options ) {
 
@@ -194,7 +193,7 @@ if ( ! class_exists( 'Maera_Bootstrap_Widgets' ) ) {
 		}
 
 		function extra_widget_areas() {
-			$extra_widget_areas = $this->extra_widget_areas_array();
+			$extra_widget_areas = self::extra_widget_areas_array();
 
 			$widget_width = new Maera_Widget_Dropdown(
 			array(

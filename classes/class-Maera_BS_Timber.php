@@ -11,23 +11,18 @@ class Maera_BS_Timber {
 	 */
 	function timber_extras( $data ) {
 
-		// Get the layout we're using (sidebar arrangement).
-		$layout = apply_filters( 'maera/layout/modifier', get_theme_mod( 'layout', 1 ) );
-
 		// get secondary sidebar
 		$sidebar_secondary = Timber::get_widgets( 'sidebar_secondary' );
 		$data['sidebar']['secondary'] = apply_filters( 'maera/sidebar/secondary', $sidebar_secondary );
 
-		if ( 0 == $layout ) {
+		$extra_widget_areas = Maera_Bootstrap_Widgets::extra_widget_areas_array();
 
-			$data['sidebar']['primary']   = null;
-			$data['sidebar']['secondary'] = null;
+		foreach ( $extra_widget_areas as $extra_widget_area => $options ) {
 
-			// Add a filter for the layout.
-			add_filter( 'maera/layout/modifier', 'maera_return_0' );
+			if ( 0 != get_theme_mod( $extra_widget_area . '_toggle', 0 ) ) {
+				$data['sidebar'][$extra_widget_area] = Timber::get_widgets( $extra_widget_area );
+			}
 
-		} elseif ( $layout < 3 ) {
-			$data['sidebar']['secondary'] = null;
 		}
 
 		$comment_form_args = array(

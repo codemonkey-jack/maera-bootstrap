@@ -12,6 +12,11 @@ class Maera_BS_Layout {
 		add_action( 'wp', array( $this, 'container_class_modifier' ) );
 		add_action( 'wp', array( $this, 'sidebars_bypass' ) );
 
+		$layout = apply_filters( 'maera/layout/modifier', get_theme_mod( 'layout', 1 ) );
+		if ( 0 == $layout ) {
+			add_filter( 'maera/layout/modifier', 'maera_return_0' );
+		}
+
 	}
 
 	/**
