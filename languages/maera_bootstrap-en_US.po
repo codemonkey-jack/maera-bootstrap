@@ -20,243 +20,243 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: class-Maera_Bootstrap.php:157
+#: class-Maera_BS.php:157
 #@ maera_bootstrap
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:89
-#: classes/class-Maera_Bootstrap_Structure.php:90
+#: classes/class-Maera_BS_Structure.php:89
+#: classes/class-Maera_BS_Structure.php:90
 #@ maera_bootstrap
 msgid ", "
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:111
+#: classes/class-Maera_BS_Structure.php:111
 #, php-format
 #@ maera_bootstrap
 msgid "View all posts by %s"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:119
+#: classes/class-Maera_BS_Structure.php:119
 #@ maera_bootstrap
 msgid "Sticky"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:131
+#: classes/class-Maera_BS_Structure.php:131
 #@ maera_bootstrap
 msgid "Gallery"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:134
+#: classes/class-Maera_BS_Structure.php:134
 #@ maera_bootstrap
 msgid "Aside"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:137
+#: classes/class-Maera_BS_Structure.php:137
 #@ maera_bootstrap
 msgid "Link"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:140
+#: classes/class-Maera_BS_Structure.php:140
 #@ maera_bootstrap
 msgid "Image"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:143
+#: classes/class-Maera_BS_Structure.php:143
 #@ maera_bootstrap
 msgid "Quote"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:146
+#: classes/class-Maera_BS_Structure.php:146
 #@ maera_bootstrap
 msgid "Status"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:149
+#: classes/class-Maera_BS_Structure.php:149
 #@ maera_bootstrap
 msgid "Video"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:152
+#: classes/class-Maera_BS_Structure.php:152
 #@ maera_bootstrap
 msgid "Audio"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:155
+#: classes/class-Maera_BS_Structure.php:155
 #@ maera_bootstrap
 msgid "Chat"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:168
+#: classes/class-Maera_BS_Structure.php:168
 #, php-format
 #@ maera_bootstrap
 msgctxt "1: post format name. 2: date"
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:202
+#: classes/class-Maera_BS_Structure.php:202
 #@ maera_bootstrap
 msgid "Comments"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:644
+#: classes/class-Maera_BS_Structure.php:644
 #@ maera_bootstrap
 msgid "Search for:"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:645
+#: classes/class-Maera_BS_Structure.php:645
 #@ maera_bootstrap
 msgid "Search"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:656
+#: classes/class-Maera_BS_Structure.php:656
 #: customizer.php:1001
 #@ maera_bootstrap
 msgid "Blogger"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:657
+#: classes/class-Maera_BS_Structure.php:657
 #: customizer.php:1002
 #@ maera_bootstrap
 msgid "DeviantART"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:658
+#: classes/class-Maera_BS_Structure.php:658
 #: customizer.php:1003
 #@ maera_bootstrap
 msgid "Digg"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:659
+#: classes/class-Maera_BS_Structure.php:659
 #: customizer.php:1004
 #@ maera_bootstrap
 msgid "Dribbble"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:660
+#: classes/class-Maera_BS_Structure.php:660
 #: customizer.php:1005
 #@ maera_bootstrap
 msgid "Facebook"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:661
+#: classes/class-Maera_BS_Structure.php:661
 #: customizer.php:1006
 #@ maera_bootstrap
 msgid "Flickr"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:662
+#: classes/class-Maera_BS_Structure.php:662
 #: customizer.php:1007
 #@ maera_bootstrap
 msgid "Github"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:663
+#: classes/class-Maera_BS_Structure.php:663
 #: customizer.php:1008
 #@ maera_bootstrap
 msgid "Google+"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:664
+#: classes/class-Maera_BS_Structure.php:664
 #: customizer.php:1009
 #@ maera_bootstrap
 msgid "Instagram"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:665
+#: classes/class-Maera_BS_Structure.php:665
 #: customizer.php:1010
 #@ maera_bootstrap
 msgid "LinkedIn"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:666
+#: classes/class-Maera_BS_Structure.php:666
 #: customizer.php:1011
 #@ maera_bootstrap
 msgid "MySpace"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:667
+#: classes/class-Maera_BS_Structure.php:667
 #: customizer.php:1012
 #@ maera_bootstrap
 msgid "Pinterest"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:668
+#: classes/class-Maera_BS_Structure.php:668
 #: customizer.php:1013
 #@ maera_bootstrap
 msgid "Reddit"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:669
+#: classes/class-Maera_BS_Structure.php:669
 #: customizer.php:1014
 #@ maera_bootstrap
 msgid "RSS"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:670
+#: classes/class-Maera_BS_Structure.php:670
 #: customizer.php:1015
 #@ maera_bootstrap
 msgid "Skype"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:671
+#: classes/class-Maera_BS_Structure.php:671
 #: customizer.php:1016
 #@ maera_bootstrap
 msgid "SoundCloud"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:672
+#: classes/class-Maera_BS_Structure.php:672
 #: customizer.php:1017
 #@ maera_bootstrap
 msgid "Tumblr"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:673
+#: classes/class-Maera_BS_Structure.php:673
 #: customizer.php:1018
 #@ maera_bootstrap
 msgid "Twitter"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:674
+#: classes/class-Maera_BS_Structure.php:674
 #: customizer.php:1019
 #@ maera_bootstrap
 msgid "Vimeo"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:675
+#: classes/class-Maera_BS_Structure.php:675
 #: customizer.php:1020
 #@ maera_bootstrap
 msgid "Vkontakte"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Structure.php:676
+#: classes/class-Maera_BS_Structure.php:676
 #: customizer.php:1021
 #@ maera_bootstrap
 msgid "YouTube"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:41
+#: classes/class-Maera_BS_Widgets.php:41
 #@ maera_bootstrap
 msgid "Body Top"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:42
+#: classes/class-Maera_BS_Widgets.php:42
 #@ maera_bootstrap
 msgid "Pre-Header"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:43
+#: classes/class-Maera_BS_Widgets.php:43
 #@ maera_bootstrap
 msgid "Header"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:44
+#: classes/class-Maera_BS_Widgets.php:44
 #@ maera_bootstrap
 msgid "Post-Header"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:45
+#: classes/class-Maera_BS_Widgets.php:45
 #: customizer.php:24
 #: customizer.php:32
 #: customizer.php:41
@@ -264,49 +264,49 @@ msgstr ""
 msgid "Jumbotron"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:46
+#: classes/class-Maera_BS_Widgets.php:46
 #@ maera_bootstrap
 msgid "Pre-Content"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:47
+#: classes/class-Maera_BS_Widgets.php:47
 #@ maera_bootstrap
 msgid "Pre-Main"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:48
+#: classes/class-Maera_BS_Widgets.php:48
 #@ maera_bootstrap
 msgid "Post-Main"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:49
+#: classes/class-Maera_BS_Widgets.php:49
 #@ maera_bootstrap
 msgid "Pre-Footer"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:50
+#: classes/class-Maera_BS_Widgets.php:50
 #: customizer.php:33
 #: customizer.php:42
 #@ maera_bootstrap
 msgid "Footer"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:51
+#: classes/class-Maera_BS_Widgets.php:51
 #@ maera_bootstrap
 msgid "Post-Footer"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:423
+#: classes/class-Maera_BS_Widgets.php:423
 #@ maera_bootstrap
 msgid "Logo (Maera Bootstrap)"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:424
+#: classes/class-Maera_BS_Widgets.php:424
 #@ maera_bootstrap
 msgid "The logo you have specified in the Customizer"
 msgstr ""
 
-#: classes/class-Maera_Bootstrap_Widgets.php:455
+#: classes/class-Maera_BS_Widgets.php:455
 #@ maera_bootstrap
 msgid "This widget has no options. Its only function is to print the site logo, as defined in the theme customizer. You can use this wherever you need, particularly useful in the header widget areas, or to accomplish alternative site layouts"
 msgstr ""

@@ -4,7 +4,7 @@
 /**
 * The Meara Bootstrap variables
 */
-class Maera_Bootstrap_Compiler {
+class Maera_BS_Compiler {
 
 	/**
 	 * Class constructor
@@ -60,9 +60,9 @@ class Maera_Bootstrap_Compiler {
 		    functions: {},
 		    dumpLineNumbers: "comments",
 		    relativeUrls: true,
-		    rootpath: ":/' . MAERA_BOOTSTRAP_SHELL_URL . '/"
+		    rootpath: ":/' . MAERA_BS_SHELL_URL . '/"
 		  };</script>';
-		echo '<script src="' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/less.min.js" type="text/javascript"></script>';
+		echo '<script src="' . MAERA_BS_SHELL_URL . '/assets/js/less.min.js" type="text/javascript"></script>';
 
 	}
 

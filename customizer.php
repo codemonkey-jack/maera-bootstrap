@@ -1,6 +1,6 @@
 <?php
 
-class Maera_Bootstrap_Customizer {
+class Maera_BS_Customizer {
 
 	function __construct() {
 
@@ -1124,7 +1124,7 @@ class Maera_Bootstrap_Customizer {
 			),
 		);
 
-		$widgets_class = new Maera_Bootstrap_Widgets();
+		$widgets_class = new Maera_BS_Widgets();
 		$extra_widget_areas = $widgets_class->extra_widget_areas_array();
 
 		$i = 1;
@@ -1149,4 +1149,4 @@ class Maera_Bootstrap_Customizer {
 
 }
 
-$customizer = new Maera_Bootstrap_Customizer();
+$customizer = new Maera_BS_Customizer();

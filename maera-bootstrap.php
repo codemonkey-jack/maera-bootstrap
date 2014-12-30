@@ -8,8 +8,8 @@ Author:              Aristeides Stathopoulos, Dimitris Kalliris
 Author URI:          http://wpmu.io
 */
 
-define( 'MAERA_BOOTSTRAP_SHELL_URL', plugins_url( '', __FILE__ ) );
-define( 'MAERA_BOOTSTRAP_SHELL_PATH', dirname( __FILE__ ) );
+define( 'MAERA_BS_SHELL_URL', plugins_url( '', __FILE__ ) );
+define( 'MAERA_BS_SHELL_PATH', dirname( __FILE__ ) );
 
 /**
  * Include the shell
@@ -20,7 +20,7 @@ function maera_shell_bootstrap_include( $shells ) {
 	$shells[] = array(
 		'value' => 'bootstrap',
 		'label' => 'Bootstrap',
-		'class' => 'Maera_Bootstrap',
+		'class' => 'Maera_BS',
 	);
 
 	return $shells;
@@ -43,12 +43,12 @@ function maera_bootstrap_texdomain() {
 }
 add_action( 'plugins_loaded', 'maera_bootstrap_texdomain' );
 
-if ( ! class_exists( 'Maera_Bootstrap' ) ) {
+if ( ! class_exists( 'Maera_BS' ) ) {
 
 	/**
 	* The Bootstrap Shell module
 	*/
-	class Maera_Bootstrap {
+	class Maera_BS {
 
 		private static $instance;
 
@@ -67,10 +67,10 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 
 			// Include other classes
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Widgets.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Widgets.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Styles.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Structure.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Bootstrap_Compiler.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Structure.php' );
+			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Compiler.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
 			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Scripts.php' );
@@ -85,10 +85,10 @@ if ( ! class_exists( 'Maera_Bootstrap' ) ) {
 			include_once( MAERA_SHELL_PATH . '/customizer.php' );
 
 			// Instantianate addon classes
-			$bs_structure = new Maera_Bootstrap_Structure();
-			$bs_widgets   = new Maera_Bootstrap_Widgets();
+			$bs_structure = new Maera_BS_Structure();
+			$bs_widgets   = new Maera_BS_Widgets();
 			$bs_styles    = new Maera_BS_Styles();
-			$bs_compiler  = new Maera_Bootstrap_Compiler();
+			$bs_compiler  = new Maera_BS_Compiler();
 			$bs_images    = new Maera_BS_Images();
 			$bs_excerpt   = new Maera_BS_Excerpt();
 			$bs_timber    = new Maera_BS_Timber();

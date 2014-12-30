@@ -24,13 +24,13 @@ class Maera_BS_Scripts {
 	 */
 	function scripts() {
 
-		wp_register_script( 'bootstrap-min', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap.min.js', false, null, true  );
+		wp_register_script( 'bootstrap-min', MAERA_BS_SHELL_URL . '/assets/js/bootstrap.min.js', false, null, true  );
 		wp_enqueue_script( 'bootstrap-min' );
 
-		wp_register_script( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
+		wp_register_script( 'bootstrap-accessibility', MAERA_BS_SHELL_URL . '/assets/js/bootstrap-accessibility.min.js', false, null, true  );
 		wp_enqueue_script( 'bootstrap-accessibility' );
 
-		wp_register_style( 'bootstrap-accessibility', MAERA_BOOTSTRAP_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
+		wp_register_style( 'bootstrap-accessibility', MAERA_BS_SHELL_URL . '/assets/css/bootstrap-accessibility.css', false, null, true );
 		wp_enqueue_style( 'bootstrap-accessibility' );
 
 		wp_enqueue_style( 'dashicons' );

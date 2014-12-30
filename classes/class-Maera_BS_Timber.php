@@ -15,7 +15,7 @@ class Maera_BS_Timber {
 		$sidebar_secondary = Timber::get_widgets( 'sidebar_secondary' );
 		$data['sidebar']['secondary'] = apply_filters( 'maera/sidebar/secondary', $sidebar_secondary );
 
-		$extra_widget_areas = Maera_Bootstrap_Widgets::extra_widget_areas_array();
+		$extra_widget_areas = Maera_BS_Widgets::extra_widget_areas_array();
 
 		foreach ( $extra_widget_areas as $extra_widget_area => $options ) {
 
@@ -30,7 +30,7 @@ class Maera_BS_Timber {
 			'id_submit'     => 'comment-submit',
 		);
 
-		$data['content_width'] = Maera_Bootstrap_Structure::content_width_px();
+		$data['content_width'] = Maera_BS_Structure::content_width_px();
 		$data['post_meta'] = Maera_BS_Meta::meta_elements();
 
 		$data['comment_form'] = TimberHelper::get_comment_form( null, $comment_form_args );

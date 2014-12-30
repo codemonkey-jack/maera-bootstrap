@@ -1,11 +1,11 @@
 <?php
 
-if ( ! class_exists( 'Maera_Bootstrap_Structure' ) ) {
+if ( ! class_exists( 'Maera_BS_Structure' ) ) {
 
 	/**
 	* The Bootstrap Shell module
 	*/
-	class Maera_Bootstrap_Structure {
+	class Maera_BS_Structure {
 
 		/**
 		 * Class constructor

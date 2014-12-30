@@ -108,7 +108,7 @@ function maera_bootstrap_get_variables() {
 	'headings-line-height' => get_theme_mod( 'font_headers_height', 1.1 ),
 	'headings-color'       => 'inherit',
 
-	'icon-font-path'   => '"' . MAERA_BOOTSTRAP_SHELL_URL . '/assets/fonts/"',
+	'icon-font-path'   => '"' . MAERA_BS_SHELL_URL . '/assets/fonts/"',
 	'icon-font-name'   => '"glyphicons-halflings-regular"',
 	'icon-font-svg-id' => '"glyphicons_halflingsregular"',
 
