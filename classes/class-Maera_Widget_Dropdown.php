@@ -65,7 +65,7 @@ class Maera_Widget_Dropdown {
 		<div style="margin-top: 1em;">
 			<label for="<?php echo $widget->get_field_id( $this->id ); ?>"><?php echo $this->label; ?></label>
 			<select class="widefat" id="<?php echo $widget->get_field_id( $this->id ); ?>" name="<?php echo $widget->get_field_name( $this->id ); ?>">
-				<option value="-1"><?php _e( '', 'maera_md' ); ?></option>
+				<option value="-1"><?php _e( 'No selection', 'maera_md' ); ?></option>
 				<?php foreach ( $choices as $choice => $options ) : ?>
 					<?php $selected = ( ( ( $choice == $instance[$this->id] ) || empty( $instance[$this->id] ) ) ? ' selected="selected"' : '' ); ?>
 					<option value="<?php echo $choice; ?>"<?php echo $selected; ?>><?php echo $options['label']; ?></option>
