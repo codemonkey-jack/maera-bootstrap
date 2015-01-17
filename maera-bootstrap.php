@@ -3,11 +3,12 @@
 Plugin Name:         Maera Bootstrap Shell
 Plugin URI:
 Description:         Add the bootstrap shell to the Maera theme
-Version:             1.0-beta1
+Version:             1.0
 Author:              Aristeides Stathopoulos, Dimitris Kalliris
 Author URI:          http://wpmu.io
 */
 
+define( 'MAERA_BS_SHELL_VER', '1.0' );
 define( 'MAERA_BS_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_BS_SHELL_PATH', dirname( __FILE__ ) );
 
@@ -150,3 +151,15 @@ if ( ! class_exists( 'Maera_BS' ) ) {
 	}
 
 }
+
+/**
+* Licensing handler
+*/
+function maera_bs_licensing() {
+
+	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
+		$maera_md_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Bootstrap Shell', MAERA_BS_SHELL_VER );
+	}
+
+}
+add_action( 'init', 'maera_bs_licensing' );
