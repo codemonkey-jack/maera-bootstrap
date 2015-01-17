@@ -5,7 +5,8 @@ Plugin URI:
 Description:         Add the bootstrap shell to the Maera theme
 Version:             1.0
 Author:              Aristeides Stathopoulos, Dimitris Kalliris
-Author URI:          http://wpmu.io
+Author URI:          https://press.codes
+Text Domain:         maera_bs
 */
 
 define( 'MAERA_BS_SHELL_VER', '1.0' );
