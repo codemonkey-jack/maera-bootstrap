@@ -3,13 +3,13 @@
 Plugin Name:         Maera Bootstrap Shell
 Plugin URI:
 Description:         Add the bootstrap shell to the Maera theme
-Version:             1.0
+Version:             0.9.0
 Author:              Aristeides Stathopoulos, Dimitris Kalliris
 Author URI:          https://press.codes
 Text Domain:         maera_bs
 */
 
-define( 'MAERA_BS_SHELL_VER', '1.0' );
+define( 'MAERA_BS_SHELL_VER', '0.9.0' );
 define( 'MAERA_BS_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_BS_SHELL_PATH', dirname( __FILE__ ) );
 
