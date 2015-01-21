@@ -91,6 +91,8 @@ class Maera_BS_Customizer {
 
 			'social' => array( 'title' => __( 'Social Links', 'maera_bs' ), 'priority' => 45, 'panel' => '' ),
 			'advanced' => array( 'title' => __( 'Advanced', 'maera_bs' ), 'priority' => 50, 'panel' => '' ),
+			
+			'custom_widget_areas' => array( 'title' => __( 'Custom Widget Areas', 'maera_bs' ), 'priority' => 55, 'panel' => '' ),
 		);
 
 		foreach ( $sections as $section => $args ) {
