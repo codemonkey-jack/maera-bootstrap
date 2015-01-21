@@ -34,7 +34,7 @@ if ( ! class_exists( 'Maera_BS_Widgets' ) ) {
 				'pre_main'    => array( 'name' => __( 'Pre-Main', 'maera_bs' ) ),
 				'post_main'   => array( 'name' => __( 'Post-Main', 'maera_bs' ) ),
 				'pre_footer'  => array( 'name' => __( 'Pre-Footer', 'maera_bs' ) ),
-				'footer'      => array( 'name' => __( 'Footer', 'maera_bs' ) ),
+				'main_footer' => array( 'name' => __( 'Footer', 'maera_bs' ) ),
 				'post_footer' => array( 'name' => __( 'Post-Footer', 'maera_bs' ) ),
 			);
 
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Maera_BS_Widgets' ) ) {
 					register_sidebar( array(
 						'name'          => $options['name'],
 						'id'            => $extra_widget_area,
-						'before_widget' => '<section id="%1$s" class="row ' . $class . ' widget %2$s">',
+						'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
 						'after_widget'  => '</section>',
 						'before_title'  => $before_title,
 						'after_title'   => $after_title,

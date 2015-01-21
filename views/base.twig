@@ -4,7 +4,7 @@
 
 <div class="{{ grid.container() }} wrap main-section" id="wrap-main-section">
 	{% do action( 'maera/content/before', post.ID ) %}
-	{% if sidebar.pre_main %}{{ sidebar.pre_main }}{% endif %}
+	{% if sidebar.pre_main %}<div class="row">{{ sidebar.pre_main }}</div>{% endif %}
 	<div class="content" id="content" itemprop="mainContentOfPage">
 		<div class="{{ grid.row() }} bg">
 			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
@@ -18,5 +18,5 @@
 		</div>
 	</div><!-- /#content -->
 	{% do action( 'maera/content/after' ) %}
-	{% if sidebar.post_main %}{{ sidebar.post_main }}{% endif %}
+	{% if sidebar.post_main %}<div class="row">{{ sidebar.post_main }}</div>{% endif %}
 </div>

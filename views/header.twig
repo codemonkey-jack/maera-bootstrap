@@ -15,23 +15,21 @@
 
 	{% do action( 'maera/header/after', post.ID ) %}
 
-	{% if theme_mods.header_widgets_nr != 0 %}
 	{% do action( 'maera/extra_header/before' ) %}
-	{% if sidebar.pre_header %}{{ sidebar.pre_header }}{% endif %}
+	{% if sidebar.pre_header %}<div class="row">{{ sidebar.pre_header }}</div>{% endif %}
 	<header class="page-header">
 		{% if 'boxed' == theme_mods.site_style %}<div class="container header-boxed">{% endif %}
 			<div class="header-wrapper container-fluid">
 				{% if 'wide' == theme_mods.site_style %}<div class="container">{% endif %}
-					{% if sidebar.header %}{{ sidebar.header }}{% endif %}
+					{% if sidebar.header %}<div class="row">{{ sidebar.header }}</div>{% endif %}
 					{% if 'wide' == theme_mods.site_style %}</div>{% endif %}
 				</div>
 				{% if 'boxed' == theme_mods.site_style %}</div>{% endif %}
 			</header>
 			{% do action( 'maera/extra_header/after' ) %}
-			{% if sidebar.post_header %}{{ sidebar.post_header }}{% endif %}
-			{% endif %}
+			{% if sidebar.post_header %}<div class="row">{{ sidebar.post_header }}</div>{% endif %}
 
-			{% if 0 != theme_mods.jumbotron_widgets_nr %}
+			{% if sidebar.jumbotron %}
 			{% if 'boxed' == theme_mods.site_style and 1 != theme_mods.jumbotron_nocontainer %}
 			<div class="container jumbotron">
 				{% else %}
@@ -41,7 +39,7 @@
 					<div class="container">
 						{% endif %}
 						{% do action( 'maera/jumbotron/content' ) %}
-						{% if sidebar.jumbotron %}{{ sidebar.jumbotron }}{% endif %}
+						{{ sidebar.jumbotron }}
 						{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
 					</div>
 					{% endif %}
@@ -49,7 +47,7 @@
 				{% endif %}
 
 				{% do action( 'maera/wrap/before', post.ID ) %}
-				{% if sidebar.pre_content %}{{ sidebar.pre_content }}{% endif %}
+				{% if sidebar.pre_content %}<div class="row">{{ sidebar.pre_content }}</div>{% endif %}
 
 				{% if theme_mods.navbar_position == 'after-headers' %}
 				{% include 'nav.twig' %}
