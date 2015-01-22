@@ -9,7 +9,7 @@
 
 	{% do action( 'maera/header/before', post.ID ) %}
 
-	{% if theme_mods.navbar_position != 'after-headers' %}
+	{% if theme.theme_mod('navbar_position', 'normal') != 'after-headers' %}
 	{% include 'nav.twig' %}
 	{% endif %}
 
@@ -18,29 +18,29 @@
 	{% do action( 'maera/extra_header/before' ) %}
 	{% if sidebar.pre_header %}<div class="row">{{ sidebar.pre_header }}</div>{% endif %}
 	<header class="page-header">
-		{% if 'boxed' == theme_mods.site_style %}<div class="container header-boxed">{% endif %}
+		{% if 'boxed' == theme.theme_mod('site_style', 'wide') %}<div class="container header-boxed">{% endif %}
 			<div class="header-wrapper container-fluid">
-				{% if 'wide' == theme_mods.site_style %}<div class="container">{% endif %}
+				{% if 'wide' == theme.theme_mod('site_style', 'wide') %}<div class="container">{% endif %}
 					{% if sidebar.header %}<div class="row">{{ sidebar.header }}</div>{% endif %}
-					{% if 'wide' == theme_mods.site_style %}</div>{% endif %}
+					{% if 'wide' == theme.theme_mod('site_style', 'wide') %}</div>{% endif %}
 				</div>
-				{% if 'boxed' == theme_mods.site_style %}</div>{% endif %}
+				{% if 'boxed' == theme.theme_mod('site_style', 'wide') %}</div>{% endif %}
 			</header>
 			{% do action( 'maera/extra_header/after' ) %}
 			{% if sidebar.post_header %}<div class="row">{{ sidebar.post_header }}</div>{% endif %}
 
 			{% if sidebar.jumbotron %}
-			{% if 'boxed' == theme_mods.site_style and 1 != theme_mods.jumbotron_nocontainer %}
+			{% if 'boxed' == theme.theme_mod('site_style', 'wide') and 1 != theme.theme_mod('jumbotron_nocontainer', 0) %}
 			<div class="container jumbotron">
 				{% else %}
 				<div class="jumbotron">
 					{% endif %}
-					{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
+					{% if ( 1 != theme.theme_mod('jumbotron_nocontainer', 0) and 'wide' == theme.theme_mod('site_style', 'wide') ) or 'boxed' == theme.theme_mod('site_style', 'wide') %}
 					<div class="container">
 						{% endif %}
 						{% do action( 'maera/jumbotron/content' ) %}
 						{{ sidebar.jumbotron }}
-						{% if ( 1 != theme_mods.jumbotron_nocontainer and 'wide' == theme_mods.site_style ) or 'boxed' == theme_mods.site_style %}
+						{% if ( 1 != theme.theme_mod('jumbotron_nocontainer', 0) and 'wide' == theme.theme_mod('site_style', 'wide') ) or 'boxed' == theme.theme_mod('site_style', 'wide') %}
 					</div>
 					{% endif %}
 				</div>
@@ -49,6 +49,6 @@
 				{% do action( 'maera/wrap/before', post.ID ) %}
 				{% if sidebar.pre_content %}<div class="row">{{ sidebar.pre_content }}</div>{% endif %}
 
-				{% if theme_mods.navbar_position == 'after-headers' %}
+				{% if theme.theme_mod('navbar_position', 'normal') == 'after-headers' %}
 				{% include 'nav.twig' %}
 				{% endif %}

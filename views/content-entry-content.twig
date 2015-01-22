@@ -1,13 +1,13 @@
-{% set preview_readmode = theme_mods.post_excerpt_link_text %}
-{% set preview_length   = theme_mods.post_excerpt_length %}
+{% set preview_readmode = theme.theme_mod('post_excerpt_link_text', __( 'Continued', 'maera_bs' )) %}
+{% set preview_length   = theme.theme_mod('post_excerpt_length', 55) %}
 
-{% if theme_mods.blog_post_mode == 'full' %}
+{% if theme.theme_mod('blog_post_mode', 'excerpt') == 'full' %}
 	{{ post.content }}
 {% else %}
 	<div class="entry-summary" itemprop="description">
-		{% if post.thumbnail and theme_mods.feat_img_archive %}
-			{% set width = theme_mods.feat_img_archive_width == 0 ? post.thumbnail.width : thumbnail.width %}
-			{% set height = theme_mods.feat_img_archive_height == 0 ? post.thumbnail.height : thumbnail.height %}
+		{% if post.thumbnail and theme.theme_mod('feat_img_archive', 0) %}
+			{% set width = theme.theme_mod('feat_img_archive_width', '-1') == 0 ? post.thumbnail.width : thumbnail.width %}
+			{% set height = theme.theme_mod('feat_img_archive_height', 0) == 0 ? post.thumbnail.height : thumbnail.height %}
 			<a href="{{ post.link }}">
 				<img class="featured-image" src="{{ post.thumbnail.src|resize(width, height) }}" srcset="{{ post.thumbnail.src|resize(width, height)|retina(1) }} 1x, {{ post.thumbnail.src|resize(width, height)|retina(2) }}  2x">
 			</a>
