@@ -182,16 +182,13 @@ class Maera_BS_Compiler {
 		$body_lum = $body_obj->toLuminosity();
 
 		// Base font settings
-		$font_base_family    = get_theme_mod( 'font_base_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
 		// TODO: use getReadableContrastingColor() from Jetpack_Color class.
 		// See https://github.com/Automattic/jetpack/issues/1068
 		$font_base_color     = '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex();
 
-		$font_base_weight    = get_theme_mod( 'font_base_weight', '#333333' );
 		$font_base_size      = get_theme_mod( 'font_base_size', 14 );
-		$font_base_height    = get_theme_mod( 'font_base_height', 1.4 );
 
-		$content .= 'body {font-family:' . $font_base_family . ';color:' . $font_base_color . ';font-weight:' . $font_base_weight . ';font-size:' . $font_base_size . 'px;line-height:' . $font_base_height . ';}';
+		$content .= 'body {color:' . $font_base_color . ';}';
 
 		// Headers font
 		$headers_font_family = get_theme_mod( 'headers_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
@@ -199,8 +196,6 @@ class Maera_BS_Compiler {
 		$content .= 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{';
 		$content .= 'font-family: ' . $headers_font_family . ';';
 		$content .= 'color: ' .$font_base_color . ';';
-		$content .= 'font-weight: ' . get_theme_mod( 'font_headers_weight', 400 ) . ';';
-		$content .= 'line-height: ' . get_theme_mod( 'font_headers_height', 1.1 ) . ';';
 		$content .= '}';
 
 		$content .= 'h1, .h1 { font-size: ' . ( 2.6  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
@@ -210,29 +205,11 @@ class Maera_BS_Compiler {
 		$content .= 'h5, .h5 { font-size: ' . ( 1    * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
 		$content .= 'h6, .h6 { font-size: ' . ( .85  * get_theme_mod( 'font_headers_size', 1 ) * $font_base_size ) . 'px; }';
 
-		// Navigation font
-		$navbar_font_family = get_theme_mod( 'font_menus_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
-		$navbar_obj = new Jetpack_Color( get_theme_mod( 'body_bg_color', '#ffffff' ) );
-
-		$content .= '.navbar{';
-		$content .= 'font-family: ' . $navbar_font_family . ';';
-		$content .= 'font-weight: ' . get_theme_mod( 'font_menus_weight', 400 ) . ';';
-		$content .= 'line-height: ' . get_theme_mod( 'font_menus_height', 1.1 ) . ';';
-		$content .= '}';
-
-		// Navigation font
-		$jumbotron_font_family = get_theme_mod( 'font_jumbotron_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
+		// Jumbotron font
 		$jumbotron_obj = new Jetpack_Color( get_theme_mod( 'jumbo_bg', '#ffffff' ) );
 
 		$content .= '.jumbotron{';
 		$content .= 'color: ' . '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex() . ';';
-		$content .= 'font-family: ' . $jumbotron_font_family . ';';
-		$content .= 'font-weight: ' . get_theme_mod( 'font_jumbotron_weight', 400 ) . ';';
-		$content .= 'line-height: ' . get_theme_mod( 'font_jumbotron_height', 1.1 ) . ';';
-		$content .= '}';
-
-		$content .= '.admin-bar body{';
-		$content .= 'padding-top: ' . get_theme_mod( 'navbar_height', 50 ) . ';';
 		$content .= '}';
 
 		// Make sure links are readable

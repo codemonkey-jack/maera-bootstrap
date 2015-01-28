@@ -91,7 +91,7 @@ class Maera_BS_Customizer {
 
 			'social' => array( 'title' => __( 'Social Links', 'maera_bs' ), 'priority' => 45, 'panel' => '' ),
 			'advanced' => array( 'title' => __( 'Advanced', 'maera_bs' ), 'priority' => 50, 'panel' => '' ),
-			
+
 			'custom_widget_areas' => array( 'title' => __( 'Custom Widget Areas', 'maera_bs' ), 'priority' => 55, 'panel' => '' ),
 		);
 
@@ -415,6 +415,11 @@ class Maera_BS_Customizer {
 				'max'  => 200,
 				'step' => 1,
 			),
+			'output' => array(
+				'element'  => '.admin-bar body',
+				'property' => 'padding-top',
+				'units'    => 'px',
+			),
 		);
 
 		return $controls;
@@ -461,6 +466,10 @@ class Maera_BS_Customizer {
 			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 			'priority' => 40,
 			'choices'  => Kirki_Fonts::get_font_choices(),
+			'output' => array(
+				'element'  => '.navbar',
+				'property' => 'font-family',
+			),
 		);
 
 		$controls[] = array(
@@ -474,6 +483,10 @@ class Maera_BS_Customizer {
 				'min'  => 100,
 				'max'  => 800,
 				'step' => 100,
+			),
+			'output' => array(
+				'element'  => '.navbar',
+				'property' => 'font-weight',
 			),
 		);
 
@@ -502,6 +515,10 @@ class Maera_BS_Customizer {
 				'min'  => 0,
 				'max'  => 3,
 				'step' => 0.1,
+			),
+			'output' => array(
+				'element'  => '.navbar',
+				'property' => 'line-height',
 			),
 		);
 
@@ -604,6 +621,10 @@ class Maera_BS_Customizer {
 			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 			'priority' => 20,
 			'choices'  => Kirki_Fonts::get_font_choices(),
+			'output' => array(
+				'element'  => 'body',
+				'property' => 'font-family',
+			),
 		);
 
 		$controls[] = array(
@@ -629,6 +650,10 @@ class Maera_BS_Customizer {
 				'max'  => 900,
 				'step' => 100,
 			),
+			'output' => array(
+				'element'  => 'body',
+				'property' => 'font-weight',
+			),
 		);
 
 		$controls[] = array(
@@ -643,6 +668,11 @@ class Maera_BS_Customizer {
 				'max'  => 48,
 				'step' => 1,
 			),
+			'output' => array(
+				'element'  => 'body',
+				'property' => 'font-size',
+				'units'    => 'px',
+			),
 		);
 
 		$controls[] = array(
@@ -656,6 +686,10 @@ class Maera_BS_Customizer {
 				'min'  => 0,
 				'max'  => 3,
 				'step' => 0.01,
+			),
+			'output' => array(
+				'element'  => 'body',
+				'property' => 'line-height',
 			),
 		);
 
@@ -687,6 +721,10 @@ class Maera_BS_Customizer {
 				'max'  => 900,
 				'step' => 100,
 			),
+			'output' => array(
+				'element'  => 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6',
+				'property' => 'font-weight'
+			)
 		);
 
 		$controls[] = array(
@@ -716,6 +754,10 @@ class Maera_BS_Customizer {
 				'max'  => 3,
 				'step' => 0.1,
 			),
+			'output' => array(
+				'element'  => 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6',
+				'property' => 'line-height'
+			)
 		);
 
 		return $controls;
@@ -942,6 +984,10 @@ class Maera_BS_Customizer {
 			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 			'priority' => 20,
 			'choices'  => Kirki_Fonts::get_font_choices(),
+			'output' => array(
+				'element'  => '.jumbotron',
+				'property' => 'font-family',
+			),
 		);
 
 		$controls[] = array(
@@ -955,6 +1001,10 @@ class Maera_BS_Customizer {
 				'min'  => 100,
 				'max'  => 800,
 				'step' => 100,
+			),
+			'output' => array(
+				'element'  => '.jumbotron',
+				'property' => 'font-weight',
 			),
 		);
 
@@ -983,6 +1033,10 @@ class Maera_BS_Customizer {
 				'min'  => 0,
 				'max'  => 3,
 				'step' => 0.1,
+			),
+			'output' => array(
+				'element'  => '.jumbotron',
+				'property' => 'line-height',
 			),
 		);
 
