@@ -188,13 +188,7 @@ class Maera_BS_Compiler {
 
 		$font_base_size      = get_theme_mod( 'font_base_size', 14 );
 
-		$content .= 'body {color:' . $font_base_color . ';}';
-
-		// Headers font
-		$headers_font_family = get_theme_mod( 'headers_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' );
-
-		$content .= 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{';
-		$content .= 'font-family: ' . $headers_font_family . ';';
+		$content .= 'body, h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{';
 		$content .= 'color: ' .$font_base_color . ';';
 		$content .= '}';
 

@@ -636,6 +636,10 @@ class Maera_BS_Customizer {
 			'default'  => 'latin',
 			'priority' => 22,
 			'choices'  => Kirki_Fonts::get_google_font_subsets(),
+			'output' => array(
+				'element'  => 'body',
+				'property' => 'font-subset',
+			),
 		);
 
 		$controls[] = array(
@@ -707,6 +711,10 @@ class Maera_BS_Customizer {
 			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 			'priority' => 30,
 			'choices'  => Kirki_Fonts::get_font_choices(),
+			'output' => array(
+				'element'  => 'h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6',
+				'property' => 'font-family'
+			)
 		);
 
 		$controls[] = array(
