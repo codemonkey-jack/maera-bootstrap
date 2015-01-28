@@ -187,7 +187,7 @@ class Maera_BS_Compiler {
 		// See https://github.com/Automattic/jetpack/issues/1068
 		$font_base_color     = '#' . $body_obj->getGrayscaleContrastingColor(10)->toHex();
 
-		$font_base_weight    = get_theme_mod( 'font_base_weight', '#333333' );
+		$font_base_weight    = get_theme_mod( 'font_base_weight', 400 );
 		$font_base_size      = get_theme_mod( 'font_base_size', 14 );
 		$font_base_height    = get_theme_mod( 'font_base_height', 1.4 );
 
