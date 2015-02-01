@@ -1,7 +1,0 @@
-{% if function('function_exists', 'jetpack_the_site_logo') and function('jetpack_the_site_logo') %}
-	{{ function('jetpack_the_site_logo') }}
-{% else %}
-	<a href="{{ site.url }}" class="site-name-logo navbar-brand">
-		{{ site.name }}
-	</a>
-{% endif %}
