@@ -68,20 +68,20 @@ if ( ! class_exists( 'Maera_BS' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 			// Include other classes
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_Widget_Dropdown.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Widgets.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Styles.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Structure.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Compiler.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Images.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Excerpt.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Scripts.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Meta.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Layout.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Navbar.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Social.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-widget-dropdown.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-widgets.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-styles.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-structure.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-compiler.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-images.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-excerpt.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-scripts.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-meta.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-layout.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-navbar.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-social.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/variables.php' );
-			include_once( MAERA_SHELL_PATH . '/classes/class-Maera_BS_Timber.php' );
+			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-timber.php' );
 
 			// Include the customizer
 			include_once( MAERA_SHELL_PATH . '/customizer.php' );
