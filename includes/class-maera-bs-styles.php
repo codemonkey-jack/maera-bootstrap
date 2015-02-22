@@ -147,22 +147,27 @@ if ( ! class_exists( 'Maera_BS_Styles' ) ) {
 		/**
 		 * Activate the custom CSS module.
 		 */
-		function activate_custom_css() {
-
+		public function activate_custom_css() {
+	
 			$jetpack_active_modules = get_option( 'jetpack_active_modules' );
-
-			if ( ! in_array( 'custom-css', $jetpack_active_modules ) ) {
+	
+			if ( is_array( $jetpack_active_modules ) && ! in_array( 'custom-css', $jetpack_active_modules ) ) {
 				$jetpack_active_modules[] = 'custom-css';
 				update_option( 'jetpack_active_modules', $jetpack_active_modules );
 			} else {
 				// Get CSS saved as a theme mod
 				$css = get_theme_mod( 'css', '' );
-
-				if ( ! empty( $css ) && empty( Jetpack_Custom_CSS::get_css() ) ) {
+	
+				// Early exit if Jetpack is not installed
+				if ( ! class_exists( 'Jetpack_Custom_CSS' ) ) {
+					return;
+				}
+				$new_css = Jetpack_Custom_CSS::get_css();
+				if ( ! empty( $css ) && empty( $new_css ) ) {
 					// Jetpack_Custom_CSS::save( array( 'css' => $css ) );
 				}
 			}
-
+	
 		}
 
 		/**
