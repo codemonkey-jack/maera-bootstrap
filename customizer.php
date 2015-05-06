@@ -790,13 +790,25 @@ class Maera_BS_Customizer {
 		);
 
 		$controls[] = array(
-			'type'        => 'text',
-			'setting'     => 'maera_entry_meta_config',
-			'label'       => __( 'Post Meta elements', 'maera_bs' ),
-			'subtitle'    => __( 'You can define a comma-separated list of meta elements you want on your posts, in the order that you want them. Accepted values: <code>author, sticky, date, category, tags, comments</code>', 'maera_bs' ),
-			'section'     => 'blog_options',
-			'priority'    => 2,
-			'default'     => 'date, author, comments',
+	    'type'        => 'sortable',
+	    'setting'     => 'maera_entry_meta_config',
+	    'label'       => __( 'Post Meta elements', 'maera_bs' ),
+			'help'        => __( 'Click the "eye" to toggle the section from being displayed. Drag n Drop the "lines" to re-order. ', 'maera_zf' ),
+	    'section'     => 'blog_options',
+	    'default'     => array(
+	        'date',
+	        'author',
+					'comments'
+	    ),
+	    'priority'    => 2,
+	    'choices'     => array(
+	        'author'  => __( 'Author', 'maera_bs' ),
+	        'sticky'  => __( 'Sticky', 'maera_bs' ),
+	        'date'    => __( 'Date', 'maera_bs' ),
+	        'category'=> __( 'Category', 'maera_bs' ),
+	        'tags'    => __( 'Tags', 'maera_bs' ),
+	        'comments'=> __( 'Comments', 'maera_bs' ),
+	    ),
 		);
 
 		$controls[] = array(

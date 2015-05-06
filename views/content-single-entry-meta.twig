@@ -1,47 +1,61 @@
-{% for meta in post_meta %}
-	{% if meta == 'author' %}
-		<span class="post-meta-element author">
-			<span class="author vcard">
-				<i class="glyphicon glyphicon-user"></i>
-				<a class="url fn n" href="{{ post.author.link }}" title="{{ post.author.name }}" rel="author">{{ post.author.name }}</a>
-			</span>
-		</span>
-	{% elseif meta == 'sticky' %}
-		{% if function('is_sticky') %}
-			<span class="post-meta-element sticky">
-				<i class="glyphicon glyphicon-flag"></i>
-				{{ __( 'Sticky', 'maera_bs' ) }}
-			</span>
-		{% endif %}
-	{% elseif meta == 'date' %}
+{% set parts_serialized = theme.theme_mod('maera_entry_meta_config', function('serialize', ['date','category','author','comments'] ) ) %}
+{% set parts = function('maybe_unserialize', parts_serialized) %}
+
+{% for part in parts %}
+
+	{% if part == 'date' %}
 		{% if function('has_post_format', 'link') %}
 		{% else %}
 			<span class="post-meta-element date">
 				<span class="entry-date">
-					<i class="glyphicon glyphicon-calendar"></i>
+					<i class="glyphicon glyphicon-calendar"></i>&nbsp;
 					<a href="{{ post.link }}" rel="bookmark"><time class="entry-date" datetime="{{ post.post_date|date }}">{{ post.post_date|date }}</time></a>
 				</span>
 			</span>
 		{% endif %}
-	{% elseif meta == 'category' %}
-		{% if post.terms('category') %}
-			<span class="post-meta-element category">
-				<i class="glyphicon glyphicon-folder-open"></i>
-				<ul class="list-inline">
-					{% for category in post.terms('category') %}
-						<li><a href="{{ category.link }}">{{ category.name }}</a></li>
-					{% endfor %}
-				</ul>
+	{% endif %}
+
+	{% if part == 'category' %}
+		<span class="post-meta-element category">
+			<i class="glyphicon glyphicon-folder-open"></i>&nbsp;
+			<ul class="list-inline">
+				{% for category in post.get_categories %}
+					<li><a href="{{ category.link }}">{{ category.name }}</a></li>{% if not loop.last %},{% endif %}
+		{% endfor %}
+			</ul>
+		</span>
+	{% endif %}
+
+	{% if part == 'author' %}
+		<span class="post-meta-element author">
+			<span class="author vcard">
+				<i class="glyphicon glyphicon-user"></i>&nbsp;
+				<a class="url fn n" href="{{ post.author.link }}" title="{{ post.author.name }}" rel="author">{{ post.author.name }}</a>
 			</span>
-		{% endif %}
-	{% elseif meta == 'tags' %}
+		</span>
+	{% endif %}
+
+	{% if part == 'comments' %}
+		{% if post.comments %}{{ __( 'with', 'maera_bs' ) }} <a href="{{ post.link }}#comments">{{ post.comment_count }} {{ __( 'comments', 'maera_bs' ) }}</a>{% endif %}
+	{% endif %}
+
+	{% if part == 'tags' %}
 		{% if post.terms('tags') %}
 			<span class="post-meta-element tags">
-				<i class="glyphicon glyphicon-folder-open"></i>
-					{% for tag in post.terms('tags') %}
-						<a href="{{ tag.link }}">{{ tag.name }}</a>
-					{% endfor %}
+				{% for tag in post.terms('tags') %}
+					<a class="label label-default" href="{{ tag.link }}">{{ tag.name }}</a>&nbsp;
+				{% endfor %}
 			</span>
 		{% endif %}
 	{% endif %}
+
+	{% if part == 'sticky' %}
+		{% if function('is_sticky') %}
+			<span class="post-meta-element sticky">
+				<i class="glyphicon glyphicon-flag"></i>&nbsp;
+				{{ __( 'Sticky', 'maera_bs' ) }}
+			</span>
+		{% endif %}
+	{% endif %}
+
 {% endfor %}
