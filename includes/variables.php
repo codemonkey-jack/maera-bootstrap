@@ -7,11 +7,15 @@
  */
 function maera_bootstrap_get_variables() {
 
-	$body_obj  = new Jetpack_Color( get_theme_mod( 'body_bg_color', '#ffffff' ) );
+	$color     = get_theme_mod( 'body_bg_color', '#ffffff' );
+	$color     = ( false !== strpos( $color, 'rgba' ) ) ? Kirki_Color::rgba2hex( $color ) : $color;
+	$body_obj  = new Jetpack_Color( $color );
 	$body_bg   = '#' . $body_obj->toHex();
 	$body_lum  = $body_obj->toLuminosity();
 
-	$b_p_obj           = new Jetpack_Color( get_theme_mod( 'color_brand_primary', '#428bca' ) );
+	$color             = get_theme_mod( 'color_brand_primary', '#428bca' );
+	$color             = ( false !== strpos( $color, 'rgba' ) ) ? Kirki_Color::rgba2hex( $color ) : $color;
+	$b_p_obj           = new Jetpack_Color( $color );
 	$brand_primary     = '#' . $b_p_obj->toHex();
 	$brand_primary_lum = $b_p_obj->toLuminosity();
 
@@ -35,8 +39,13 @@ function maera_bootstrap_get_variables() {
 	$b_i_obj           = new Jetpack_Color( $brand_info );
 	$brand_info_lum    = $b_i_obj->toLuminosity();
 
-	$nav_col_obj   = new Jetpack_Color( get_theme_mod( 'navbar_bg', '#f8f8f8' ) );
-	$jumbotron_obj = new Jetpack_Color( get_theme_mod( 'jumbo_bg', '#ffffff' ) );
+	$color         = get_theme_mod( 'navbar_bg', '#f8f8f8' );
+	$color         = ( false !== strpos( $color, 'rgba' ) ) ? Kirki_Color::rgba2hex( $color ) : $color;
+	$nav_col_obj   = new Jetpack_Color( $color );
+
+	$color         = get_theme_mod( 'jumbo_bg', '#ffffff' );
+	$color         = ( false !== strpos( $color, 'rgba' ) ) ? Kirki_Color::rgba2hex( $color ) : $color;
+	$jumbotron_obj = new Jetpack_Color( $color );
 
 	$navbar_border      = ( 0.6 < $brand_primary_lum ) ? 'lighten(@navbar-default-bg, 6.5%)' : 'darken(@navbar-default-bg, 6.5%)';
 
