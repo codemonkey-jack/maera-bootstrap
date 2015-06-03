@@ -11,7 +11,10 @@ class Maera_BS_Social {
 		return array(
 			'facebook'    => __( 'Facebook', 'maera_bs' ),
 			'twitter'     => __( 'Twitter', 'maera_bs' ),
-			'googleplus'  => __( 'Google+', 'maera_bs' ),
+			'google'      => __( 'Google+', 'maera_bs' ),
+			'instagram'   => __( 'Instagram', 'maera_bs' ),
+			'pinterest'   => __( 'Pinterest', 'maera_bs' ),
+			'tumblr'      => __( 'Tumblr', 'maera_bs' ),
 		);
 	}
 
@@ -28,7 +31,7 @@ class Maera_BS_Social {
 			$link = get_theme_mod( $social_link . '_link', '' );
 
 			if ( '' != esc_url( $link ) ) {
-				$content .= '<a role="link" aria-labelledby="' . $label . '" href="' . $link . '" target="_blank" title="' . $label . '"><i class="dashicons dashicons-' . $social_link . '"></i>';
+				$content .= '<a role="link" aria-labelledby="' . $label . '" href="' . $link . '" target="_blank" title="' . $label . '"><i class="socicon socicon-' . $social_link . '"></i>';
 				$content .= 'dropdown' == get_theme_mod( 'navbar_social', 'off' ) ? '&nbsp;' . $label : '';
 				$content .= '</a>';
 				$content .= $separator;
