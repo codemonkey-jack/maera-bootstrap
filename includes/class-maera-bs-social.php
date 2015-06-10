@@ -15,6 +15,19 @@ class Maera_BS_Social {
 			'instagram'   => __( 'Instagram', 'maera_bs' ),
 			'pinterest'   => __( 'Pinterest', 'maera_bs' ),
 			'tumblr'      => __( 'Tumblr', 'maera_bs' ),
+			'skype'       => __( 'Skype', 'maera_bs' ),
+			'linkedin'    => __( 'LinkedIn', 'maera_bs' ),
+			'youtube'     => __( 'Youtube', 'maera_bs' ),
+			'vimeo'       => __( 'Vimeo', 'maera_bs' ),
+			'dribbble'    => __( 'Dribbble', 'maera_bs' ),
+			'stumbleupon' => __( 'StumbleUpon', 'maera_bs' ),
+			'behance'     => __( 'Behance', 'maera_bs' ),
+			'github'      => __( 'Github', 'maera_bs' ),
+			'rss'         => __( 'RSS', 'maera_bs' ),
+			'soundcloud'  => __( 'Soundcloud', 'maera_bs' ),
+			'wordpress'   => __( 'WordPress', 'maera_bs' ),
+			'reddit'      => __( 'Reddit', 'maera_bs' ),
+			'digg'        => __( 'Digg', 'maera_bs' ),
 		);
 	}
 
