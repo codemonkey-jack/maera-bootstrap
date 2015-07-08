@@ -4,7 +4,7 @@
 	{% if pagination.prev %}
 		<li class="previous">
 			<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">
-				{{ icon('chevron-left') }} {{ __( 'Previous', 'maera_bs' ) }}
+				{{ icon('arrow-left-alt2') }} {{ __( 'Previous', 'maera_bs' ) }}
 			</a>
 		</li>
 	{% endif %}
@@ -12,7 +12,7 @@
 	{% if pagination.next %}
 		<li class="next">
 			<a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">
-				{{ __( 'Next', 'maera_bs' ) }} {{ icon('chevron-right') }}
+				{{ __( 'Next', 'maera_bs' ) }} {{ icon('arrow-right-alt2') }}
 			</a>
 		</li>
 	{% endif %}
