@@ -166,8 +166,7 @@ class Maera_BS_Customizer {
 	function settings_layout( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
+			'type'     => 'radio-buttonset',
 			'setting'  => 'site_style',
 			'label'    => __( 'Site Style', 'maera_bs' ),
 			'subtitle' => __( 'Wide and boxed Layouts are responsive while fluid layouts are full-width.', 'maera_bs' ),
@@ -182,8 +181,7 @@ class Maera_BS_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'image',
+			'type'     => 'radio-image',
 			'setting'  => 'layout',
 			'label'    => __( 'Layout', 'maera_bs' ),
 			'subtitle' => __( 'Select your main layout. Please note that if no widgets are present in a sidebar then that sidebar will not be displayed. ', 'maera_bs' ),
@@ -230,8 +228,7 @@ class Maera_BS_Customizer {
 	function settings_layout_advanced( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
+			'type'     => 'radio-buttonset',
 			'setting'  => 'widgets_mode',
 			'label'    => __( 'Widgets mode', 'maera_bs' ),
 			'subtitle' => __( 'How do you want your widgets to be displayed?', 'maera_bs' ),
@@ -323,8 +320,7 @@ class Maera_BS_Customizer {
 
 			foreach ( $post_types as $post_type ) {
 				$controls[] = array(
-					'type'     => 'radio',
-					'mode'     => 'image',
+					'type'     => 'radio-image',
 					'setting'  => $post_type . '_layout',
 					'label'    => $post_type . ' ' . __( 'layout', 'maera_bs' ),
 					'description' => null,
@@ -388,8 +384,7 @@ class Maera_BS_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
+			'type'     => 'radio-buttonset',
 			'setting'  => 'navbar_nav_align',
 			'label'    => __( 'Menus alignment', 'maera_bs' ),
 			'section'  => 'nav',
@@ -540,8 +535,7 @@ class Maera_BS_Customizer {
 		);
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
+			'type'     => 'radio-buttonset',
 			'setting'  => 'gradients_toggle',
 			'label'    => __( 'Enable Gradients', 'maera_bs' ),
 			'description' => __( 'Enable or disable gradients. These are applied to navbars, buttons and other elements. Please note that gradients will not be applied in the preview mode and can only be seen on the live site.', 'maera_bs' ),
@@ -775,8 +769,7 @@ class Maera_BS_Customizer {
 	function settings_blog_options( $controls ) {
 
 		$controls[] = array(
-			'type'        => 'radio',
-			'mode'        => 'buttonset',
+			'type'        => 'radio-buttonset',
 			'setting'     => 'blog_post_mode',
 			'label'       => __( 'Archives Display Mode', 'maera_bs' ),
 			'description' => __( 'Display the excerpt or the full post on post archives.', 'maera_bs' ),
@@ -1091,8 +1084,7 @@ class Maera_BS_Customizer {
 	function settings_social( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'radio',
-			'mode'     => 'buttonset',
+			'type'     => 'radio-buttonset',
 			'setting'  => 'navbar_social',
 			'label'    => __( 'Display social links in the NavBar.', 'maera_bs' ),
 			'subtitle' => __( 'Social network links can be set-up in the "Social" section.', 'maera_bs' ),
