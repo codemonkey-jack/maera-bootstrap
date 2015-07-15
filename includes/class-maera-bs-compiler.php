@@ -86,6 +86,7 @@ class Maera_BS_Compiler {
 		}
 
 		// Utilities
+		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/reset-text.less' );
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/hide-text.less' );
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/opacity.less' );
 		$content .= file_get_contents( MAERA_SHELL_PATH . '/assets/less/vendor/bootstrap/mixins/image.less' );
