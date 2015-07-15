@@ -185,6 +185,10 @@ function maera_bootstrap_get_variables() {
 
 	'btn-link-disabled-color' => '@gray-light',
 
+	'btn-border-radius-base'  => round( get_theme_mod( 'border_radius', 4 ) * ( 4/4 ) ) . 'px',
+	'btn-border-radius-large' => round( get_theme_mod( 'border_radius', 4 ) * ( 6/4 ) ) . 'px',
+	'btn-border-radius-small' => round( get_theme_mod( 'border_radius', 4 ) * ( 3/4 ) ) . 'px',
+
 	'input-bg'            => '@body-bg',
 	'input-bg-disabled'   => '@gray-lighter',
 	'input-color'         => '@gray-dark',
@@ -229,7 +233,8 @@ function maera_bootstrap_get_variables() {
 	'zindex-popover'          => '1060',
 	'zindex-tooltip'          => '1070',
 	'zindex-navbar-fixed'     => '1030',
-	'zindex-modal'            => '1040',
+	'zindex-modal-background' => '1040',
+	'zindex-modal'            => '1050',
 
 	'screen-xs'     => '480px',
 	'screen-xs-min' => '@screen-xs',
@@ -360,11 +365,12 @@ function maera_bootstrap_get_variables() {
 
 	'pager-disabled-color' => '@pagination-disabled-color',
 
-	'jumbotron-padding'       => round( get_theme_mod( 'padding_base', 6 ) * ( 30/6 ) ) . 'px',
-	'jumbotron-color'         => 'inherit',
-	'jumbotron-bg'            => '#' . $jumbotron_obj->toHex(),
-	'jumbotron-heading-color' => 'inherit',
-	'jumbotron-font-size'     => get_theme_mod( 'font_jumbotron_size', 20 ),
+	'jumbotron-padding'           => round( get_theme_mod( 'padding_base', 6 ) * ( 30/6 ) ) . 'px',
+	'jumbotron-color'             => 'inherit',
+	'jumbotron-bg'                => '#' . $jumbotron_obj->toHex(),
+	'jumbotron-heading-color'     => 'inherit',
+	'jumbotron-font-size'         => get_theme_mod( 'font_jumbotron_size', 20 ),
+	'jumbotron-heading-font-size' => round( get_theme_mod( 'font_jumbotron_size', 20 ) * 3 ),
 
 	'state-success-text'   => '@brand-success',
 	'state-success-bg'     => 'mix(@body-bg, @brand-success, 70%)',
@@ -583,6 +589,8 @@ function maera_bootstrap_get_variables() {
 	'hr-border' => '@gray-lighter',
 
 	'dl-horizontal-offset' => '@component-offset-horizontal',
+
+	'form-group-margin-bottom' => round( get_theme_mod( 'padding_base', 6 ) * ( 15/6 ) ) . 'px',
 
 	);
 
