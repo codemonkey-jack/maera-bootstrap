@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name:         Maera Bootstrap Shell
-Plugin URI:
-Description:         Add the bootstrap shell to the Maera theme
+Plugin URI:          https://press.codes/downloads/maera-bootstrap-shell/
+Description:         Adds the bootstrap shell to the Maera theme
 Version:             0.9.1
 Author:              Aristeides Stathopoulos, Dimitris Kalliris
 Author URI:          https://press.codes
@@ -63,11 +63,10 @@ if ( ! class_exists( 'Maera_BS' ) ) {
 				define( 'MAERA_SHELL_PATH', dirname( __FILE__ ) );
 			}
 
-			$this->required_plugins();
-
 			add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 
 			// Include other classes
+			include_once( MAERA_SHELL_PATH . '/includes/class-tgm-plugin-activation.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/class-maera-widget-dropdown.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-widgets.php' );
 			include_once( MAERA_SHELL_PATH . '/includes/class-maera-bs-styles.php' );
@@ -127,40 +126,52 @@ if ( ! class_exists( 'Maera_BS' ) ) {
 
 		}
 
-
-		/**
-		* Build the array of required plugins.
-		* You can use the 'maera/required_plugins' filter to add or remove plugins.
-		*/
-		function required_plugins() {
-
-			$plugins[] = array(
-				'name' => 'Breadcrumb Trail',
-				'file' => 'breadcrumb-trail.php',
-				'slug' => 'breadcrumb-trail'
-			);
-			$plugins[] = array(
-				'name' => 'Less & scss compilers',
-				'file' => 'less-plugin.php',
-				'slug' => 'lessphp'
-			);
-
-			$plugins = new Maera_Required_Plugins( $plugins );
-
-		}
-
 	}
 
 }
 
 /**
-* Licensing handler
-*/
-function maera_bs_licensing() {
+ * Build the array of required plugins.
+ * Uses TGMPA
+ */
+function maera_bs_required_plugins() {
 
-	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
-		$maera_md_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Bootstrap Shell', MAERA_BS_SHELL_VER );
-	}
+	$plugins = array(
+		array(
+			'name'     => 'Breadcrumb Trail',
+			'slug'     => 'breadcrumb-trail',
+			'required' => true,
+		),
+		array(
+			'name'     => 'Less compilers',
+			'slug'     => 'lessphp',
+			'required' => true,
+		),
+		array(
+			'name'     => 'Timber Library',
+			'slug'     => 'timber-library',
+			'required' => true,
+		),
+		array(
+			'name'     => 'Kirki Toolkit',
+			'slug'     => 'kirki',
+			'required' => true,
+		),
+	);
+
+	$config = array(
+		'id'           => 'maera-bootstrap',
+		'menu'         => 'maera-bootstrap-install-plugins',
+		'parent_slug'  => 'themes.php',
+		'capability'   => 'edit_theme_options',
+		'has_notices'  => true,
+		'dismissable'  => false,
+		'dismiss_msg'  => '',
+		'is_automatic' => true,
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
 
 }
-add_action( 'init', 'maera_bs_licensing' );
+add_action( 'tgmpa_register', 'maera_bs_required_plugins' );
