@@ -29,10 +29,14 @@ class Maera_BS_Meta {
 		$content = '';
 
 		// convert options from CSV to array
-		$metas_array = explode( ',', $metas );
+		if ( !is_array($metas) ) {
+			$metas_array = explode( ',', $metas );
 
-		// clean up the array a bit... make sure there are no spaces that may mess things up
-		$metas_array = array_map( 'trim', $metas_array );
+			// clean up the array a bit... make sure there are no spaces that may mess things up
+			$metas_array = array_map( 'trim', $metas_array );
+		} else {
+			$metas_array = $metas;
+		}
 
 		return $metas_array;
 
