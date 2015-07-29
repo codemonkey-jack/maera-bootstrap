@@ -94,7 +94,7 @@ function maera_bootstrap_get_variables() {
 	'link-hover-color' => ( 0.3 < $brand_primary_lum ) ? 'darken(@link-color, 15%)' : 'lighten(@link-color, 15%)',
 	'link-hover-decoration' => 'underline',
 
-	'font-family-sans-serif' => get_theme_mod( 'font_base_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' ),
+	'font-family-sans-serif' => get_theme_mod( 'font_base_family', 'Helvetica, Arial, sans-serif' ),
 	'font-family-serif'      => 'Georgia, "Times New Roman", Times, serif',
 	'font-family-monospace'  => 'Menlo, Monaco, Consolas, "Courier New", monospace',
 	'font-family-base'       => '@font-family-sans-serif',
@@ -112,7 +112,7 @@ function maera_bootstrap_get_variables() {
 
 	'line-height-base'     => get_theme_mod( 'font_base_height', 1.43 ),
 	'line-height-computed' => 'floor((@font-size-base * @line-height-base))',
-	'headings-font-family' => get_theme_mod( 'headers_font_family', '"Helvetica Neue", Helvetica, Arial, sans-serif' ),
+	'headings-font-family' => get_theme_mod( 'headers_font_family', 'Helvetica, Arial, sans-serif' ),
 	'headings-font-weight' => get_theme_mod( 'font_headers_weight', 500 ),
 	'headings-line-height' => get_theme_mod( 'font_headers_height', 1.1 ),
 	'headings-color'       => 'inherit',

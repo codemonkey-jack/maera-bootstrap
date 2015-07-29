@@ -458,7 +458,7 @@ class Maera_BS_Customizer {
 			'setting'  => 'font_menus_font_family',
 			'label'    => __( 'Menus font', 'maera_bs' ),
 			'section'  => 'typo_nav',
-			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+			'default'  => 'Helvetica, Arial, sans-serif',
 			'priority' => 40,
 			'choices'  => Kirki_Fonts::get_font_choices(),
 			'output' => array(
@@ -612,7 +612,7 @@ class Maera_BS_Customizer {
 			'setting'  => 'font_base_family',
 			'label'    => __( 'Base font', 'maera_bs' ),
 			'section'  => 'typo_base',
-			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+			'default'  => 'Helvetica, Arial, sans-serif',
 			'priority' => 20,
 			'choices'  => Kirki_Fonts::get_font_choices(),
 			'output' => array(
@@ -702,7 +702,7 @@ class Maera_BS_Customizer {
 			'setting'  => 'headers_font_family',
 			'label'    => __( 'Font-Family', 'maera_bs' ),
 			'section'  => 'typo_headers',
-			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+			'default'  => 'Helvetica, Arial, sans-serif',
 			'priority' => 30,
 			'choices'  => Kirki_Fonts::get_font_choices(),
 			'output' => array(
@@ -994,7 +994,7 @@ class Maera_BS_Customizer {
 			'setting'  => 'font_jumbotron_font_family',
 			'label'    => __( 'Jumbotron font', 'maera_bs' ),
 			'section'  => 'typo_jumbo',
-			'default'  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+			'default'  => 'Helvetica, Arial, sans-serif',
 			'priority' => 20,
 			'choices'  => Kirki_Fonts::get_font_choices(),
 			'output' => array(
