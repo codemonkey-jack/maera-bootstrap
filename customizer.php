@@ -121,7 +121,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'textarea',
-			'setting'  => 'css',
+			'settings'  => 'css',
 			'label'    => __( 'Custom CSS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom CSS here. This code will appear in a script tag appended in the header section of the page.', 'maera_bs' ),
 			'section'  => 'advanced',
@@ -131,7 +131,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'textarea',
-			'setting'  => 'less',
+			'settings'  => 'less',
 			'label'    => __( 'Custom LESS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom LESS here. This code will be compiled with the other LESS files of the theme and be appended to the header.', 'maera_bs' ),
 			'section'  => 'advanced',
@@ -141,7 +141,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'textarea',
-			'setting'  => 'js',
+			'settings'  => 'js',
 			'label'    => __( 'Custom JS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera_bs' ),
 			'section'  => 'advanced',
@@ -151,7 +151,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'checkbox',
-			'setting'  => 'minimize_css',
+			'settings'  => 'minimize_css',
 			'label'    => __( 'Minimize CSS', 'maera_bs' ),
 			'description' => __( 'Minimize the generated CSS. This should be always be checked for production sites.', 'maera_bs' ),
 			'section'  => 'advanced',
@@ -167,7 +167,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-buttonset',
-			'setting'  => 'site_style',
+			'settings'  => 'site_style',
 			'label'    => __( 'Site Style', 'maera_bs' ),
 			'subtitle' => __( 'Wide and boxed Layouts are responsive while fluid layouts are full-width.', 'maera_bs' ),
 			'section'  => 'layout',
@@ -182,7 +182,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-image',
-			'setting'  => 'layout',
+			'settings'  => 'layout',
 			'label'    => __( 'Layout', 'maera_bs' ),
 			'subtitle' => __( 'Select your main layout. Please note that if no widgets are present in a sidebar then that sidebar will not be displayed. ', 'maera_bs' ),
 			'section'  => 'layout',
@@ -193,7 +193,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'layout_primary_width',
+			'settings'  => 'layout_primary_width',
 			'label'    => __( 'Primary Sidebar Width', 'maera_bs' ),
 			'description' => '',
 			'section'  => 'layout',
@@ -208,7 +208,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'layout_secondary_width',
+			'settings'  => 'layout_secondary_width',
 			'label'    => __( 'Secondary Sidebar Width', 'maera_bs' ),
 			'description' => '',
 			'section'  => 'layout',
@@ -229,7 +229,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-buttonset',
-			'setting'  => 'widgets_mode',
+			'settings'  => 'widgets_mode',
 			'label'    => __( 'Widgets mode', 'maera_bs' ),
 			'subtitle' => __( 'How do you want your widgets to be displayed?', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -244,7 +244,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'screen_tablet',
+			'settings'  => 'screen_tablet',
 			'label'    => __( 'Small Screen / Tablet view', 'maera_bs' ),
 			'subtitle' => __( 'The width of Tablet screens. Default: 768px', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -259,7 +259,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'screen_desktop',
+			'settings'  => 'screen_desktop',
 			'label'    => __( 'Desktop Container Width', 'maera_bs' ),
 			'subtitle' => __( 'The width of normal screens. Default: 992px', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -274,7 +274,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'screen_large_desktop',
+			'settings'  => 'screen_large_desktop',
 			'label'    => __( 'Large Desktop Container Width', 'maera_bs' ),
 			'subtitle' => __( 'The width of Large Desktop screens. Default: 1200px', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -289,7 +289,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'gutter',
+			'settings'  => 'gutter',
 			'label'    => __( 'Gutter', 'maera_bs' ),
 			'subtitle' => __( 'The spacing between grid columns. Default: 30px', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -304,7 +304,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'checkbox',
-			'setting'  => 'cpt_layout_toggle',
+			'settings'  => 'cpt_layout_toggle',
 			'label'    => __( 'Per Post-Type layouts', 'maera_bs' ),
 			'subtitle' => __( 'After you enable this setting you will have to save your settings and refresh your page in order to see the new options.', 'maera_bs' ),
 			'section'  => 'layout_advanced',
@@ -321,7 +321,7 @@ class Maera_BS_Customizer {
 			foreach ( $post_types as $post_type ) {
 				$controls[] = array(
 					'type'     => 'radio-image',
-					'setting'  => $post_type . '_layout',
+					'settings'  => $post_type . '_layout',
 					'label'    => $post_type . ' ' . __( 'layout', 'maera_bs' ),
 					'description' => null,
 					'section'  => 'layout_advanced',
@@ -339,7 +339,7 @@ class Maera_BS_Customizer {
 	function settings_nav( $controls ) {
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'navbar_position',
+			'settings'  => 'navbar_position',
 			'label'    => __( 'NavBar Positioning', 'maera_bs' ),
 			'description' => __( 'Using this option you can set the navbar to be fixed to top, fixed to bottom or normal. When you\'re using one of the \'fixed\' options, the navbar will stay fixed on the top or bottom of the page. Default: Normal', 'maera_bs' ),
 			'section'  => 'nav',
@@ -358,7 +358,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'grid_float_breakpoint',
+			'settings'  => 'grid_float_breakpoint',
 			'label'    => __( 'Responsive NavBar Threshold', 'maera_bs' ),
 			'subtitle' => __( 'Point at which the navbar becomes uncollapsed', 'maera_bs' ),
 			'section'  => 'nav',
@@ -376,7 +376,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'checkbox',
-			'setting'  => 'navbar_search',
+			'settings'  => 'navbar_search',
 			'label'    => __( 'Display search form on the NavBar', 'maera_bs' ),
 			'section'  => 'nav',
 			'default'  => 1,
@@ -385,7 +385,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-buttonset',
-			'setting'  => 'navbar_nav_align',
+			'settings'  => 'navbar_nav_align',
 			'label'    => __( 'Menus alignment', 'maera_bs' ),
 			'section'  => 'nav',
 			'default'  => 'left',
@@ -399,7 +399,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'navbar_height',
+			'settings'  => 'navbar_height',
 			'label'    => __( 'NavBar Height', 'maera_bs' ),
 			'subtitle' => __( 'Select the height of your navbars in pixels.', 'maera_bs' ),
 			'section'  => 'nav',
@@ -425,7 +425,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'color',
-			'setting'  => 'navbar_bg',
+			'settings'  => 'navbar_bg',
 			'label'    => __( 'NavBar Background Color', 'maera_bs' ),
 			'description' => __( 'Pick a background color for the NavBar. Default: #f8f8f8.', 'maera_bs' ),
 			'section'  => 'nav_bg',
@@ -435,7 +435,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'navbar_bg_opacity',
+			'settings'  => 'navbar_bg_opacity',
 			'label'    => __( 'NavBar Background Opacity', 'maera_bs' ),
 			'section'  => 'nav_bg',
 			'default'  => 100,
@@ -455,7 +455,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'font_menus_font_family',
+			'settings'  => 'font_menus_font_family',
 			'label'    => __( 'Menus font', 'maera_bs' ),
 			'section'  => 'typo_nav',
 			'default'  => 'Helvetica, Arial, sans-serif',
@@ -469,7 +469,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_menus_weight',
+			'settings'  => 'font_menus_weight',
 			'subtitle' => __( 'Font Weight', 'maera_bs' ),
 			'section'  => 'typo_nav',
 			'default'  => 400,
@@ -487,7 +487,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_menus_size',
+			'settings'  => 'font_menus_size',
 			'subtitle' => __( 'Font Size', 'maera_bs' ),
 			'section'  => 'typo_nav',
 			'default'  => 14,
@@ -501,7 +501,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_menus_height',
+			'settings'  => 'font_menus_height',
 			'subtitle' => __( 'Line Height', 'maera_bs' ),
 			'section'  => 'typo_nav',
 			'default'  => 1.1,
@@ -525,7 +525,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'color',
-			'setting'  => 'color_brand_primary',
+			'settings'  => 'color_brand_primary',
 			'label'    => __( 'Brand Colors: Primary', 'maera_bs' ),
 			'description' => __( 'Select your primary branding color. Also referred to as an accent color. This will affect various areas of your site, including the color of your primary buttons, link color, the background of some elements and many more.', 'maera_bs' ),
 			'section'  => 'colors',
@@ -536,7 +536,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-buttonset',
-			'setting'  => 'gradients_toggle',
+			'settings'  => 'gradients_toggle',
 			'label'    => __( 'Enable Gradients', 'maera_bs' ),
 			'description' => __( 'Enable or disable gradients. These are applied to navbars, buttons and other elements. Please note that gradients will not be applied in the preview mode and can only be seen on the live site.', 'maera_bs' ),
 			'section'  => 'colors',
@@ -556,7 +556,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'background',
-			'setting'      => 'html_bg',
+			'settings'      => 'html_bg',
 			'label'        => __( 'General Background', 'maera_bs' ),
 			'section'      => 'html_bg',
 			'default'      => array(
@@ -580,7 +580,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'color',
-			'setting'      => 'body_bg_color',
+			'settings'      => 'body_bg_color',
 			'label'        => __( 'Background Color', 'maera_bs' ),
 			'section'      => 'body_bg',
 			'default'      => '#ffffff',
@@ -589,7 +589,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'slider',
-			'setting'      => 'body_bg_opacity',
+			'settings'      => 'body_bg_opacity',
 			'label'        => __( 'Opacity', 'maera_bs' ),
 			'section'      => 'body_bg',
 			'default'      => 100,
@@ -609,7 +609,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'font_base_family',
+			'settings'  => 'font_base_family',
 			'label'    => __( 'Base font', 'maera_bs' ),
 			'section'  => 'typo_base',
 			'default'  => 'Helvetica, Arial, sans-serif',
@@ -623,7 +623,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'multicheck',
-			'setting'  => 'font_subsets',
+			'settings'  => 'font_subsets',
 			'label'    => __( 'Google-Font subsets', 'maera_bs' ),
 			'description' => __( 'The subsets used from Google\'s API.', 'maera_bs' ),
 			'section'  => 'typo_base',
@@ -638,7 +638,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_base_weight',
+			'settings'  => 'font_base_weight',
 			'label'    => __( 'Base Font Weight', 'maera_bs' ),
 			'section'  => 'typo_base',
 			'default'  => 400,
@@ -656,7 +656,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_base_size',
+			'settings'  => 'font_base_size',
 			'label'    => __( 'Base Font Size', 'maera_bs' ),
 			'section'  => 'typo_base',
 			'default'  => 14,
@@ -675,7 +675,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_base_height',
+			'settings'  => 'font_base_height',
 			'label'    => __( 'Base Line Height', 'maera_bs' ),
 			'section'  => 'typo_base',
 			'default'  => 1.43,
@@ -699,7 +699,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'headers_font_family',
+			'settings'  => 'headers_font_family',
 			'label'    => __( 'Font-Family', 'maera_bs' ),
 			'section'  => 'typo_headers',
 			'default'  => 'Helvetica, Arial, sans-serif',
@@ -713,7 +713,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_headers_weight',
+			'settings'  => 'font_headers_weight',
 			'label'    => __( 'Font Weight.', 'maera_bs' ) . ' ' . __( 'Default: ', 'maera_bs' ) . 400,
 			'section'  => 'typo_headers',
 			'default'  => 400,
@@ -731,7 +731,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_headers_size',
+			'settings'  => 'font_headers_size',
 			'label'    => __( 'Font Size', 'maera_bs' ) . ' ' . __( 'Default: ', 'maera_bs' ) . '1',
 			'description' => __( 'The size defined here applies to H5. All other header elements are calculated porportionally, based on the base font size.', 'maera_bs' ),
 			'section'  => 'typo_headers',
@@ -746,7 +746,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_headers_height',
+			'settings'  => 'font_headers_height',
 			'label'    => __( 'Line Height', 'maera_bs' ) . ' ' . __( 'Default: ', 'maera_bs' ) . '1.1',
 			'section'  => 'typo_headers',
 			'default'  => 1.1,
@@ -770,7 +770,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'        => 'radio-buttonset',
-			'setting'     => 'blog_post_mode',
+			'settings'     => 'blog_post_mode',
 			'label'       => __( 'Archives Display Mode', 'maera_bs' ),
 			'description' => __( 'Display the excerpt or the full post on post archives.', 'maera_bs' ),
 			'section'     => 'blog_options',
@@ -784,7 +784,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 	    'type'        => 'sortable',
-	    'setting'     => 'maera_entry_meta_config',
+	    'settings'     => 'maera_entry_meta_config',
 	    'label'       => __( 'Post Meta elements', 'maera_bs' ),
 			'help'        => __( 'Click the "eye" to toggle the section from being displayed. Drag n Drop the "lines" to re-order. ', 'maera_zf' ),
 	    'section'     => 'blog_options',
@@ -806,7 +806,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'        => 'checkbox',
-			'setting'     => 'breadcrumbs',
+			'settings'     => 'breadcrumbs',
 			'label'       => __( 'Show Breadcrumbs. Please note that this setting requires you to save your options and refresh the page. Breadcrumbs are not displayed on the homepage.', 'maera_bs' ),
 			'section'     => 'blog_options',
 			'priority'    => 3,
@@ -815,7 +815,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'post_excerpt_length',
+			'settings'  => 'post_excerpt_length',
 			'label'    => __( 'Post excerpt length', 'maera_bs' ),
 			'description' => __( 'Choose how many words should be used for post excerpt. Default: 55', 'maera_bs' ),
 			'section'  => 'blog_options',
@@ -830,7 +830,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'        => 'text',
-			'setting'     => 'post_excerpt_link_text',
+			'settings'     => 'post_excerpt_link_text',
 			'label'       => __( '"more" text', 'maera_bs' ),
 			'subtitle'    => __( 'Text to display in case of excerpt too long. Default: Continued', 'maera_bs' ),
 			'section'     => 'blog_options',
@@ -846,7 +846,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'        => 'checkbox',
-			'setting'     => 'feat_img_archive',
+			'settings'     => 'feat_img_archive',
 			'label'       => __( 'Display Featured Images', 'maera_bs' ),
 			'description' => __( 'Display featured Images on post archives ( such as categories, tags, month view etc ).', 'maera_bs' ),
 			'section'     => 'feat_archive',
@@ -856,7 +856,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'feat_img_archive_width',
+			'settings'  => 'feat_img_archive_width',
 			'label'    => __( 'Featured Image Width', 'maera_bs' ),
 			'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera_bs' ),
 			'section'  => 'feat_archive',
@@ -871,7 +871,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'feat_img_archive_height',
+			'settings'  => 'feat_img_archive_height',
 			'label'    => __( 'Featured Image Height', 'maera_bs' ),
 			'subtitle' => __( 'Set to 0 to resize the image using the original image proportions. Default: 0', 'maera_bs' ),
 			'section'  => 'feat_archive',
@@ -888,7 +888,7 @@ class Maera_BS_Customizer {
 		$controls[] = array(
 			'type'        => 'multicheck',
 			'mode'        => 'checkbox',
-			'setting'     => 'feat_img_per_post_type',
+			'settings'     => 'feat_img_per_post_type',
 			'label'       => __( 'Disable featured images per post type.', 'maera_bs' ),
 			// 'subtitle'    => __( 'CAUTION: This setting will also disable displaying the featured images on single posts as well.', 'maera_bs' ),
 			'section'     => 'feat_archive',
@@ -905,7 +905,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'        => 'checkbox',
-			'setting'     => 'feat_img_post',
+			'settings'     => 'feat_img_post',
 			'label'       => __( 'Display Featured Images', 'maera_bs' ),
 			'subtitle'    => __( 'Display featured Images on single posts.', 'maera_bs' ),
 			'section'     => 'feat_single',
@@ -915,7 +915,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'feat_img_post_width',
+			'settings'  => 'feat_img_post_width',
 			'label'    => __( 'Featured Image Width', 'maera_bs' ),
 			'subtitle' => __( 'Set to -1 for max width and 0 for original width. Default: -1', 'maera_bs' ),
 			'section'  => 'feat_single',
@@ -930,7 +930,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'feat_img_post_height',
+			'settings'  => 'feat_img_post_height',
 			'label'    => __( 'Featured Image Height', 'maera_bs' ),
 			'subtitle' => __( 'Set to 0 to use the original image proportions. Default: 0', 'maera_bs' ),
 			'section'  => 'feat_single',
@@ -951,7 +951,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'background',
-			'setting'      => 'jumbo_bg',
+			'settings'      => 'jumbo_bg',
 			'label'        => __( 'Jumbotron Background', 'maera_bs' ),
 			'section'      => 'jumbo_bg',
 			'default'      => array(
@@ -975,7 +975,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'checkbox',
-			'setting'  => 'jumbotron_nocontainer',
+			'settings'  => 'jumbotron_nocontainer',
 			'label'    => __( 'Full-Width', 'maera_bs' ),
 			'description' => __( 'When selected, the Jumbotron is no longer restricted by the width of your page, taking over the full width of your screen. This option is useful when you have assigned a slider widget on the Jumbotron area and you want its width to be the maximum width of the screen. Default: OFF.', 'maera_bs' ),
 			'section'  => 'structure_jumbo',
@@ -991,7 +991,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'select',
-			'setting'  => 'font_jumbotron_font_family',
+			'settings'  => 'font_jumbotron_font_family',
 			'label'    => __( 'Jumbotron font', 'maera_bs' ),
 			'section'  => 'typo_jumbo',
 			'default'  => 'Helvetica, Arial, sans-serif',
@@ -1005,7 +1005,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_jumbotron_weight',
+			'settings'  => 'font_jumbotron_weight',
 			'subtitle' => __( 'Font Weight', 'maera_bs' ),
 			'section'  => 'typo_jumbo',
 			'default'  => 400,
@@ -1023,7 +1023,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_jumbotron_size',
+			'settings'  => 'font_jumbotron_size',
 			'subtitle' => __( 'Font Size', 'maera_bs' ),
 			'section'  => 'typo_jumbo',
 			'default'  => 20,
@@ -1037,7 +1037,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'font_jumbotron_height',
+			'settings'  => 'font_jumbotron_height',
 			'subtitle' => __( 'Line Height', 'maera_bs' ),
 			'section'  => 'typo_jumbo',
 			'default'  => 22,
@@ -1061,7 +1061,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'background',
-			'setting'      => 'header_bg',
+			'settings'      => 'header_bg',
 			'label'        => __( 'Header Background', 'maera_bs' ),
 			'section'      => 'header_bg',
 			'default'      => array(
@@ -1085,7 +1085,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'radio-buttonset',
-			'setting'  => 'navbar_social',
+			'settings'  => 'navbar_social',
 			'label'    => __( 'Display social links in the NavBar.', 'maera_bs' ),
 			'subtitle' => __( 'Social network links can be set-up in the "Social" section.', 'maera_bs' ),
 			'section'  => 'social',
@@ -1105,7 +1105,7 @@ class Maera_BS_Customizer {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => $social_link . '_link',
+				'settings'  => $social_link . '_link',
 				'label'    => $label . ' ' . __( 'link', 'maera_bs' ),
 				'section'  => 'social',
 				'default'  => '',
@@ -1124,7 +1124,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'         => 'background',
-			'setting'      => 'footer_bg',
+			'settings'      => 'footer_bg',
 			'label'        => __( 'Footer Background', 'maera_bs' ),
 			'section'      => 'footer_bg',
 			'default'      => array(
@@ -1149,7 +1149,7 @@ class Maera_BS_Customizer {
 		$controls[] = array(
 			'type'     => 'textarea',
 			'label'    => __( 'Footer Text', 'maera_bs' ),
-			'setting'  => 'footer_text',
+			'settings'  => 'footer_text',
 			'default'  => '&copy; [year] [sitename]',
 			'section'  => 'branding',
 			'priority' => 12,
@@ -1164,7 +1164,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'border_radius',
+			'settings'  => 'border_radius',
 			'label'    => __( 'Border-Radius', 'maera_bs' ),
 			'description' => __( 'You can adjust the corner-radius of all elements in your site here. This will affect buttons, navbars, widgets and many more. Default: 4', 'maera_bs' ),
 			'section'  => 'general',
@@ -1179,7 +1179,7 @@ class Maera_BS_Customizer {
 
 		$controls[] = array(
 			'type'     => 'slider',
-			'setting'  => 'padding_base',
+			'settings'  => 'padding_base',
 			'label'    => __( 'Padding Base', 'maera_bs' ),
 			'description' => __( 'You can adjust the padding base. This affects buttons size and lots of other cool stuff too! Default: 6', 'maera_bs' ),
 			'section'  => 'general',
@@ -1201,7 +1201,7 @@ class Maera_BS_Customizer {
 
 			$controls[] = array(
 				'type'     => 'checkbox',
-				'setting'  => $area . '_toggle',
+				'settings'  => $area . '_toggle',
 				'label'    => $area,
 				'section'  => 'custom_widget_areas',
 				'default'  => 0,
