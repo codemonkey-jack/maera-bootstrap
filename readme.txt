@@ -1,10 +1,9 @@
 === Maera Bootstrap ===
 Contributors: aristath, fovoc
 Tags: theme extension
-Donate link: http://aristeides.com/
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 0.9.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +19,7 @@ This shell adds the [Bootstrap](http://getbootstrap.com/) framework to your Maer
 
 **SUPPORT**
 
-We only offer premium support on all Maera Shells. Please visit https://press.codes/support/ for more details.
+We only offer premium support on all Maera Shells. Please visit https://wpsatchel.com/support/ for more details.
 
 == Installation ==
 

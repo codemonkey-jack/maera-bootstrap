@@ -1,15 +1,16 @@
 <?php
 /*
 Plugin Name:         Maera Bootstrap Shell
-Plugin URI:          https://press.codes/downloads/maera-bootstrap-shell/
+Plugin URI:          https://wpsatchel.com/downloads/maera-bootstrap-shell/
 Description:         Adds the bootstrap shell to the Maera theme
-Version:             0.9.1
-Author:              Aristeides Stathopoulos, Dimitris Kalliris
-Author URI:          https://press.codes
+Version:             1.0.0
+Author:              WPSatchel
+Contributers:		 Aristeides Stathopoulos, Dimitris Kalliris
+Author URI:          https://wpsatchel.com
 Text Domain:         maera_bs
 */
 
-define( 'MAERA_BS_SHELL_VER', '0.9.1' );
+define( 'MAERA_BS_SHELL_VER', '1.0.0' );
 define( 'MAERA_BS_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_BS_SHELL_PATH', dirname( __FILE__ ) );
 
