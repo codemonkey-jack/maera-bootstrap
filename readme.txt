@@ -23,4 +23,4 @@ We only offer premium support on all Maera Shells. Please visit https://wpsatche
 
 == Installation ==
 
-This plugin **requires** the Maera theme framework. You can download it from https://press.codes/
+This plugin **requires** the Maera theme framework. You can download it with a valid club membership from https://wpsatchel.com/
