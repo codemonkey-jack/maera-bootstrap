@@ -130,8 +130,8 @@ class Maera_BS_Customizer {
 			'default'  => '',
 			'choices' => array(
 				'language' => 'css',
-				'theme' => 'monokai',
-				'height' => 250,
+				'theme'    => 'monokai',
+				'height'   => 250,
 			)
 		);
 
