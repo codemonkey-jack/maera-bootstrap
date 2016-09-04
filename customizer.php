@@ -121,33 +121,48 @@ class Maera_BS_Customizer {
 	function settings_advanced( $controls ) {
 
 		$controls[] = array(
-			'type'     => 'textarea',
+			'type'     => 'code',
 			'settings'  => 'css',
 			'label'    => __( 'Custom CSS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom CSS here. This code will appear in a script tag appended in the header section of the page.', 'maera_bs' ),
 			'section'  => 'advanced',
 			'priority' => 4,
 			'default'  => '',
+			'choices' => array(
+				'language' => 'css',
+				'theme' => 'monokai',
+				'height' => 250,
+			)
 		);
 
 		$controls[] = array(
-			'type'     => 'textarea',
+			'type'     => 'code',
 			'settings'  => 'less',
 			'label'    => __( 'Custom LESS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom LESS here. This code will be compiled with the other LESS files of the theme and be appended to the header.', 'maera_bs' ),
 			'section'  => 'advanced',
 			'priority' => 5,
 			'default'  => '',
+			'choices'  => array(
+				'language' => 'less',
+				'theme'    => 'monokai',
+				'height'   => 250,
+			)
 		);
 
 		$controls[] = array(
-			'type'     => 'textarea',
+			'type'     => 'code',
 			'settings'  => 'js',
 			'label'    => __( 'Custom JS', 'maera_bs' ),
 			'subtitle' => __( 'You can write your custom JavaScript/jQuery here. The code will be included in a script tag appended to the bottom of the page.', 'maera_bs' ),
 			'section'  => 'advanced',
 			'priority' => 6,
 			'default'  => '',
+			'choices'  => array(
+				'language' => 'javascript',
+				'theme'    => 'monokai',
+				'height'   => 250,
+			)
 		);
 
 		$controls[] = array(
