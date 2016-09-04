@@ -63,6 +63,7 @@ class Maera_BS_Customizer {
 
 		$sections = array(
 			'branding' => array( 'title' => __( 'Branding', 'maera_bs' ), 'priority' => 5, 'panel' => '' ),
+			'nav' => array( 'title' => __( 'Navigation', 'maera_bs' ), 'priority' => 10, 'panel' => '' ),
 
 			'general'         => array( 'title' => __( 'General', 'maera_bs' ),         'priority' => 10, 'panel' => 'structure' ),
 			'layout'          => array( 'title' => __( 'Layout', 'maera_bs' ),          'priority' => 15, 'panel' => 'structure' ),
