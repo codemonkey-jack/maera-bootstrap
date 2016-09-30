@@ -10,6 +10,39 @@ Author URI:          https://wpsatchel.com
 Text Domain:         maera_bs
 */
 
+// Create a helper function for easy SDK access.
+function maera_bs_fs() {
+    global $maera_bs_fs;
+
+    if ( ! isset( $maera_bs_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $maera_bs_fs = fs_dynamic_init( array(
+            'id'                => '449',
+            'slug'              => 'maera-bootstrap',
+            'type'              => 'plugin',
+            'public_key'        => 'pk_ed7177ae95ab0720a6225a4f7dc17',
+            'is_premium'        => true,
+            'has_addons'        => false,
+            'has_paid_plans'    => true,
+            'is_org_compliant'  => false,
+            'menu'              => array(
+                'first-path' => 'plugins.php',
+                'support'    => false,
+            ),
+            // Set the SDK to work in a sandbox mode (for development & testing).
+            // IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
+            'secret_key'  => 'sk_8gWo*WeboTtQKMh6wBR{n9Q5yVE1[',
+        ) );
+    }
+
+    return $maera_bs_fs;
+}
+
+// Init Freemius.
+maera_bs_fs();
+
 define( 'MAERA_BS_SHELL_VER', '1.0.1' );
 define( 'MAERA_BS_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_BS_SHELL_PATH', dirname( __FILE__ ) );
