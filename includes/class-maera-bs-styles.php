@@ -17,18 +17,14 @@ if ( ! class_exists( 'Maera_BS_Styles' ) ) {
 
 			if ( $wp_customize ) {
 				add_action( 'wp_enqueue_scripts', array( $this, 'custom_css' ), 105 );
-				remove_action( 'wp_head', array( 'Jetpack_Custom_CSS', 'link_tag' ), 101 );
 			}
-
-			add_action( 'wp_loaded', array( $this, 'activate_custom_css' ) );
-			add_action( 'customize_save_after', array( $this, 'custom_css_theme_mod_to_jetpack' ) );
-			add_action( 'safecss_parse_post', array( $this, 'custom_css_jetpack_to_theme_mod' ) );
 
 			// Styles
 			add_filter( 'maera/styles', array( $this, 'header_css' ) );
 			add_filter( 'maera/styles', array( $this, 'layout_css' ) );
 			add_filter( 'maera/styles', array( $this, 'navbar_css' ) );
 			add_filter( 'maera/styles', array( $this, 'body_css' ) );
+			add_filter( 'maera/styles', array( $this, 'custom_post_css' ) );
 		}
 
 
@@ -144,49 +140,15 @@ if ( ! class_exists( 'Maera_BS_Styles' ) ) {
 			}
 		}
 
-		/**
-		 * Activate the custom CSS module.
-		 */
-		public function activate_custom_css() {
-	
-			$jetpack_active_modules = get_option( 'jetpack_active_modules' );
-	
-			if ( is_array( $jetpack_active_modules ) && ! in_array( 'custom-css', $jetpack_active_modules ) ) {
-				$jetpack_active_modules[] = 'custom-css';
-				update_option( 'jetpack_active_modules', $jetpack_active_modules );
-			} else {
-				// Get CSS saved as a theme mod
-				$css = get_theme_mod( 'css', '' );
-	
-				// Early exit if Jetpack is not installed
-				if ( ! class_exists( 'Jetpack_Custom_CSS' ) ) {
-					return;
-				}
-				$new_css = Jetpack_Custom_CSS::get_css();
-				if ( ! empty( $css ) && empty( $new_css ) ) {
-					// Jetpack_Custom_CSS::save( array( 'css' => $css ) );
-				}
-			}
-	
-		}
-
-		/**
-		 * Copy the custom CSS from theme_mod to Jetpack
-		 */
-		function custom_css_theme_mod_to_jetpack() {
+		
+		function custom_post_css($styles){
 			$css = get_theme_mod( 'css', '' );
-			Jetpack_Custom_CSS::save( array( 'css' => $css ) );
+			if ( ! empty( $css )) {
+				$styles .= $css;
+			}
+			return $styles;
 		}
 
-		/**
-		 * Copy the custom CSS from Jetpack to theme_mod
-		 */
-		function custom_css_jetpack_to_theme_mod() {
-			$css = Jetpack_Custom_CSS::get_css();
-			if ( $css != get_theme_mod( 'css', '' ) ) {
-				set_theme_mod( 'css', $css );
-			}
-		}
 	}
 
 }

@@ -120,7 +120,7 @@
 		 * @param bool  $is_addon
 		 */
 		function init( $menu, $is_addon = false ) {
-			$this->_menu_slug = $menu['slug'];
+			$this->_menu_slug = @$menu['slug'];
 
 			$this->_default_submenu_items = array();
 			// @deprecated
